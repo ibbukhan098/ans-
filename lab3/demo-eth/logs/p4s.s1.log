@@ -1,0 +1,880 @@
+Calling target program-options parser
+[15:20:44.003] [bmv2] [D] [thread 3305] Set default default entry for table 'TheIngress.ethernet_table': NoAction - 
+[15:20:44.004] [bmv2] [D] [thread 3305] Set default default entry for table 'tbl_drop': TheIngress.drop - 
+Adding interface s1-eth0 as port 0
+[15:20:44.007] [bmv2] [D] [thread 3305] Adding interface s1-eth0 as port 0
+Adding interface s1-eth1 as port 1
+[15:20:44.064] [bmv2] [D] [thread 3305] Adding interface s1-eth1 as port 1
+Server listening on 0.0.0.0:50051
+[15:20:44.139] [bmv2] [I] [thread 3305] Starting Thrift server on port 9090
+[15:20:44.142] [bmv2] [I] [thread 3305] Thrift server was started
+[15:20:44.446] [bmv2] [W] [thread 3345] [P4Runtime] p4::tmp::P4DeviceConfig is deprecated
+[15:20:44.452] [bmv2] [D] [thread 3345] Set default default entry for table 'TheIngress.ethernet_table': NoAction - 
+[15:20:44.453] [bmv2] [D] [thread 3345] Set default default entry for table 'tbl_drop': TheIngress.drop - 
+[15:20:44.457] [bmv2] [D] [thread 3345] simple_switch target has been notified of a config swap
+[15:20:44.516] [bmv2] [D] [thread 3347] Entry 0 added to table 'TheIngress.ethernet_table'
+[15:20:44.517] [bmv2] [D] [thread 3347] Dumping entry 0
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000101
+Action entry: TheIngress.l2_forward - 0,
+
+[15:20:44.523] [bmv2] [D] [thread 3345] Entry 1 added to table 'TheIngress.ethernet_table'
+[15:20:44.524] [bmv2] [D] [thread 3345] Dumping entry 1
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000102
+Action entry: TheIngress.l2_forward - 1,
+
+[15:20:44.531] [bmv2] [D] [thread 3347] Entry 2 added to table 'TheIngress.ethernet_table'
+[15:20:44.532] [bmv2] [D] [thread 3347] Dumping entry 2
+Match key:
+* hdr.eth.dstAddr     : EXACT     ffffffffffff
+Action entry: TheIngress.multicast - 1,
+
+[15:20:44.538] [bmv2] [D] [thread 3345] mgrp node created for mgid 1
+[15:20:44.539] [bmv2] [D] [thread 3345] node created for rid 1
+[15:20:44.539] [bmv2] [D] [thread 3345] node associated with mgid 1
+[15:20:44.539] [bmv2] [D] [thread 3345] node created for rid 0
+[15:20:44.541] [bmv2] [D] [thread 3345] node associated with mgid 1
+[15:20:47.622] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Processing packet received on port 1
+[15:20:47.622] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Parser 'parser': start
+[15:20:47.623] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:20:47.624] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Extracting header 'eth'
+[15:20:47.625] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:20:47.626] [bmv2] [T] [thread 3316] [0.0] [cxt 0] Bytes parsed: 14
+[15:20:47.627] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Parser 'parser': end
+[15:20:47.627] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Pipeline 'ingress': start
+[15:20:47.628] [bmv2] [T] [thread 3316] [0.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:20:47.628] [bmv2] [T] [thread 3316] [0.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:20:47.629] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:20:47.629] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:20:47.630] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Action entry is NoAction - 
+[15:20:47.630] [bmv2] [T] [thread 3316] [0.0] [cxt 0] Action NoAction
+[15:20:47.631] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Pipeline 'ingress': end
+[15:20:47.632] [bmv2] [D] [thread 3316] [0.0] [cxt 0] Egress port is 0
+[15:20:47.632] [bmv2] [D] [thread 3317] [0.0] [cxt 0] Pipeline 'egress': start
+[15:20:47.633] [bmv2] [D] [thread 3317] [0.0] [cxt 0] Pipeline 'egress': end
+[15:20:47.633] [bmv2] [D] [thread 3317] [0.0] [cxt 0] Deparser 'deparser': start
+[15:20:47.633] [bmv2] [D] [thread 3317] [0.0] [cxt 0] Deparsing header 'eth'
+[15:20:47.634] [bmv2] [D] [thread 3317] [0.0] [cxt 0] Deparser 'deparser': end
+[15:20:47.634] [bmv2] [D] [thread 3321] [0.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:20:47.875] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Processing packet received on port 0
+[15:20:47.876] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Parser 'parser': start
+[15:20:47.877] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:20:47.877] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Extracting header 'eth'
+[15:20:47.878] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:20:47.878] [bmv2] [T] [thread 3316] [1.0] [cxt 0] Bytes parsed: 14
+[15:20:47.878] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Parser 'parser': end
+[15:20:47.879] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Pipeline 'ingress': start
+[15:20:47.880] [bmv2] [T] [thread 3316] [1.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:20:47.880] [bmv2] [T] [thread 3316] [1.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:20:47.881] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:20:47.882] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:20:47.882] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Action entry is NoAction - 
+[15:20:47.883] [bmv2] [T] [thread 3316] [1.0] [cxt 0] Action NoAction
+[15:20:47.884] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Pipeline 'ingress': end
+[15:20:47.884] [bmv2] [D] [thread 3316] [1.0] [cxt 0] Egress port is 0
+[15:20:47.885] [bmv2] [D] [thread 3317] [1.0] [cxt 0] Pipeline 'egress': start
+[15:20:47.885] [bmv2] [D] [thread 3317] [1.0] [cxt 0] Pipeline 'egress': end
+[15:20:47.886] [bmv2] [D] [thread 3317] [1.0] [cxt 0] Deparser 'deparser': start
+[15:20:47.886] [bmv2] [D] [thread 3317] [1.0] [cxt 0] Deparsing header 'eth'
+[15:20:47.886] [bmv2] [D] [thread 3317] [1.0] [cxt 0] Deparser 'deparser': end
+[15:20:47.887] [bmv2] [D] [thread 3321] [1.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:20:55.042] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Processing packet received on port 1
+[15:20:55.043] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Parser 'parser': start
+[15:20:55.044] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:20:55.044] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Extracting header 'eth'
+[15:20:55.044] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:20:55.044] [bmv2] [T] [thread 3316] [2.0] [cxt 0] Bytes parsed: 14
+[15:20:55.045] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Parser 'parser': end
+[15:20:55.046] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Pipeline 'ingress': start
+[15:20:55.047] [bmv2] [T] [thread 3316] [2.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:20:55.048] [bmv2] [T] [thread 3316] [2.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:20:55.049] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:20:55.050] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:20:55.051] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Action entry is NoAction - 
+[15:20:55.052] [bmv2] [T] [thread 3316] [2.0] [cxt 0] Action NoAction
+[15:20:55.052] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Pipeline 'ingress': end
+[15:20:55.052] [bmv2] [D] [thread 3316] [2.0] [cxt 0] Egress port is 0
+[15:20:55.053] [bmv2] [D] [thread 3317] [2.0] [cxt 0] Pipeline 'egress': start
+[15:20:55.054] [bmv2] [D] [thread 3317] [2.0] [cxt 0] Pipeline 'egress': end
+[15:20:55.055] [bmv2] [D] [thread 3317] [2.0] [cxt 0] Deparser 'deparser': start
+[15:20:55.055] [bmv2] [D] [thread 3317] [2.0] [cxt 0] Deparsing header 'eth'
+[15:20:55.056] [bmv2] [D] [thread 3317] [2.0] [cxt 0] Deparser 'deparser': end
+[15:20:55.058] [bmv2] [D] [thread 3321] [2.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:20:56.322] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Processing packet received on port 0
+[15:20:56.323] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Parser 'parser': start
+[15:20:56.323] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:20:56.324] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Extracting header 'eth'
+[15:20:56.325] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:20:56.325] [bmv2] [T] [thread 3316] [3.0] [cxt 0] Bytes parsed: 14
+[15:20:56.325] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Parser 'parser': end
+[15:20:56.327] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Pipeline 'ingress': start
+[15:20:56.328] [bmv2] [T] [thread 3316] [3.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:20:56.328] [bmv2] [T] [thread 3316] [3.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:20:56.329] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:20:56.329] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:20:56.329] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Action entry is NoAction - 
+[15:20:56.330] [bmv2] [T] [thread 3316] [3.0] [cxt 0] Action NoAction
+[15:20:56.331] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Pipeline 'ingress': end
+[15:20:56.332] [bmv2] [D] [thread 3316] [3.0] [cxt 0] Egress port is 0
+[15:20:56.333] [bmv2] [D] [thread 3317] [3.0] [cxt 0] Pipeline 'egress': start
+[15:20:56.334] [bmv2] [D] [thread 3317] [3.0] [cxt 0] Pipeline 'egress': end
+[15:20:56.335] [bmv2] [D] [thread 3317] [3.0] [cxt 0] Deparser 'deparser': start
+[15:20:56.336] [bmv2] [D] [thread 3317] [3.0] [cxt 0] Deparsing header 'eth'
+[15:20:56.336] [bmv2] [D] [thread 3317] [3.0] [cxt 0] Deparser 'deparser': end
+[15:20:56.337] [bmv2] [D] [thread 3321] [3.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:21:09.897] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Processing packet received on port 1
+[15:21:09.897] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Parser 'parser': start
+[15:21:09.897] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:21:09.897] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Extracting header 'eth'
+[15:21:09.898] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:21:09.898] [bmv2] [T] [thread 3316] [4.0] [cxt 0] Bytes parsed: 14
+[15:21:09.898] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Parser 'parser': end
+[15:21:09.898] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Pipeline 'ingress': start
+[15:21:09.899] [bmv2] [T] [thread 3316] [4.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:21:09.900] [bmv2] [T] [thread 3316] [4.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:21:09.900] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:21:09.901] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:21:09.902] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Action entry is NoAction - 
+[15:21:09.903] [bmv2] [T] [thread 3316] [4.0] [cxt 0] Action NoAction
+[15:21:09.903] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Pipeline 'ingress': end
+[15:21:09.904] [bmv2] [D] [thread 3316] [4.0] [cxt 0] Egress port is 0
+[15:21:09.904] [bmv2] [D] [thread 3317] [4.0] [cxt 0] Pipeline 'egress': start
+[15:21:09.905] [bmv2] [D] [thread 3317] [4.0] [cxt 0] Pipeline 'egress': end
+[15:21:09.905] [bmv2] [D] [thread 3317] [4.0] [cxt 0] Deparser 'deparser': start
+[15:21:09.905] [bmv2] [D] [thread 3317] [4.0] [cxt 0] Deparsing header 'eth'
+[15:21:09.906] [bmv2] [D] [thread 3317] [4.0] [cxt 0] Deparser 'deparser': end
+[15:21:09.906] [bmv2] [D] [thread 3321] [4.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:21:14.500] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Processing packet received on port 0
+[15:21:14.501] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Parser 'parser': start
+[15:21:14.502] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:21:14.503] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Extracting header 'eth'
+[15:21:14.504] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:21:14.505] [bmv2] [T] [thread 3316] [5.0] [cxt 0] Bytes parsed: 14
+[15:21:14.506] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Parser 'parser': end
+[15:21:14.508] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Pipeline 'ingress': start
+[15:21:14.508] [bmv2] [T] [thread 3316] [5.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:21:14.509] [bmv2] [T] [thread 3316] [5.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:21:14.510] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:21:14.511] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:21:14.512] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Action entry is NoAction - 
+[15:21:14.512] [bmv2] [T] [thread 3316] [5.0] [cxt 0] Action NoAction
+[15:21:14.513] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Pipeline 'ingress': end
+[15:21:14.514] [bmv2] [D] [thread 3316] [5.0] [cxt 0] Egress port is 0
+[15:21:14.514] [bmv2] [D] [thread 3317] [5.0] [cxt 0] Pipeline 'egress': start
+[15:21:14.515] [bmv2] [D] [thread 3317] [5.0] [cxt 0] Pipeline 'egress': end
+[15:21:14.516] [bmv2] [D] [thread 3317] [5.0] [cxt 0] Deparser 'deparser': start
+[15:21:14.516] [bmv2] [D] [thread 3317] [5.0] [cxt 0] Deparsing header 'eth'
+[15:21:14.517] [bmv2] [D] [thread 3317] [5.0] [cxt 0] Deparser 'deparser': end
+[15:21:14.518] [bmv2] [D] [thread 3321] [5.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:21:39.077] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Processing packet received on port 1
+[15:21:39.078] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Parser 'parser': start
+[15:21:39.079] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:21:39.081] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Extracting header 'eth'
+[15:21:39.082] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:21:39.083] [bmv2] [T] [thread 3316] [6.0] [cxt 0] Bytes parsed: 14
+[15:21:39.083] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Parser 'parser': end
+[15:21:39.084] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Pipeline 'ingress': start
+[15:21:39.085] [bmv2] [T] [thread 3316] [6.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:21:39.086] [bmv2] [T] [thread 3316] [6.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:21:39.087] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:21:39.088] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:21:39.089] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Action entry is NoAction - 
+[15:21:39.090] [bmv2] [T] [thread 3316] [6.0] [cxt 0] Action NoAction
+[15:21:39.091] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Pipeline 'ingress': end
+[15:21:39.092] [bmv2] [D] [thread 3316] [6.0] [cxt 0] Egress port is 0
+[15:21:39.093] [bmv2] [D] [thread 3317] [6.0] [cxt 0] Pipeline 'egress': start
+[15:21:39.094] [bmv2] [D] [thread 3317] [6.0] [cxt 0] Pipeline 'egress': end
+[15:21:39.095] [bmv2] [D] [thread 3317] [6.0] [cxt 0] Deparser 'deparser': start
+[15:21:39.095] [bmv2] [D] [thread 3317] [6.0] [cxt 0] Deparsing header 'eth'
+[15:21:39.096] [bmv2] [D] [thread 3317] [6.0] [cxt 0] Deparser 'deparser': end
+[15:21:39.097] [bmv2] [D] [thread 3321] [6.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:21:49.313] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Processing packet received on port 0
+[15:21:49.314] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Parser 'parser': start
+[15:21:49.314] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:21:49.315] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Extracting header 'eth'
+[15:21:49.316] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:21:49.317] [bmv2] [T] [thread 3316] [7.0] [cxt 0] Bytes parsed: 14
+[15:21:49.318] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Parser 'parser': end
+[15:21:49.319] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Pipeline 'ingress': start
+[15:21:49.319] [bmv2] [T] [thread 3316] [7.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:21:49.319] [bmv2] [T] [thread 3316] [7.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:21:49.320] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:21:49.320] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:21:49.320] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Action entry is NoAction - 
+[15:21:49.321] [bmv2] [T] [thread 3316] [7.0] [cxt 0] Action NoAction
+[15:21:49.322] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Pipeline 'ingress': end
+[15:21:49.324] [bmv2] [D] [thread 3316] [7.0] [cxt 0] Egress port is 0
+[15:21:49.325] [bmv2] [D] [thread 3317] [7.0] [cxt 0] Pipeline 'egress': start
+[15:21:49.325] [bmv2] [D] [thread 3317] [7.0] [cxt 0] Pipeline 'egress': end
+[15:21:49.325] [bmv2] [D] [thread 3317] [7.0] [cxt 0] Deparser 'deparser': start
+[15:21:49.326] [bmv2] [D] [thread 3317] [7.0] [cxt 0] Deparsing header 'eth'
+[15:21:49.327] [bmv2] [D] [thread 3317] [7.0] [cxt 0] Deparser 'deparser': end
+[15:21:49.328] [bmv2] [D] [thread 3321] [7.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:22:19.463] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Processing packet received on port 0
+[15:22:19.499] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Parser 'parser': start
+[15:22:19.515] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:19.520] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Extracting header 'eth'
+[15:22:19.531] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:19.566] [bmv2] [T] [thread 3316] [8.0] [cxt 0] Bytes parsed: 14
+[15:22:19.576] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Parser 'parser': end
+[15:22:19.577] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Pipeline 'ingress': start
+[15:22:19.631] [bmv2] [T] [thread 3316] [8.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:19.703] [bmv2] [T] [thread 3316] [8.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:19.726] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000102
+
+[15:22:19.766] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 1
+[15:22:19.796] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Dumping entry 1
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000102
+Action entry: TheIngress.l2_forward - 1,
+
+[15:22:19.847] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Action entry is TheIngress.l2_forward - 1,
+[15:22:19.884] [bmv2] [T] [thread 3316] [8.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:19.897] [bmv2] [T] [thread 3316] [8.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:19.929] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Pipeline 'ingress': end
+[15:22:19.938] [bmv2] [D] [thread 3316] [8.0] [cxt 0] Egress port is 1
+[15:22:19.986] [bmv2] [D] [thread 3318] [8.0] [cxt 0] Pipeline 'egress': start
+[15:22:20.011] [bmv2] [D] [thread 3318] [8.0] [cxt 0] Pipeline 'egress': end
+[15:22:20.012] [bmv2] [D] [thread 3318] [8.0] [cxt 0] Deparser 'deparser': start
+[15:22:20.013] [bmv2] [D] [thread 3318] [8.0] [cxt 0] Deparsing header 'eth'
+[15:22:20.036] [bmv2] [D] [thread 3318] [8.0] [cxt 0] Deparser 'deparser': end
+[15:22:20.076] [bmv2] [D] [thread 3321] [8.0] [cxt 0] Transmitting packet of size 98 out of port 1
+[15:22:20.092] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Processing packet received on port 1
+[15:22:20.092] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Parser 'parser': start
+[15:22:20.092] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:20.092] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Extracting header 'eth'
+[15:22:20.093] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:20.093] [bmv2] [T] [thread 3316] [9.0] [cxt 0] Bytes parsed: 14
+[15:22:20.093] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Parser 'parser': end
+[15:22:20.093] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Pipeline 'ingress': start
+[15:22:20.093] [bmv2] [T] [thread 3316] [9.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:20.093] [bmv2] [T] [thread 3316] [9.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:20.093] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000101
+
+[15:22:20.093] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 0
+[15:22:20.093] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Dumping entry 0
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000101
+Action entry: TheIngress.l2_forward - 0,
+
+[15:22:20.093] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Action entry is TheIngress.l2_forward - 0,
+[15:22:20.093] [bmv2] [T] [thread 3316] [9.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:20.094] [bmv2] [T] [thread 3316] [9.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:20.094] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Pipeline 'ingress': end
+[15:22:20.094] [bmv2] [D] [thread 3316] [9.0] [cxt 0] Egress port is 0
+[15:22:20.094] [bmv2] [D] [thread 3317] [9.0] [cxt 0] Pipeline 'egress': start
+[15:22:20.094] [bmv2] [D] [thread 3317] [9.0] [cxt 0] Pipeline 'egress': end
+[15:22:20.094] [bmv2] [D] [thread 3317] [9.0] [cxt 0] Deparser 'deparser': start
+[15:22:20.094] [bmv2] [D] [thread 3317] [9.0] [cxt 0] Deparsing header 'eth'
+[15:22:20.094] [bmv2] [D] [thread 3317] [9.0] [cxt 0] Deparser 'deparser': end
+[15:22:20.094] [bmv2] [D] [thread 3321] [9.0] [cxt 0] Transmitting packet of size 98 out of port 0
+[15:22:20.446] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Processing packet received on port 0
+[15:22:20.446] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Parser 'parser': start
+[15:22:20.446] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:20.447] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Extracting header 'eth'
+[15:22:20.447] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:20.447] [bmv2] [T] [thread 3316] [10.0] [cxt 0] Bytes parsed: 14
+[15:22:20.447] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Parser 'parser': end
+[15:22:20.447] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Pipeline 'ingress': start
+[15:22:20.447] [bmv2] [T] [thread 3316] [10.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:20.448] [bmv2] [T] [thread 3316] [10.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:20.448] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000102
+
+[15:22:20.448] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 1
+[15:22:20.448] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Dumping entry 1
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000102
+Action entry: TheIngress.l2_forward - 1,
+
+[15:22:20.448] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Action entry is TheIngress.l2_forward - 1,
+[15:22:20.448] [bmv2] [T] [thread 3316] [10.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:20.449] [bmv2] [T] [thread 3316] [10.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:20.449] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Pipeline 'ingress': end
+[15:22:20.449] [bmv2] [D] [thread 3316] [10.0] [cxt 0] Egress port is 1
+[15:22:20.450] [bmv2] [D] [thread 3318] [10.0] [cxt 0] Pipeline 'egress': start
+[15:22:20.450] [bmv2] [D] [thread 3318] [10.0] [cxt 0] Pipeline 'egress': end
+[15:22:20.451] [bmv2] [D] [thread 3318] [10.0] [cxt 0] Deparser 'deparser': start
+[15:22:20.452] [bmv2] [D] [thread 3318] [10.0] [cxt 0] Deparsing header 'eth'
+[15:22:20.452] [bmv2] [D] [thread 3318] [10.0] [cxt 0] Deparser 'deparser': end
+[15:22:20.453] [bmv2] [D] [thread 3321] [10.0] [cxt 0] Transmitting packet of size 98 out of port 1
+[15:22:20.455] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Processing packet received on port 1
+[15:22:20.455] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Parser 'parser': start
+[15:22:20.456] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:20.456] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Extracting header 'eth'
+[15:22:20.456] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:20.456] [bmv2] [T] [thread 3316] [11.0] [cxt 0] Bytes parsed: 14
+[15:22:20.456] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Parser 'parser': end
+[15:22:20.456] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Pipeline 'ingress': start
+[15:22:20.456] [bmv2] [T] [thread 3316] [11.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:20.456] [bmv2] [T] [thread 3316] [11.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:20.456] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000101
+
+[15:22:20.456] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 0
+[15:22:20.456] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Dumping entry 0
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000101
+Action entry: TheIngress.l2_forward - 0,
+
+[15:22:20.456] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Action entry is TheIngress.l2_forward - 0,
+[15:22:20.457] [bmv2] [T] [thread 3316] [11.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:20.457] [bmv2] [T] [thread 3316] [11.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:20.457] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Pipeline 'ingress': end
+[15:22:20.457] [bmv2] [D] [thread 3316] [11.0] [cxt 0] Egress port is 0
+[15:22:20.458] [bmv2] [D] [thread 3317] [11.0] [cxt 0] Pipeline 'egress': start
+[15:22:20.458] [bmv2] [D] [thread 3317] [11.0] [cxt 0] Pipeline 'egress': end
+[15:22:20.459] [bmv2] [D] [thread 3317] [11.0] [cxt 0] Deparser 'deparser': start
+[15:22:20.459] [bmv2] [D] [thread 3317] [11.0] [cxt 0] Deparsing header 'eth'
+[15:22:20.460] [bmv2] [D] [thread 3317] [11.0] [cxt 0] Deparser 'deparser': end
+[15:22:20.461] [bmv2] [D] [thread 3321] [11.0] [cxt 0] Transmitting packet of size 98 out of port 0
+[15:22:21.453] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Processing packet received on port 0
+[15:22:21.454] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Parser 'parser': start
+[15:22:21.455] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:21.456] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Extracting header 'eth'
+[15:22:21.457] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:21.458] [bmv2] [T] [thread 3316] [12.0] [cxt 0] Bytes parsed: 14
+[15:22:21.459] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Parser 'parser': end
+[15:22:21.459] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Pipeline 'ingress': start
+[15:22:21.460] [bmv2] [T] [thread 3316] [12.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:21.461] [bmv2] [T] [thread 3316] [12.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:21.462] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000102
+
+[15:22:21.463] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 1
+[15:22:21.463] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Dumping entry 1
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000102
+Action entry: TheIngress.l2_forward - 1,
+
+[15:22:21.464] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Action entry is TheIngress.l2_forward - 1,
+[15:22:21.465] [bmv2] [T] [thread 3316] [12.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:21.466] [bmv2] [T] [thread 3316] [12.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:21.466] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Pipeline 'ingress': end
+[15:22:21.467] [bmv2] [D] [thread 3316] [12.0] [cxt 0] Egress port is 1
+[15:22:21.468] [bmv2] [D] [thread 3318] [12.0] [cxt 0] Pipeline 'egress': start
+[15:22:21.469] [bmv2] [D] [thread 3318] [12.0] [cxt 0] Pipeline 'egress': end
+[15:22:21.470] [bmv2] [D] [thread 3318] [12.0] [cxt 0] Deparser 'deparser': start
+[15:22:21.471] [bmv2] [D] [thread 3318] [12.0] [cxt 0] Deparsing header 'eth'
+[15:22:21.472] [bmv2] [D] [thread 3318] [12.0] [cxt 0] Deparser 'deparser': end
+[15:22:21.473] [bmv2] [D] [thread 3321] [12.0] [cxt 0] Transmitting packet of size 98 out of port 1
+[15:22:21.476] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Processing packet received on port 1
+[15:22:21.477] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Parser 'parser': start
+[15:22:21.478] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:21.478] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Extracting header 'eth'
+[15:22:21.478] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:21.479] [bmv2] [T] [thread 3316] [13.0] [cxt 0] Bytes parsed: 14
+[15:22:21.480] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Parser 'parser': end
+[15:22:21.481] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Pipeline 'ingress': start
+[15:22:21.481] [bmv2] [T] [thread 3316] [13.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:21.482] [bmv2] [T] [thread 3316] [13.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:21.484] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000101
+
+[15:22:21.484] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 0
+[15:22:21.485] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Dumping entry 0
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000101
+Action entry: TheIngress.l2_forward - 0,
+
+[15:22:21.486] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Action entry is TheIngress.l2_forward - 0,
+[15:22:21.487] [bmv2] [T] [thread 3316] [13.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:21.488] [bmv2] [T] [thread 3316] [13.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:21.488] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Pipeline 'ingress': end
+[15:22:21.489] [bmv2] [D] [thread 3316] [13.0] [cxt 0] Egress port is 0
+[15:22:21.491] [bmv2] [D] [thread 3317] [13.0] [cxt 0] Pipeline 'egress': start
+[15:22:21.491] [bmv2] [D] [thread 3317] [13.0] [cxt 0] Pipeline 'egress': end
+[15:22:21.492] [bmv2] [D] [thread 3317] [13.0] [cxt 0] Deparser 'deparser': start
+[15:22:21.493] [bmv2] [D] [thread 3317] [13.0] [cxt 0] Deparsing header 'eth'
+[15:22:21.493] [bmv2] [D] [thread 3317] [13.0] [cxt 0] Deparser 'deparser': end
+[15:22:21.494] [bmv2] [D] [thread 3321] [13.0] [cxt 0] Transmitting packet of size 98 out of port 0
+[15:22:22.450] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Processing packet received on port 0
+[15:22:22.451] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Parser 'parser': start
+[15:22:22.452] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:22.452] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Extracting header 'eth'
+[15:22:22.453] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:22.454] [bmv2] [T] [thread 3316] [14.0] [cxt 0] Bytes parsed: 14
+[15:22:22.455] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Parser 'parser': end
+[15:22:22.455] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Pipeline 'ingress': start
+[15:22:22.456] [bmv2] [T] [thread 3316] [14.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:22.457] [bmv2] [T] [thread 3316] [14.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:22.457] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000102
+
+[15:22:22.458] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 1
+[15:22:22.459] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Dumping entry 1
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000102
+Action entry: TheIngress.l2_forward - 1,
+
+[15:22:22.459] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Action entry is TheIngress.l2_forward - 1,
+[15:22:22.460] [bmv2] [T] [thread 3316] [14.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:22.460] [bmv2] [T] [thread 3316] [14.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:22.461] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Pipeline 'ingress': end
+[15:22:22.462] [bmv2] [D] [thread 3316] [14.0] [cxt 0] Egress port is 1
+[15:22:22.463] [bmv2] [D] [thread 3318] [14.0] [cxt 0] Pipeline 'egress': start
+[15:22:22.464] [bmv2] [D] [thread 3318] [14.0] [cxt 0] Pipeline 'egress': end
+[15:22:22.464] [bmv2] [D] [thread 3318] [14.0] [cxt 0] Deparser 'deparser': start
+[15:22:22.465] [bmv2] [D] [thread 3318] [14.0] [cxt 0] Deparsing header 'eth'
+[15:22:22.466] [bmv2] [D] [thread 3318] [14.0] [cxt 0] Deparser 'deparser': end
+[15:22:22.467] [bmv2] [D] [thread 3321] [14.0] [cxt 0] Transmitting packet of size 98 out of port 1
+[15:22:22.470] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Processing packet received on port 1
+[15:22:22.470] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Parser 'parser': start
+[15:22:22.471] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:22.472] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Extracting header 'eth'
+[15:22:22.473] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:22.473] [bmv2] [T] [thread 3316] [15.0] [cxt 0] Bytes parsed: 14
+[15:22:22.474] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Parser 'parser': end
+[15:22:22.474] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Pipeline 'ingress': start
+[15:22:22.475] [bmv2] [T] [thread 3316] [15.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:22.476] [bmv2] [T] [thread 3316] [15.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:22.477] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000101
+
+[15:22:22.478] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 0
+[15:22:22.478] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Dumping entry 0
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000101
+Action entry: TheIngress.l2_forward - 0,
+
+[15:22:22.479] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Action entry is TheIngress.l2_forward - 0,
+[15:22:22.480] [bmv2] [T] [thread 3316] [15.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:22.480] [bmv2] [T] [thread 3316] [15.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:22.481] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Pipeline 'ingress': end
+[15:22:22.482] [bmv2] [D] [thread 3316] [15.0] [cxt 0] Egress port is 0
+[15:22:22.483] [bmv2] [D] [thread 3317] [15.0] [cxt 0] Pipeline 'egress': start
+[15:22:22.483] [bmv2] [D] [thread 3317] [15.0] [cxt 0] Pipeline 'egress': end
+[15:22:22.484] [bmv2] [D] [thread 3317] [15.0] [cxt 0] Deparser 'deparser': start
+[15:22:22.484] [bmv2] [D] [thread 3317] [15.0] [cxt 0] Deparsing header 'eth'
+[15:22:22.485] [bmv2] [D] [thread 3317] [15.0] [cxt 0] Deparser 'deparser': end
+[15:22:22.485] [bmv2] [D] [thread 3321] [15.0] [cxt 0] Transmitting packet of size 98 out of port 0
+[15:22:23.452] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Processing packet received on port 0
+[15:22:23.453] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Parser 'parser': start
+[15:22:23.453] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:23.453] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Extracting header 'eth'
+[15:22:23.454] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:23.454] [bmv2] [T] [thread 3316] [16.0] [cxt 0] Bytes parsed: 14
+[15:22:23.454] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Parser 'parser': end
+[15:22:23.455] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Pipeline 'ingress': start
+[15:22:23.455] [bmv2] [T] [thread 3316] [16.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:23.456] [bmv2] [T] [thread 3316] [16.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:23.456] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000102
+
+[15:22:23.456] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 1
+[15:22:23.456] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Dumping entry 1
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000102
+Action entry: TheIngress.l2_forward - 1,
+
+[15:22:23.457] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Action entry is TheIngress.l2_forward - 1,
+[15:22:23.458] [bmv2] [T] [thread 3316] [16.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:23.459] [bmv2] [T] [thread 3316] [16.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:23.459] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Pipeline 'ingress': end
+[15:22:23.460] [bmv2] [D] [thread 3316] [16.0] [cxt 0] Egress port is 1
+[15:22:23.461] [bmv2] [D] [thread 3318] [16.0] [cxt 0] Pipeline 'egress': start
+[15:22:23.462] [bmv2] [D] [thread 3318] [16.0] [cxt 0] Pipeline 'egress': end
+[15:22:23.463] [bmv2] [D] [thread 3318] [16.0] [cxt 0] Deparser 'deparser': start
+[15:22:23.464] [bmv2] [D] [thread 3318] [16.0] [cxt 0] Deparsing header 'eth'
+[15:22:23.464] [bmv2] [D] [thread 3318] [16.0] [cxt 0] Deparser 'deparser': end
+[15:22:23.464] [bmv2] [D] [thread 3321] [16.0] [cxt 0] Transmitting packet of size 98 out of port 1
+[15:22:23.466] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Processing packet received on port 1
+[15:22:23.467] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Parser 'parser': start
+[15:22:23.467] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:23.468] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Extracting header 'eth'
+[15:22:23.468] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:23.468] [bmv2] [T] [thread 3316] [17.0] [cxt 0] Bytes parsed: 14
+[15:22:23.469] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Parser 'parser': end
+[15:22:23.469] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Pipeline 'ingress': start
+[15:22:23.469] [bmv2] [T] [thread 3316] [17.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:23.470] [bmv2] [T] [thread 3316] [17.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:23.470] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000101
+
+[15:22:23.470] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 0
+[15:22:23.471] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Dumping entry 0
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000101
+Action entry: TheIngress.l2_forward - 0,
+
+[15:22:23.471] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Action entry is TheIngress.l2_forward - 0,
+[15:22:23.471] [bmv2] [T] [thread 3316] [17.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:23.472] [bmv2] [T] [thread 3316] [17.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:23.472] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Pipeline 'ingress': end
+[15:22:23.472] [bmv2] [D] [thread 3316] [17.0] [cxt 0] Egress port is 0
+[15:22:23.473] [bmv2] [D] [thread 3317] [17.0] [cxt 0] Pipeline 'egress': start
+[15:22:23.474] [bmv2] [D] [thread 3317] [17.0] [cxt 0] Pipeline 'egress': end
+[15:22:23.474] [bmv2] [D] [thread 3317] [17.0] [cxt 0] Deparser 'deparser': start
+[15:22:23.474] [bmv2] [D] [thread 3317] [17.0] [cxt 0] Deparsing header 'eth'
+[15:22:23.475] [bmv2] [D] [thread 3317] [17.0] [cxt 0] Deparser 'deparser': end
+[15:22:23.475] [bmv2] [D] [thread 3321] [17.0] [cxt 0] Transmitting packet of size 98 out of port 0
+[15:22:24.455] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Processing packet received on port 0
+[15:22:24.455] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Parser 'parser': start
+[15:22:24.456] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:24.457] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Extracting header 'eth'
+[15:22:24.457] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:24.457] [bmv2] [T] [thread 3316] [18.0] [cxt 0] Bytes parsed: 14
+[15:22:24.457] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Parser 'parser': end
+[15:22:24.457] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Pipeline 'ingress': start
+[15:22:24.458] [bmv2] [T] [thread 3316] [18.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:24.458] [bmv2] [T] [thread 3316] [18.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:24.458] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000102
+
+[15:22:24.458] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 1
+[15:22:24.458] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Dumping entry 1
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000102
+Action entry: TheIngress.l2_forward - 1,
+
+[15:22:24.458] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Action entry is TheIngress.l2_forward - 1,
+[15:22:24.458] [bmv2] [T] [thread 3316] [18.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:24.458] [bmv2] [T] [thread 3316] [18.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:24.459] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Pipeline 'ingress': end
+[15:22:24.459] [bmv2] [D] [thread 3316] [18.0] [cxt 0] Egress port is 1
+[15:22:24.460] [bmv2] [D] [thread 3318] [18.0] [cxt 0] Pipeline 'egress': start
+[15:22:24.461] [bmv2] [D] [thread 3318] [18.0] [cxt 0] Pipeline 'egress': end
+[15:22:24.461] [bmv2] [D] [thread 3318] [18.0] [cxt 0] Deparser 'deparser': start
+[15:22:24.462] [bmv2] [D] [thread 3318] [18.0] [cxt 0] Deparsing header 'eth'
+[15:22:24.462] [bmv2] [D] [thread 3318] [18.0] [cxt 0] Deparser 'deparser': end
+[15:22:24.463] [bmv2] [D] [thread 3321] [18.0] [cxt 0] Transmitting packet of size 98 out of port 1
+[15:22:24.465] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Processing packet received on port 1
+[15:22:24.465] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Parser 'parser': start
+[15:22:24.466] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:24.467] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Extracting header 'eth'
+[15:22:24.467] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:24.468] [bmv2] [T] [thread 3316] [19.0] [cxt 0] Bytes parsed: 14
+[15:22:24.468] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Parser 'parser': end
+[15:22:24.469] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Pipeline 'ingress': start
+[15:22:24.469] [bmv2] [T] [thread 3316] [19.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:24.470] [bmv2] [T] [thread 3316] [19.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:24.470] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 000000000101
+
+[15:22:24.471] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Table 'TheIngress.ethernet_table': hit with handle 0
+[15:22:24.471] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Dumping entry 0
+Match key:
+* hdr.eth.dstAddr     : EXACT     000000000101
+Action entry: TheIngress.l2_forward - 0,
+
+[15:22:24.472] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Action entry is TheIngress.l2_forward - 0,
+[15:22:24.472] [bmv2] [T] [thread 3316] [19.0] [cxt 0] Action TheIngress.l2_forward
+[15:22:24.473] [bmv2] [T] [thread 3316] [19.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(72) Primitive standard_metadata.egress_spec = port
+[15:22:24.473] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Pipeline 'ingress': end
+[15:22:24.473] [bmv2] [D] [thread 3316] [19.0] [cxt 0] Egress port is 0
+[15:22:24.473] [bmv2] [D] [thread 3317] [19.0] [cxt 0] Pipeline 'egress': start
+[15:22:24.474] [bmv2] [D] [thread 3317] [19.0] [cxt 0] Pipeline 'egress': end
+[15:22:24.474] [bmv2] [D] [thread 3317] [19.0] [cxt 0] Deparser 'deparser': start
+[15:22:24.475] [bmv2] [D] [thread 3317] [19.0] [cxt 0] Deparsing header 'eth'
+[15:22:24.475] [bmv2] [D] [thread 3317] [19.0] [cxt 0] Deparser 'deparser': end
+[15:22:24.476] [bmv2] [D] [thread 3321] [19.0] [cxt 0] Transmitting packet of size 98 out of port 0
+[15:22:38.470] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Processing packet received on port 1
+[15:22:38.471] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Parser 'parser': start
+[15:22:38.471] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:38.472] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Extracting header 'eth'
+[15:22:38.473] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:38.474] [bmv2] [T] [thread 3316] [20.0] [cxt 0] Bytes parsed: 14
+[15:22:38.474] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Parser 'parser': end
+[15:22:38.475] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Pipeline 'ingress': start
+[15:22:38.476] [bmv2] [T] [thread 3316] [20.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:38.477] [bmv2] [T] [thread 3316] [20.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:38.477] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:22:38.478] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:22:38.478] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Action entry is NoAction - 
+[15:22:38.479] [bmv2] [T] [thread 3316] [20.0] [cxt 0] Action NoAction
+[15:22:38.480] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Pipeline 'ingress': end
+[15:22:38.481] [bmv2] [D] [thread 3316] [20.0] [cxt 0] Egress port is 0
+[15:22:38.481] [bmv2] [D] [thread 3317] [20.0] [cxt 0] Pipeline 'egress': start
+[15:22:38.482] [bmv2] [D] [thread 3317] [20.0] [cxt 0] Pipeline 'egress': end
+[15:22:38.482] [bmv2] [D] [thread 3317] [20.0] [cxt 0] Deparser 'deparser': start
+[15:22:38.483] [bmv2] [D] [thread 3317] [20.0] [cxt 0] Deparsing header 'eth'
+[15:22:38.483] [bmv2] [D] [thread 3317] [20.0] [cxt 0] Deparser 'deparser': end
+[15:22:38.484] [bmv2] [D] [thread 3321] [20.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:22:54.851] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Processing packet received on port 0
+[15:22:54.852] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Parser 'parser': start
+[15:22:54.853] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:22:54.853] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Extracting header 'eth'
+[15:22:54.854] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:22:54.854] [bmv2] [T] [thread 3316] [21.0] [cxt 0] Bytes parsed: 14
+[15:22:54.856] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Parser 'parser': end
+[15:22:54.856] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Pipeline 'ingress': start
+[15:22:54.857] [bmv2] [T] [thread 3316] [21.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:22:54.858] [bmv2] [T] [thread 3316] [21.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:22:54.859] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:22:54.859] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:22:54.860] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Action entry is NoAction - 
+[15:22:54.861] [bmv2] [T] [thread 3316] [21.0] [cxt 0] Action NoAction
+[15:22:54.862] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Pipeline 'ingress': end
+[15:22:54.863] [bmv2] [D] [thread 3316] [21.0] [cxt 0] Egress port is 0
+[15:22:54.866] [bmv2] [D] [thread 3317] [21.0] [cxt 0] Pipeline 'egress': start
+[15:22:54.866] [bmv2] [D] [thread 3317] [21.0] [cxt 0] Pipeline 'egress': end
+[15:22:54.866] [bmv2] [D] [thread 3317] [21.0] [cxt 0] Deparser 'deparser': start
+[15:22:54.867] [bmv2] [D] [thread 3317] [21.0] [cxt 0] Deparsing header 'eth'
+[15:22:54.868] [bmv2] [D] [thread 3317] [21.0] [cxt 0] Deparser 'deparser': end
+[15:22:54.869] [bmv2] [D] [thread 3321] [21.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:24:33.154] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Processing packet received on port 1
+[15:24:33.156] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Parser 'parser': start
+[15:24:33.158] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:24:33.158] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Extracting header 'eth'
+[15:24:33.159] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:24:33.160] [bmv2] [T] [thread 3316] [22.0] [cxt 0] Bytes parsed: 14
+[15:24:33.160] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Parser 'parser': end
+[15:24:33.161] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Pipeline 'ingress': start
+[15:24:33.162] [bmv2] [T] [thread 3316] [22.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:24:33.163] [bmv2] [T] [thread 3316] [22.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:24:33.164] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:24:33.165] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:24:33.165] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Action entry is NoAction - 
+[15:24:33.166] [bmv2] [T] [thread 3316] [22.0] [cxt 0] Action NoAction
+[15:24:33.166] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Pipeline 'ingress': end
+[15:24:33.167] [bmv2] [D] [thread 3316] [22.0] [cxt 0] Egress port is 0
+[15:24:33.168] [bmv2] [D] [thread 3317] [22.0] [cxt 0] Pipeline 'egress': start
+[15:24:33.168] [bmv2] [D] [thread 3317] [22.0] [cxt 0] Pipeline 'egress': end
+[15:24:33.169] [bmv2] [D] [thread 3317] [22.0] [cxt 0] Deparser 'deparser': start
+[15:24:33.169] [bmv2] [D] [thread 3317] [22.0] [cxt 0] Deparsing header 'eth'
+[15:24:33.170] [bmv2] [D] [thread 3317] [22.0] [cxt 0] Deparser 'deparser': end
+[15:24:33.172] [bmv2] [D] [thread 3321] [22.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:25:20.258] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Processing packet received on port 0
+[15:25:20.259] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Parser 'parser': start
+[15:25:20.259] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:25:20.260] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Extracting header 'eth'
+[15:25:20.261] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:25:20.261] [bmv2] [T] [thread 3316] [23.0] [cxt 0] Bytes parsed: 14
+[15:25:20.262] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Parser 'parser': end
+[15:25:20.262] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Pipeline 'ingress': start
+[15:25:20.263] [bmv2] [T] [thread 3316] [23.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:25:20.264] [bmv2] [T] [thread 3316] [23.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:25:20.264] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:25:20.265] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:25:20.265] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Action entry is NoAction - 
+[15:25:20.266] [bmv2] [T] [thread 3316] [23.0] [cxt 0] Action NoAction
+[15:25:20.266] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Pipeline 'ingress': end
+[15:25:20.267] [bmv2] [D] [thread 3316] [23.0] [cxt 0] Egress port is 0
+[15:25:20.267] [bmv2] [D] [thread 3317] [23.0] [cxt 0] Pipeline 'egress': start
+[15:25:20.268] [bmv2] [D] [thread 3317] [23.0] [cxt 0] Pipeline 'egress': end
+[15:25:20.268] [bmv2] [D] [thread 3317] [23.0] [cxt 0] Deparser 'deparser': start
+[15:25:20.269] [bmv2] [D] [thread 3317] [23.0] [cxt 0] Deparsing header 'eth'
+[15:25:20.269] [bmv2] [D] [thread 3317] [23.0] [cxt 0] Deparser 'deparser': end
+[15:25:20.270] [bmv2] [D] [thread 3321] [23.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:28:20.483] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Processing packet received on port 1
+[15:28:20.484] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Parser 'parser': start
+[15:28:20.485] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:28:20.486] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Extracting header 'eth'
+[15:28:20.486] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:28:20.487] [bmv2] [T] [thread 3316] [24.0] [cxt 0] Bytes parsed: 14
+[15:28:20.488] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Parser 'parser': end
+[15:28:20.489] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Pipeline 'ingress': start
+[15:28:20.490] [bmv2] [T] [thread 3316] [24.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:28:20.491] [bmv2] [T] [thread 3316] [24.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:28:20.491] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:28:20.491] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:28:20.491] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Action entry is NoAction - 
+[15:28:20.492] [bmv2] [T] [thread 3316] [24.0] [cxt 0] Action NoAction
+[15:28:20.492] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Pipeline 'ingress': end
+[15:28:20.493] [bmv2] [D] [thread 3316] [24.0] [cxt 0] Egress port is 0
+[15:28:20.494] [bmv2] [D] [thread 3317] [24.0] [cxt 0] Pipeline 'egress': start
+[15:28:20.495] [bmv2] [D] [thread 3317] [24.0] [cxt 0] Pipeline 'egress': end
+[15:28:20.495] [bmv2] [D] [thread 3317] [24.0] [cxt 0] Deparser 'deparser': start
+[15:28:20.496] [bmv2] [D] [thread 3317] [24.0] [cxt 0] Deparsing header 'eth'
+[15:28:20.497] [bmv2] [D] [thread 3317] [24.0] [cxt 0] Deparser 'deparser': end
+[15:28:20.498] [bmv2] [D] [thread 3321] [24.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:29:58.790] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Processing packet received on port 0
+[15:29:58.791] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Parser 'parser': start
+[15:29:58.791] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:29:58.792] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Extracting header 'eth'
+[15:29:58.793] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:29:58.794] [bmv2] [T] [thread 3316] [25.0] [cxt 0] Bytes parsed: 14
+[15:29:58.794] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Parser 'parser': end
+[15:29:58.795] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Pipeline 'ingress': start
+[15:29:58.796] [bmv2] [T] [thread 3316] [25.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:29:58.796] [bmv2] [T] [thread 3316] [25.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:29:58.797] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:29:58.798] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:29:58.798] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Action entry is NoAction - 
+[15:29:58.799] [bmv2] [T] [thread 3316] [25.0] [cxt 0] Action NoAction
+[15:29:58.800] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Pipeline 'ingress': end
+[15:29:58.800] [bmv2] [D] [thread 3316] [25.0] [cxt 0] Egress port is 0
+[15:29:58.801] [bmv2] [D] [thread 3317] [25.0] [cxt 0] Pipeline 'egress': start
+[15:29:58.801] [bmv2] [D] [thread 3317] [25.0] [cxt 0] Pipeline 'egress': end
+[15:29:58.802] [bmv2] [D] [thread 3317] [25.0] [cxt 0] Deparser 'deparser': start
+[15:29:58.803] [bmv2] [D] [thread 3317] [25.0] [cxt 0] Deparsing header 'eth'
+[15:29:58.804] [bmv2] [D] [thread 3317] [25.0] [cxt 0] Deparser 'deparser': end
+[15:29:58.804] [bmv2] [D] [thread 3321] [25.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:35:26.468] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Processing packet received on port 1
+[15:35:26.469] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Parser 'parser': start
+[15:35:26.470] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:35:26.471] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Extracting header 'eth'
+[15:35:26.472] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:35:26.473] [bmv2] [T] [thread 3316] [26.0] [cxt 0] Bytes parsed: 14
+[15:35:26.473] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Parser 'parser': end
+[15:35:26.474] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Pipeline 'ingress': start
+[15:35:26.474] [bmv2] [T] [thread 3316] [26.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:35:26.475] [bmv2] [T] [thread 3316] [26.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:35:26.476] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:35:26.477] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:35:26.477] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Action entry is NoAction - 
+[15:35:26.478] [bmv2] [T] [thread 3316] [26.0] [cxt 0] Action NoAction
+[15:35:26.479] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Pipeline 'ingress': end
+[15:35:26.479] [bmv2] [D] [thread 3316] [26.0] [cxt 0] Egress port is 0
+[15:35:26.480] [bmv2] [D] [thread 3317] [26.0] [cxt 0] Pipeline 'egress': start
+[15:35:26.481] [bmv2] [D] [thread 3317] [26.0] [cxt 0] Pipeline 'egress': end
+[15:35:26.482] [bmv2] [D] [thread 3317] [26.0] [cxt 0] Deparser 'deparser': start
+[15:35:26.483] [bmv2] [D] [thread 3317] [26.0] [cxt 0] Deparsing header 'eth'
+[15:35:26.483] [bmv2] [D] [thread 3317] [26.0] [cxt 0] Deparser 'deparser': end
+[15:35:26.484] [bmv2] [D] [thread 3321] [26.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:39:15.844] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Processing packet received on port 0
+[15:39:15.844] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Parser 'parser': start
+[15:39:15.845] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:39:15.846] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Extracting header 'eth'
+[15:39:15.847] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:39:15.849] [bmv2] [T] [thread 3316] [27.0] [cxt 0] Bytes parsed: 14
+[15:39:15.849] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Parser 'parser': end
+[15:39:15.849] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Pipeline 'ingress': start
+[15:39:15.849] [bmv2] [T] [thread 3316] [27.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:39:15.850] [bmv2] [T] [thread 3316] [27.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:39:15.851] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:39:15.851] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:39:15.851] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Action entry is NoAction - 
+[15:39:15.852] [bmv2] [T] [thread 3316] [27.0] [cxt 0] Action NoAction
+[15:39:15.852] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Pipeline 'ingress': end
+[15:39:15.853] [bmv2] [D] [thread 3316] [27.0] [cxt 0] Egress port is 0
+[15:39:15.853] [bmv2] [D] [thread 3317] [27.0] [cxt 0] Pipeline 'egress': start
+[15:39:15.854] [bmv2] [D] [thread 3317] [27.0] [cxt 0] Pipeline 'egress': end
+[15:39:15.854] [bmv2] [D] [thread 3317] [27.0] [cxt 0] Deparser 'deparser': start
+[15:39:15.855] [bmv2] [D] [thread 3317] [27.0] [cxt 0] Deparsing header 'eth'
+[15:39:15.855] [bmv2] [D] [thread 3317] [27.0] [cxt 0] Deparser 'deparser': end
+[15:39:15.856] [bmv2] [D] [thread 3321] [27.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:49:28.509] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Processing packet received on port 1
+[15:49:28.652] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Parser 'parser': start
+[15:49:28.679] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:49:28.698] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Extracting header 'eth'
+[15:49:28.876] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:49:28.879] [bmv2] [T] [thread 3316] [28.0] [cxt 0] Bytes parsed: 14
+[15:49:28.958] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Parser 'parser': end
+[15:49:28.959] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Pipeline 'ingress': start
+[15:49:28.961] [bmv2] [T] [thread 3316] [28.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:49:28.965] [bmv2] [T] [thread 3316] [28.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:49:29.154] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:49:29.257] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:49:29.258] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Action entry is NoAction - 
+[15:49:29.261] [bmv2] [T] [thread 3316] [28.0] [cxt 0] Action NoAction
+[15:49:29.264] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Pipeline 'ingress': end
+[15:49:29.265] [bmv2] [D] [thread 3316] [28.0] [cxt 0] Egress port is 0
+[15:49:29.507] [bmv2] [D] [thread 3317] [28.0] [cxt 0] Pipeline 'egress': start
+[15:49:29.508] [bmv2] [D] [thread 3317] [28.0] [cxt 0] Pipeline 'egress': end
+[15:49:29.533] [bmv2] [D] [thread 3317] [28.0] [cxt 0] Deparser 'deparser': start
+[15:49:29.636] [bmv2] [D] [thread 3317] [28.0] [cxt 0] Deparsing header 'eth'
+[15:49:29.638] [bmv2] [D] [thread 3317] [28.0] [cxt 0] Deparser 'deparser': end
+[15:49:29.663] [bmv2] [D] [thread 3321] [28.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[15:58:55.492] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Processing packet received on port 0
+[15:58:55.493] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Parser 'parser': start
+[15:58:55.493] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:58:55.493] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Extracting header 'eth'
+[15:58:55.493] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[15:58:55.493] [bmv2] [T] [thread 3316] [29.0] [cxt 0] Bytes parsed: 14
+[15:58:55.493] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Parser 'parser': end
+[15:58:55.493] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Pipeline 'ingress': start
+[15:58:55.493] [bmv2] [T] [thread 3316] [29.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[15:58:55.494] [bmv2] [T] [thread 3316] [29.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[15:58:55.494] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[15:58:55.494] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[15:58:55.494] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Action entry is NoAction - 
+[15:58:55.494] [bmv2] [T] [thread 3316] [29.0] [cxt 0] Action NoAction
+[15:58:55.494] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Pipeline 'ingress': end
+[15:58:55.495] [bmv2] [D] [thread 3316] [29.0] [cxt 0] Egress port is 0
+[15:58:55.495] [bmv2] [D] [thread 3317] [29.0] [cxt 0] Pipeline 'egress': start
+[15:58:55.495] [bmv2] [D] [thread 3317] [29.0] [cxt 0] Pipeline 'egress': end
+[15:58:55.495] [bmv2] [D] [thread 3317] [29.0] [cxt 0] Deparser 'deparser': start
+[15:58:55.495] [bmv2] [D] [thread 3317] [29.0] [cxt 0] Deparsing header 'eth'
+[15:58:55.495] [bmv2] [D] [thread 3317] [29.0] [cxt 0] Deparser 'deparser': end
+[15:58:55.496] [bmv2] [D] [thread 3321] [29.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[16:33:45.340] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Processing packet received on port 1
+[16:33:46.252] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Parser 'parser': start
+[16:33:47.673] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Parser 'parser' entering state 'start'
+[16:33:47.792] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Extracting header 'eth'
+[16:33:47.795] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[16:33:47.875] [bmv2] [T] [thread 3316] [30.0] [cxt 0] Bytes parsed: 14
+[16:33:47.880] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Parser 'parser': end
+[16:33:47.949] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Pipeline 'ingress': start
+[16:33:48.001] [bmv2] [T] [thread 3316] [30.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[16:33:48.067] [bmv2] [T] [thread 3316] [30.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[16:33:48.219] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[16:33:48.594] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[16:33:48.602] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Action entry is NoAction - 
+[16:33:48.673] [bmv2] [T] [thread 3316] [30.0] [cxt 0] Action NoAction
+[16:33:48.731] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Pipeline 'ingress': end
+[16:33:48.751] [bmv2] [D] [thread 3316] [30.0] [cxt 0] Egress port is 0
+[16:33:48.809] [bmv2] [D] [thread 3317] [30.0] [cxt 0] Pipeline 'egress': start
+[16:33:48.836] [bmv2] [D] [thread 3317] [30.0] [cxt 0] Pipeline 'egress': end
+[16:33:48.838] [bmv2] [D] [thread 3317] [30.0] [cxt 0] Deparser 'deparser': start
+[16:33:48.916] [bmv2] [D] [thread 3317] [30.0] [cxt 0] Deparsing header 'eth'
+[16:33:48.925] [bmv2] [D] [thread 3317] [30.0] [cxt 0] Deparser 'deparser': end
+[16:33:48.926] [bmv2] [D] [thread 3321] [30.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[16:49:50.633] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Processing packet received on port 0
+[16:49:50.668] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Parser 'parser': start
+[16:49:50.669] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Parser 'parser' entering state 'start'
+[16:49:50.671] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Extracting header 'eth'
+[16:49:50.688] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Parser state 'start' has no switch, going to default next state
+[16:49:50.689] [bmv2] [T] [thread 3316] [31.0] [cxt 0] Bytes parsed: 14
+[16:49:50.690] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Parser 'parser': end
+[16:49:50.721] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Pipeline 'ingress': start
+[16:49:50.763] [bmv2] [T] [thread 3316] [31.0] [cxt 0] /vagrant/lab3/demo-eth/p4/main.p4(105) Condition "hdr.eth.isValid()" (node_2) is true
+[16:49:50.792] [bmv2] [T] [thread 3316] [31.0] [cxt 0] Applying table 'TheIngress.ethernet_table'
+[16:49:50.815] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Looking up key:
+* hdr.eth.dstAddr     : 333300000002
+
+[16:49:50.843] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Table 'TheIngress.ethernet_table': miss
+[16:49:50.845] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Action entry is NoAction - 
+[16:49:50.897] [bmv2] [T] [thread 3316] [31.0] [cxt 0] Action NoAction
+[16:49:50.898] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Pipeline 'ingress': end
+[16:49:50.933] [bmv2] [D] [thread 3316] [31.0] [cxt 0] Egress port is 0
+[16:49:50.988] [bmv2] [D] [thread 3317] [31.0] [cxt 0] Pipeline 'egress': start
+[16:49:51.018] [bmv2] [D] [thread 3317] [31.0] [cxt 0] Pipeline 'egress': end
+[16:49:51.019] [bmv2] [D] [thread 3317] [31.0] [cxt 0] Deparser 'deparser': start
+[16:49:51.020] [bmv2] [D] [thread 3317] [31.0] [cxt 0] Deparsing header 'eth'
+[16:49:51.073] [bmv2] [D] [thread 3317] [31.0] [cxt 0] Deparser 'deparser': end
+[16:49:51.120] [bmv2] [D] [thread 3321] [31.0] [cxt 0] Transmitting packet of size 70 out of port 0
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory

@@ -1,0 +1,1451 @@
+Calling target program-options parser
+[18:31:08.441] [bmv2] [D] [thread 65942] Set default default entry for table 'tbl_main150': main150 - 
+[18:31:08.443] [bmv2] [D] [thread 65942] Set default default entry for table 'TheIngress.aggregation_table': TheIngress.aggregate_and_increment - 
+Adding interface s1-eth0 as port 0
+[18:31:08.452] [bmv2] [D] [thread 65942] Adding interface s1-eth0 as port 0
+Adding interface s1-eth1 as port 1
+[18:31:08.503] [bmv2] [D] [thread 65942] Adding interface s1-eth1 as port 1
+Server listening on 0.0.0.0:50051
+[18:31:08.551] [bmv2] [I] [thread 65942] Starting Thrift server on port 9090
+[18:31:08.553] [bmv2] [I] [thread 65942] Thrift server was started
+[18:31:08.557] [bmv2] [D] [thread 65952] [0.0] [cxt 0] Processing packet received on port 0
+[18:31:08.557] [bmv2] [D] [thread 65952] [0.0] [cxt 0] Parser 'parser': start
+[18:31:08.558] [bmv2] [D] [thread 65952] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:08.558] [bmv2] [D] [thread 65952] [0.0] [cxt 0] Extracting header 'eth'
+[18:31:08.559] [bmv2] [D] [thread 65952] [0.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:08.560] [bmv2] [T] [thread 65952] [0.0] [cxt 0] Bytes parsed: 14
+[18:31:08.562] [bmv2] [D] [thread 65952] [0.0] [cxt 0] Parser 'parser': end
+[18:31:08.564] [bmv2] [D] [thread 65952] [0.0] [cxt 0] Pipeline 'ingress': start
+[18:31:08.565] [bmv2] [T] [thread 65952] [0.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:08.566] [bmv2] [D] [thread 65952] [0.0] [cxt 0] Pipeline 'ingress': end
+[18:31:08.567] [bmv2] [D] [thread 65952] [0.0] [cxt 0] Egress port is 0
+[18:31:08.568] [bmv2] [D] [thread 65952] [1.0] [cxt 0] Processing packet received on port 0
+[18:31:08.569] [bmv2] [D] [thread 65952] [1.0] [cxt 0] Parser 'parser': start
+[18:31:08.570] [bmv2] [D] [thread 65952] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:08.572] [bmv2] [D] [thread 65952] [1.0] [cxt 0] Extracting header 'eth'
+[18:31:08.573] [bmv2] [D] [thread 65952] [1.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:08.575] [bmv2] [T] [thread 65952] [1.0] [cxt 0] Bytes parsed: 14
+[18:31:08.576] [bmv2] [D] [thread 65952] [1.0] [cxt 0] Parser 'parser': end
+[18:31:08.577] [bmv2] [D] [thread 65952] [1.0] [cxt 0] Pipeline 'ingress': start
+[18:31:08.578] [bmv2] [T] [thread 65952] [1.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:08.579] [bmv2] [D] [thread 65952] [1.0] [cxt 0] Pipeline 'ingress': end
+[18:31:08.580] [bmv2] [D] [thread 65952] [1.0] [cxt 0] Egress port is 0
+[18:31:08.569] [bmv2] [D] [thread 65953] [0.0] [cxt 0] Pipeline 'egress': start
+[18:31:08.582] [bmv2] [D] [thread 65953] [0.0] [cxt 0] Pipeline 'egress': end
+[18:31:08.583] [bmv2] [D] [thread 65953] [0.0] [cxt 0] Deparser 'deparser': start
+[18:31:08.584] [bmv2] [D] [thread 65953] [0.0] [cxt 0] Deparsing header 'eth'
+[18:31:08.585] [bmv2] [D] [thread 65953] [0.0] [cxt 0] Deparser 'deparser': end
+[18:31:08.586] [bmv2] [D] [thread 65953] [1.0] [cxt 0] Pipeline 'egress': start
+[18:31:08.588] [bmv2] [D] [thread 65953] [1.0] [cxt 0] Pipeline 'egress': end
+[18:31:08.590] [bmv2] [D] [thread 65953] [1.0] [cxt 0] Deparser 'deparser': start
+[18:31:08.591] [bmv2] [D] [thread 65953] [1.0] [cxt 0] Deparsing header 'eth'
+[18:31:08.592] [bmv2] [D] [thread 65953] [1.0] [cxt 0] Deparser 'deparser': end
+[18:31:08.587] [bmv2] [D] [thread 65957] [0.0] [cxt 0] Transmitting packet of size 86 out of port 0
+[18:31:08.595] [bmv2] [D] [thread 65957] [1.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[18:31:08.785] [bmv2] [D] [thread 65952] [2.0] [cxt 0] Processing packet received on port 1
+[18:31:08.786] [bmv2] [D] [thread 65952] [2.0] [cxt 0] Parser 'parser': start
+[18:31:08.788] [bmv2] [D] [thread 65952] [2.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:08.789] [bmv2] [D] [thread 65952] [2.0] [cxt 0] Extracting header 'eth'
+[18:31:08.789] [bmv2] [D] [thread 65952] [2.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:08.790] [bmv2] [T] [thread 65952] [2.0] [cxt 0] Bytes parsed: 14
+[18:31:08.791] [bmv2] [D] [thread 65952] [2.0] [cxt 0] Parser 'parser': end
+[18:31:08.791] [bmv2] [D] [thread 65952] [2.0] [cxt 0] Pipeline 'ingress': start
+[18:31:08.793] [bmv2] [T] [thread 65952] [2.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:08.794] [bmv2] [D] [thread 65952] [2.0] [cxt 0] Pipeline 'ingress': end
+[18:31:08.795] [bmv2] [D] [thread 65952] [2.0] [cxt 0] Egress port is 0
+[18:31:08.797] [bmv2] [D] [thread 65953] [2.0] [cxt 0] Pipeline 'egress': start
+[18:31:08.798] [bmv2] [D] [thread 65953] [2.0] [cxt 0] Pipeline 'egress': end
+[18:31:08.798] [bmv2] [D] [thread 65953] [2.0] [cxt 0] Deparser 'deparser': start
+[18:31:08.799] [bmv2] [D] [thread 65953] [2.0] [cxt 0] Deparsing header 'eth'
+[18:31:08.800] [bmv2] [D] [thread 65953] [2.0] [cxt 0] Deparser 'deparser': end
+[18:31:08.801] [bmv2] [D] [thread 65957] [2.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[18:31:09.167] [bmv2] [D] [thread 65952] [3.0] [cxt 0] Processing packet received on port 1
+[18:31:09.168] [bmv2] [D] [thread 65952] [3.0] [cxt 0] Parser 'parser': start
+[18:31:09.168] [bmv2] [D] [thread 65952] [3.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:09.168] [bmv2] [D] [thread 65952] [3.0] [cxt 0] Extracting header 'eth'
+[18:31:09.169] [bmv2] [D] [thread 65952] [3.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:09.175] [bmv2] [T] [thread 65952] [3.0] [cxt 0] Bytes parsed: 14
+[18:31:09.217] [bmv2] [D] [thread 65952] [3.0] [cxt 0] Parser 'parser': end
+[18:31:09.261] [bmv2] [D] [thread 65952] [3.0] [cxt 0] Pipeline 'ingress': start
+[18:31:09.261] [bmv2] [T] [thread 65952] [3.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:09.284] [bmv2] [D] [thread 65952] [3.0] [cxt 0] Pipeline 'ingress': end
+[18:31:09.302] [bmv2] [D] [thread 65952] [3.0] [cxt 0] Egress port is 0
+[18:31:09.304] [bmv2] [D] [thread 65952] [4.0] [cxt 0] Processing packet received on port 1
+[18:31:09.304] [bmv2] [D] [thread 65952] [4.0] [cxt 0] Parser 'parser': start
+[18:31:09.304] [bmv2] [D] [thread 65953] [3.0] [cxt 0] Pipeline 'egress': start
+[18:31:09.310] [bmv2] [D] [thread 65953] [3.0] [cxt 0] Pipeline 'egress': end
+[18:31:09.312] [bmv2] [D] [thread 65953] [3.0] [cxt 0] Deparser 'deparser': start
+[18:31:09.313] [bmv2] [D] [thread 65953] [3.0] [cxt 0] Deparsing header 'eth'
+[18:31:09.314] [bmv2] [D] [thread 65953] [3.0] [cxt 0] Deparser 'deparser': end
+[18:31:09.309] [bmv2] [D] [thread 65952] [4.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:09.317] [bmv2] [D] [thread 65952] [4.0] [cxt 0] Extracting header 'eth'
+[18:31:09.317] [bmv2] [D] [thread 65952] [4.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:09.318] [bmv2] [T] [thread 65952] [4.0] [cxt 0] Bytes parsed: 14
+[18:31:09.321] [bmv2] [D] [thread 65952] [4.0] [cxt 0] Parser 'parser': end
+[18:31:09.323] [bmv2] [D] [thread 65952] [4.0] [cxt 0] Pipeline 'ingress': start
+[18:31:09.316] [bmv2] [D] [thread 65957] [3.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[18:31:09.324] [bmv2] [T] [thread 65952] [4.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:09.325] [bmv2] [D] [thread 65952] [4.0] [cxt 0] Pipeline 'ingress': end
+[18:31:09.326] [bmv2] [D] [thread 65952] [4.0] [cxt 0] Egress port is 0
+[18:31:09.328] [bmv2] [D] [thread 65953] [4.0] [cxt 0] Pipeline 'egress': start
+[18:31:09.330] [bmv2] [D] [thread 65953] [4.0] [cxt 0] Pipeline 'egress': end
+[18:31:09.331] [bmv2] [D] [thread 65953] [4.0] [cxt 0] Deparser 'deparser': start
+[18:31:09.332] [bmv2] [D] [thread 65953] [4.0] [cxt 0] Deparsing header 'eth'
+[18:31:09.334] [bmv2] [D] [thread 65953] [4.0] [cxt 0] Deparser 'deparser': end
+[18:31:09.339] [bmv2] [W] [thread 65981] [P4Runtime] p4::tmp::P4DeviceConfig is deprecated
+[18:31:09.340] [bmv2] [D] [thread 65957] [4.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:31:09.344] [bmv2] [D] [thread 65981] Set default default entry for table 'tbl_main150': main150 - 
+[18:31:09.345] [bmv2] [D] [thread 65981] Set default default entry for table 'TheIngress.aggregation_table': TheIngress.aggregate_and_increment - 
+[18:31:09.352] [bmv2] [D] [thread 65981] simple_switch target has been notified of a config swap
+[18:31:09.420] [bmv2] [D] [thread 65983] mgrp node created for mgid 1
+[18:31:09.422] [bmv2] [D] [thread 65983] node created for rid 1
+[18:31:09.424] [bmv2] [D] [thread 65983] node associated with mgid 1
+[18:31:09.426] [bmv2] [D] [thread 65983] node created for rid 0
+[18:31:09.427] [bmv2] [D] [thread 65983] node associated with mgid 1
+[18:31:09.438] [bmv2] [D] [thread 65981] Entry 0 added to table 'TheIngress.aggregation_table'
+[18:31:09.440] [bmv2] [D] [thread 65981] Dumping entry 0
+Match key:
+* meta.current_count  : EXACT     00000001
+Action entry: TheIngress.broadcast_and_reset - 
+
+[18:31:09.600] [bmv2] [D] [thread 65952] [5.0] [cxt 0] Processing packet received on port 0
+[18:31:09.623] [bmv2] [D] [thread 65952] [5.0] [cxt 0] Parser 'parser': start
+[18:31:09.635] [bmv2] [D] [thread 65952] [5.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:09.669] [bmv2] [D] [thread 65952] [5.0] [cxt 0] Extracting header 'eth'
+[18:31:09.681] [bmv2] [D] [thread 65952] [5.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:09.681] [bmv2] [T] [thread 65952] [5.0] [cxt 0] Bytes parsed: 14
+[18:31:09.699] [bmv2] [D] [thread 65952] [5.0] [cxt 0] Parser 'parser': end
+[18:31:09.700] [bmv2] [D] [thread 65952] [5.0] [cxt 0] Pipeline 'ingress': start
+[18:31:09.715] [bmv2] [T] [thread 65952] [5.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:09.722] [bmv2] [D] [thread 65952] [5.0] [cxt 0] Pipeline 'ingress': end
+[18:31:09.723] [bmv2] [D] [thread 65952] [5.0] [cxt 0] Egress port is 0
+[18:31:09.724] [bmv2] [D] [thread 65952] [6.0] [cxt 0] Processing packet received on port 0
+[18:31:09.725] [bmv2] [D] [thread 65952] [6.0] [cxt 0] Parser 'parser': start
+[18:31:09.782] [bmv2] [D] [thread 65952] [6.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:09.725] [bmv2] [D] [thread 65953] [5.0] [cxt 0] Pipeline 'egress': start
+[18:31:09.832] [bmv2] [D] [thread 65952] [6.0] [cxt 0] Extracting header 'eth'
+[18:31:09.968] [bmv2] [D] [thread 65952] [6.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:09.884] [bmv2] [D] [thread 65953] [5.0] [cxt 0] Pipeline 'egress': end
+[18:31:10.085] [bmv2] [D] [thread 65953] [5.0] [cxt 0] Deparser 'deparser': start
+[18:31:10.170] [bmv2] [D] [thread 65953] [5.0] [cxt 0] Deparsing header 'eth'
+[18:31:10.199] [bmv2] [D] [thread 65953] [5.0] [cxt 0] Deparser 'deparser': end
+[18:31:10.048] [bmv2] [T] [thread 65952] [6.0] [cxt 0] Bytes parsed: 14
+[18:31:10.268] [bmv2] [D] [thread 65952] [6.0] [cxt 0] Parser 'parser': end
+[18:31:10.349] [bmv2] [D] [thread 65952] [6.0] [cxt 0] Pipeline 'ingress': start
+[18:31:10.360] [bmv2] [T] [thread 65952] [6.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:10.378] [bmv2] [D] [thread 65952] [6.0] [cxt 0] Pipeline 'ingress': end
+[18:31:10.385] [bmv2] [D] [thread 65952] [6.0] [cxt 0] Egress port is 0
+[18:31:10.399] [bmv2] [D] [thread 65952] [7.0] [cxt 0] Processing packet received on port 1
+[18:31:10.435] [bmv2] [D] [thread 65952] [7.0] [cxt 0] Parser 'parser': start
+[18:31:10.436] [bmv2] [D] [thread 65952] [7.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:10.438] [bmv2] [D] [thread 65952] [7.0] [cxt 0] Extracting header 'eth'
+[18:31:10.439] [bmv2] [D] [thread 65952] [7.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:10.522] [bmv2] [T] [thread 65952] [7.0] [cxt 0] Bytes parsed: 14
+[18:31:10.404] [bmv2] [D] [thread 65953] [6.0] [cxt 0] Pipeline 'egress': start
+[18:31:10.309] [bmv2] [D] [thread 65957] [5.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[18:31:10.569] [bmv2] [D] [thread 65952] [7.0] [cxt 0] Parser 'parser': end
+[18:31:10.686] [bmv2] [D] [thread 65952] [7.0] [cxt 0] Pipeline 'ingress': start
+[18:31:10.618] [bmv2] [D] [thread 65953] [6.0] [cxt 0] Pipeline 'egress': end
+[18:31:10.731] [bmv2] [D] [thread 65953] [6.0] [cxt 0] Deparser 'deparser': start
+[18:31:10.731] [bmv2] [D] [thread 65953] [6.0] [cxt 0] Deparsing header 'eth'
+[18:31:10.731] [bmv2] [D] [thread 65953] [6.0] [cxt 0] Deparser 'deparser': end
+[18:31:10.721] [bmv2] [T] [thread 65952] [7.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:10.734] [bmv2] [D] [thread 65952] [7.0] [cxt 0] Pipeline 'ingress': end
+[18:31:10.735] [bmv2] [D] [thread 65952] [7.0] [cxt 0] Egress port is 0
+[18:31:10.733] [bmv2] [D] [thread 65957] [6.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:31:10.736] [bmv2] [D] [thread 65952] [8.0] [cxt 0] Processing packet received on port 0
+[18:31:10.739] [bmv2] [D] [thread 65952] [8.0] [cxt 0] Parser 'parser': start
+[18:31:10.740] [bmv2] [D] [thread 65952] [8.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:10.741] [bmv2] [D] [thread 65952] [8.0] [cxt 0] Extracting header 'eth'
+[18:31:10.742] [bmv2] [D] [thread 65952] [8.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:10.743] [bmv2] [T] [thread 65952] [8.0] [cxt 0] Bytes parsed: 14
+[18:31:10.743] [bmv2] [D] [thread 65952] [8.0] [cxt 0] Parser 'parser': end
+[18:31:10.745] [bmv2] [D] [thread 65952] [8.0] [cxt 0] Pipeline 'ingress': start
+[18:31:10.745] [bmv2] [T] [thread 65952] [8.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:10.746] [bmv2] [D] [thread 65952] [8.0] [cxt 0] Pipeline 'ingress': end
+[18:31:10.747] [bmv2] [D] [thread 65952] [8.0] [cxt 0] Egress port is 0
+[18:31:10.736] [bmv2] [D] [thread 65953] [7.0] [cxt 0] Pipeline 'egress': start
+[18:31:10.749] [bmv2] [D] [thread 65953] [7.0] [cxt 0] Pipeline 'egress': end
+[18:31:10.750] [bmv2] [D] [thread 65953] [7.0] [cxt 0] Deparser 'deparser': start
+[18:31:10.751] [bmv2] [D] [thread 65953] [7.0] [cxt 0] Deparsing header 'eth'
+[18:31:10.752] [bmv2] [D] [thread 65953] [7.0] [cxt 0] Deparser 'deparser': end
+[18:31:10.752] [bmv2] [D] [thread 65953] [8.0] [cxt 0] Pipeline 'egress': start
+[18:31:10.753] [bmv2] [D] [thread 65953] [8.0] [cxt 0] Pipeline 'egress': end
+[18:31:10.753] [bmv2] [D] [thread 65953] [8.0] [cxt 0] Deparser 'deparser': start
+[18:31:10.754] [bmv2] [D] [thread 65953] [8.0] [cxt 0] Deparsing header 'eth'
+[18:31:10.755] [bmv2] [D] [thread 65953] [8.0] [cxt 0] Deparser 'deparser': end
+[18:31:10.752] [bmv2] [D] [thread 65957] [7.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[18:31:10.757] [bmv2] [D] [thread 65957] [8.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[18:31:13.583] [bmv2] [D] [thread 65952] [9.0] [cxt 0] Processing packet received on port 1
+[18:31:13.584] [bmv2] [D] [thread 65952] [9.0] [cxt 0] Parser 'parser': start
+[18:31:13.585] [bmv2] [D] [thread 65952] [9.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:13.586] [bmv2] [D] [thread 65952] [9.0] [cxt 0] Extracting header 'eth'
+[18:31:13.586] [bmv2] [D] [thread 65952] [9.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:13.588] [bmv2] [T] [thread 65952] [9.0] [cxt 0] Bytes parsed: 14
+[18:31:13.588] [bmv2] [D] [thread 65952] [9.0] [cxt 0] Parser 'parser': end
+[18:31:13.590] [bmv2] [D] [thread 65952] [9.0] [cxt 0] Pipeline 'ingress': start
+[18:31:13.590] [bmv2] [T] [thread 65952] [9.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:13.590] [bmv2] [D] [thread 65952] [9.0] [cxt 0] Pipeline 'ingress': end
+[18:31:13.590] [bmv2] [D] [thread 65952] [9.0] [cxt 0] Egress port is 0
+[18:31:13.591] [bmv2] [D] [thread 65953] [9.0] [cxt 0] Pipeline 'egress': start
+[18:31:13.592] [bmv2] [D] [thread 65953] [9.0] [cxt 0] Pipeline 'egress': end
+[18:31:13.593] [bmv2] [D] [thread 65953] [9.0] [cxt 0] Deparser 'deparser': start
+[18:31:13.593] [bmv2] [D] [thread 65953] [9.0] [cxt 0] Deparsing header 'eth'
+[18:31:13.594] [bmv2] [D] [thread 65953] [9.0] [cxt 0] Deparser 'deparser': end
+[18:31:13.595] [bmv2] [D] [thread 65957] [9.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:31:14.097] [bmv2] [D] [thread 65952] [10.0] [cxt 0] Processing packet received on port 0
+[18:31:14.098] [bmv2] [D] [thread 65952] [10.0] [cxt 0] Parser 'parser': start
+[18:31:14.099] [bmv2] [D] [thread 65952] [10.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:14.099] [bmv2] [D] [thread 65952] [10.0] [cxt 0] Extracting header 'eth'
+[18:31:14.100] [bmv2] [D] [thread 65952] [10.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:14.101] [bmv2] [T] [thread 65952] [10.0] [cxt 0] Bytes parsed: 14
+[18:31:14.102] [bmv2] [D] [thread 65952] [10.0] [cxt 0] Parser 'parser': end
+[18:31:14.102] [bmv2] [D] [thread 65952] [10.0] [cxt 0] Pipeline 'ingress': start
+[18:31:14.103] [bmv2] [T] [thread 65952] [10.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:14.103] [bmv2] [D] [thread 65952] [10.0] [cxt 0] Pipeline 'ingress': end
+[18:31:14.104] [bmv2] [D] [thread 65952] [10.0] [cxt 0] Egress port is 0
+[18:31:14.105] [bmv2] [D] [thread 65953] [10.0] [cxt 0] Pipeline 'egress': start
+[18:31:14.106] [bmv2] [D] [thread 65953] [10.0] [cxt 0] Pipeline 'egress': end
+[18:31:14.106] [bmv2] [D] [thread 65953] [10.0] [cxt 0] Deparser 'deparser': start
+[18:31:14.107] [bmv2] [D] [thread 65953] [10.0] [cxt 0] Deparsing header 'eth'
+[18:31:14.108] [bmv2] [D] [thread 65953] [10.0] [cxt 0] Deparser 'deparser': end
+[18:31:14.109] [bmv2] [D] [thread 65957] [10.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:31:21.776] [bmv2] [D] [thread 65952] [11.0] [cxt 0] Processing packet received on port 1
+[18:31:21.777] [bmv2] [D] [thread 65952] [11.0] [cxt 0] Parser 'parser': start
+[18:31:21.778] [bmv2] [D] [thread 65952] [11.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:21.778] [bmv2] [D] [thread 65952] [11.0] [cxt 0] Extracting header 'eth'
+[18:31:21.779] [bmv2] [D] [thread 65952] [11.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:21.780] [bmv2] [T] [thread 65952] [11.0] [cxt 0] Bytes parsed: 14
+[18:31:21.780] [bmv2] [D] [thread 65952] [11.0] [cxt 0] Parser 'parser': end
+[18:31:21.781] [bmv2] [D] [thread 65952] [11.0] [cxt 0] Pipeline 'ingress': start
+[18:31:21.782] [bmv2] [T] [thread 65952] [11.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:21.783] [bmv2] [D] [thread 65952] [11.0] [cxt 0] Pipeline 'ingress': end
+[18:31:21.784] [bmv2] [D] [thread 65952] [11.0] [cxt 0] Egress port is 0
+[18:31:21.786] [bmv2] [D] [thread 65953] [11.0] [cxt 0] Pipeline 'egress': start
+[18:31:21.787] [bmv2] [D] [thread 65953] [11.0] [cxt 0] Pipeline 'egress': end
+[18:31:21.788] [bmv2] [D] [thread 65953] [11.0] [cxt 0] Deparser 'deparser': start
+[18:31:21.789] [bmv2] [D] [thread 65953] [11.0] [cxt 0] Deparsing header 'eth'
+[18:31:21.790] [bmv2] [D] [thread 65953] [11.0] [cxt 0] Deparser 'deparser': end
+[18:31:21.791] [bmv2] [D] [thread 65957] [11.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:31:23.338] [bmv2] [D] [thread 65952] [12.0] [cxt 0] Processing packet received on port 0
+[18:31:23.339] [bmv2] [D] [thread 65952] [12.0] [cxt 0] Parser 'parser': start
+[18:31:23.340] [bmv2] [D] [thread 65952] [12.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:23.340] [bmv2] [D] [thread 65952] [12.0] [cxt 0] Extracting header 'eth'
+[18:31:23.341] [bmv2] [D] [thread 65952] [12.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:23.342] [bmv2] [T] [thread 65952] [12.0] [cxt 0] Bytes parsed: 14
+[18:31:23.343] [bmv2] [D] [thread 65952] [12.0] [cxt 0] Parser 'parser': end
+[18:31:23.343] [bmv2] [D] [thread 65952] [12.0] [cxt 0] Pipeline 'ingress': start
+[18:31:23.344] [bmv2] [T] [thread 65952] [12.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:23.344] [bmv2] [D] [thread 65952] [12.0] [cxt 0] Pipeline 'ingress': end
+[18:31:23.345] [bmv2] [D] [thread 65952] [12.0] [cxt 0] Egress port is 0
+[18:31:23.346] [bmv2] [D] [thread 65953] [12.0] [cxt 0] Pipeline 'egress': start
+[18:31:23.346] [bmv2] [D] [thread 65953] [12.0] [cxt 0] Pipeline 'egress': end
+[18:31:23.346] [bmv2] [D] [thread 65953] [12.0] [cxt 0] Deparser 'deparser': start
+[18:31:23.347] [bmv2] [D] [thread 65953] [12.0] [cxt 0] Deparsing header 'eth'
+[18:31:23.347] [bmv2] [D] [thread 65953] [12.0] [cxt 0] Deparser 'deparser': end
+[18:31:23.348] [bmv2] [D] [thread 65957] [12.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:31:26.987] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Processing packet received on port 0
+[18:31:26.988] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Parser 'parser': start
+[18:31:26.989] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:26.990] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Extracting header 'eth'
+[18:31:26.991] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Parser state 'start': key is 88b5
+[18:31:26.991] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Bytes parsed: 14
+[18:31:26.992] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Parser 'parser' entering state 'parse_switchml'
+[18:31:26.993] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Extracting header 'sml'
+[18:31:26.994] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Parser state 'parse_switchml' has no switch, going to default next state
+[18:31:26.994] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Bytes parsed: 34
+[18:31:26.995] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Parser 'parser': end
+[18:31:26.995] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Pipeline 'ingress': start
+[18:31:26.996] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is true
+[18:31:26.998] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Applying table 'tbl_main150'
+[18:31:26.999] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Looking up key:
+
+[18:31:26.999] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Table 'tbl_main150': miss
+[18:31:27.000] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Action entry is main150 - 
+[18:31:27.002] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Action main150
+[18:31:27.003] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(150) Primitive counter_reg.read(meta.current_count, 0)
+[18:31:27.003] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Read register 'TheIngress.counter_reg' at index 0 read value 0
+[18:31:27.004] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Applying table 'TheIngress.aggregation_table'
+[18:31:27.005] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Looking up key:
+* meta.current_count  : 00000000
+
+[18:31:27.006] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Table 'TheIngress.aggregation_table': miss
+[18:31:27.007] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Action entry is TheIngress.aggregate_and_increment - 
+[18:31:27.008] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Action TheIngress.aggregate_and_increment
+[18:31:27.009] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(93) Primitive aggregation_reg.read(current_val, 0)
+[18:31:27.010] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 0
+[18:31:27.011] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(94) Primitive current_val + hdr.sml.payload0
+[18:31:27.012] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(94) Primitive aggregation_reg.write(0, current_val + hdr.sml.payload0)
+[18:31:27.013] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 21676
+[18:31:27.014] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(95) Primitive aggregation_reg.read(current_val, 1)
+[18:31:27.015] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 0
+[18:31:27.016] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(96) Primitive current_val + hdr.sml.payload1
+[18:31:27.016] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(96) Primitive aggregation_reg.write(1, current_val + hdr.sml.payload1)
+[18:31:27.018] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 23107
+[18:31:27.019] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(97) Primitive aggregation_reg.read(current_val, 2)
+[18:31:27.019] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 0
+[18:31:27.020] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(98) Primitive current_val + hdr.sml.payload2
+[18:31:27.021] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(98) Primitive aggregation_reg.write(2, current_val + hdr.sml.payload2)
+[18:31:27.022] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 55347
+[18:31:27.023] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(99) Primitive aggregation_reg.read(current_val, 3)
+[18:31:27.024] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 0
+[18:31:27.024] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(100) Primitive current_val + hdr.sml.payload3
+[18:31:27.025] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(100) Primitive aggregation_reg.write(3, current_val + hdr.sml.payload3)
+[18:31:27.026] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 26208
+[18:31:27.027] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(101) Primitive meta.current_count + 1
+[18:31:27.028] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(101) Primitive counter_reg.write(0, meta.current_count + 1)
+[18:31:27.028] [bmv2] [T] [thread 65952] [13.0] [cxt 0] Wrote register 'TheIngress.counter_reg' at index 0 with value 1
+[18:31:27.029] [bmv2] [T] [thread 65952] [13.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(103) Primitive mark_to_drop(standard_metadata)
+[18:31:27.030] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Pipeline 'ingress': end
+[18:31:27.030] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Egress port is 511
+[18:31:27.030] [bmv2] [D] [thread 65952] [13.0] [cxt 0] Dropping packet at the end of ingress
+[18:31:27.031] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Processing packet received on port 1
+[18:31:27.032] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Parser 'parser': start
+[18:31:27.032] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:27.033] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Extracting header 'eth'
+[18:31:27.034] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Parser state 'start': key is 88b5
+[18:31:27.035] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Bytes parsed: 14
+[18:31:27.035] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Parser 'parser' entering state 'parse_switchml'
+[18:31:27.036] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Extracting header 'sml'
+[18:31:27.037] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Parser state 'parse_switchml' has no switch, going to default next state
+[18:31:27.038] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Bytes parsed: 34
+[18:31:27.039] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Parser 'parser': end
+[18:31:27.039] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Pipeline 'ingress': start
+[18:31:27.040] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is true
+[18:31:27.040] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Applying table 'tbl_main150'
+[18:31:27.041] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Looking up key:
+
+[18:31:27.042] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Table 'tbl_main150': miss
+[18:31:27.043] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Action entry is main150 - 
+[18:31:27.044] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Action main150
+[18:31:27.044] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(150) Primitive counter_reg.read(meta.current_count, 0)
+[18:31:27.044] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Read register 'TheIngress.counter_reg' at index 0 read value 1
+[18:31:27.044] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Applying table 'TheIngress.aggregation_table'
+[18:31:27.044] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Looking up key:
+* meta.current_count  : 00000001
+
+[18:31:27.044] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Table 'TheIngress.aggregation_table': hit with handle 0
+[18:31:27.044] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Dumping entry 0
+Match key:
+* meta.current_count  : EXACT     00000001
+Action entry: TheIngress.broadcast_and_reset - 
+
+[18:31:27.044] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Action entry is TheIngress.broadcast_and_reset - 
+[18:31:27.044] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Action TheIngress.broadcast_and_reset
+[18:31:27.044] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(109) Primitive aggregation_reg.read(tmp, 0)
+[18:31:27.044] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 21676
+[18:31:27.044] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(110) Primitive tmp + hdr.sml.payload0
+[18:31:27.045] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(110) Primitive aggregation_reg.write(0, tmp + hdr.sml.payload0)
+[18:31:27.045] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 72112
+[18:31:27.045] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(111) Primitive aggregation_reg.read(tmp, 1)
+[18:31:27.045] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 23107
+[18:31:27.045] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(112) Primitive tmp + hdr.sml.payload1
+[18:31:27.045] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(112) Primitive aggregation_reg.write(1, tmp + hdr.sml.payload1)
+[18:31:27.045] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 50039
+[18:31:27.045] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(113) Primitive aggregation_reg.read(tmp, 2)
+[18:31:27.046] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 55347
+[18:31:27.047] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(114) Primitive tmp + hdr.sml.payload2
+[18:31:27.047] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(114) Primitive aggregation_reg.write(2, tmp + hdr.sml.payload2)
+[18:31:27.047] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 81952
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(115) Primitive aggregation_reg.read(tmp, 3)
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 26208
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(116) Primitive tmp + hdr.sml.payload3
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(116) Primitive aggregation_reg.write(3, tmp + hdr.sml.payload3)
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 81423
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(118) Primitive aggregation_reg.read(hdr.sml.payload0, 0)
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 72112
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(119) Primitive aggregation_reg.read(hdr.sml.payload1, 1)
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 50039
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(120) Primitive aggregation_reg.read(hdr.sml.payload2, 2)
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 81952
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(121) Primitive aggregation_reg.read(hdr.sml.payload3, 3)
+[18:31:27.048] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 81423
+[18:31:27.049] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(123) Primitive counter_reg.write(0, 0)
+[18:31:27.050] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Wrote register 'TheIngress.counter_reg' at index 0 with value 0
+[18:31:27.050] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(124) Primitive aggregation_reg.write(0, 0)
+[18:31:27.050] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 0
+[18:31:27.050] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(125) Primitive aggregation_reg.write(1, 0)
+[18:31:27.051] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 0
+[18:31:27.051] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(126) Primitive aggregation_reg.write(2, 0)
+[18:31:27.051] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 0
+[18:31:27.051] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(127) Primitive aggregation_reg.write(3, 0)
+[18:31:27.052] [bmv2] [T] [thread 65952] [14.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 0
+[18:31:27.053] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(21) Primitive 0x0000000000FF; ...
+[18:31:27.053] [bmv2] [T] [thread 65952] [14.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(129) Primitive standard_metadata.mcast_grp = 1
+[18:31:27.054] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Pipeline 'ingress': end
+[18:31:27.055] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Multicast requested for packet
+[18:31:27.055] [bmv2] [D] [thread 65952] number of packets replicated : 2
+[18:31:27.056] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Replicating packet on port 1
+[18:31:27.057] [bmv2] [D] [thread 65952] [14.0] [cxt 0] Replicating packet on port 0
+[18:31:27.058] [bmv2] [D] [thread 65954] [14.1] [cxt 0] Pipeline 'egress': start
+[18:31:27.058] [bmv2] [D] [thread 65954] [14.1] [cxt 0] Pipeline 'egress': end
+[18:31:27.059] [bmv2] [D] [thread 65954] [14.1] [cxt 0] Deparser 'deparser': start
+[18:31:27.060] [bmv2] [D] [thread 65954] [14.1] [cxt 0] Deparsing header 'eth'
+[18:31:27.060] [bmv2] [D] [thread 65954] [14.1] [cxt 0] Deparsing header 'sml'
+[18:31:27.061] [bmv2] [D] [thread 65954] [14.1] [cxt 0] Deparser 'deparser': end
+[18:31:27.058] [bmv2] [D] [thread 65953] [14.2] [cxt 0] Pipeline 'egress': start
+[18:31:27.062] [bmv2] [D] [thread 65953] [14.2] [cxt 0] Pipeline 'egress': end
+[18:31:27.062] [bmv2] [D] [thread 65953] [14.2] [cxt 0] Deparser 'deparser': start
+[18:31:27.062] [bmv2] [D] [thread 65953] [14.2] [cxt 0] Deparsing header 'eth'
+[18:31:27.062] [bmv2] [D] [thread 65953] [14.2] [cxt 0] Deparsing header 'sml'
+[18:31:27.062] [bmv2] [D] [thread 65953] [14.2] [cxt 0] Deparser 'deparser': end
+[18:31:27.062] [bmv2] [D] [thread 65957] [14.1] [cxt 0] Transmitting packet of size 34 out of port 1
+[18:31:27.065] [bmv2] [D] [thread 65957] [14.2] [cxt 0] Transmitting packet of size 34 out of port 0
+[18:31:27.331] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Processing packet received on port 1
+[18:31:27.332] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Parser 'parser': start
+[18:31:27.332] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:27.333] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Extracting header 'eth'
+[18:31:27.334] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Parser state 'start': key is 88b5
+[18:31:27.335] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Bytes parsed: 14
+[18:31:27.336] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Parser 'parser' entering state 'parse_switchml'
+[18:31:27.337] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Extracting header 'sml'
+[18:31:27.338] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Parser state 'parse_switchml' has no switch, going to default next state
+[18:31:27.339] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Bytes parsed: 34
+[18:31:27.340] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Parser 'parser': end
+[18:31:27.341] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Pipeline 'ingress': start
+[18:31:27.342] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is true
+[18:31:27.343] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Applying table 'tbl_main150'
+[18:31:27.344] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Looking up key:
+
+[18:31:27.345] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Table 'tbl_main150': miss
+[18:31:27.346] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Action entry is main150 - 
+[18:31:27.347] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Action main150
+[18:31:27.348] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(150) Primitive counter_reg.read(meta.current_count, 0)
+[18:31:27.349] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Read register 'TheIngress.counter_reg' at index 0 read value 0
+[18:31:27.350] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Applying table 'TheIngress.aggregation_table'
+[18:31:27.351] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Looking up key:
+* meta.current_count  : 00000000
+
+[18:31:27.352] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Table 'TheIngress.aggregation_table': miss
+[18:31:27.353] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Action entry is TheIngress.aggregate_and_increment - 
+[18:31:27.354] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Action TheIngress.aggregate_and_increment
+[18:31:27.355] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(93) Primitive aggregation_reg.read(current_val, 0)
+[18:31:27.356] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 0
+[18:31:27.357] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(94) Primitive current_val + hdr.sml.payload0
+[18:31:27.357] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(94) Primitive aggregation_reg.write(0, current_val + hdr.sml.payload0)
+[18:31:27.358] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 41637
+[18:31:27.359] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(95) Primitive aggregation_reg.read(current_val, 1)
+[18:31:27.360] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 0
+[18:31:27.360] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(96) Primitive current_val + hdr.sml.payload1
+[18:31:27.361] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(96) Primitive aggregation_reg.write(1, current_val + hdr.sml.payload1)
+[18:31:27.362] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 43674
+[18:31:27.363] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(97) Primitive aggregation_reg.read(current_val, 2)
+[18:31:27.363] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 0
+[18:31:27.364] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(98) Primitive current_val + hdr.sml.payload2
+[18:31:27.365] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(98) Primitive aggregation_reg.write(2, current_val + hdr.sml.payload2)
+[18:31:27.366] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 7190
+[18:31:27.366] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(99) Primitive aggregation_reg.read(current_val, 3)
+[18:31:27.367] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 0
+[18:31:27.368] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(100) Primitive current_val + hdr.sml.payload3
+[18:31:27.369] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(100) Primitive aggregation_reg.write(3, current_val + hdr.sml.payload3)
+[18:31:27.369] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 56944
+[18:31:27.370] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(101) Primitive meta.current_count + 1
+[18:31:27.371] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(101) Primitive counter_reg.write(0, meta.current_count + 1)
+[18:31:27.371] [bmv2] [T] [thread 65952] [15.0] [cxt 0] Wrote register 'TheIngress.counter_reg' at index 0 with value 1
+[18:31:27.372] [bmv2] [T] [thread 65952] [15.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(103) Primitive mark_to_drop(standard_metadata)
+[18:31:27.373] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Pipeline 'ingress': end
+[18:31:27.374] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Egress port is 511
+[18:31:27.374] [bmv2] [D] [thread 65952] [15.0] [cxt 0] Dropping packet at the end of ingress
+[18:31:27.375] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Processing packet received on port 0
+[18:31:27.376] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Parser 'parser': start
+[18:31:27.377] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:27.378] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Extracting header 'eth'
+[18:31:27.378] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Parser state 'start': key is 88b5
+[18:31:27.379] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Bytes parsed: 14
+[18:31:27.380] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Parser 'parser' entering state 'parse_switchml'
+[18:31:27.381] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Extracting header 'sml'
+[18:31:27.381] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Parser state 'parse_switchml' has no switch, going to default next state
+[18:31:27.382] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Bytes parsed: 34
+[18:31:27.383] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Parser 'parser': end
+[18:31:27.384] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Pipeline 'ingress': start
+[18:31:27.385] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is true
+[18:31:27.386] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Applying table 'tbl_main150'
+[18:31:27.387] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Looking up key:
+
+[18:31:27.388] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Table 'tbl_main150': miss
+[18:31:27.389] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Action entry is main150 - 
+[18:31:27.389] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Action main150
+[18:31:27.390] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(150) Primitive counter_reg.read(meta.current_count, 0)
+[18:31:27.391] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Read register 'TheIngress.counter_reg' at index 0 read value 1
+[18:31:27.392] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Applying table 'TheIngress.aggregation_table'
+[18:31:27.392] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Looking up key:
+* meta.current_count  : 00000001
+
+[18:31:27.393] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Table 'TheIngress.aggregation_table': hit with handle 0
+[18:31:27.394] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Dumping entry 0
+Match key:
+* meta.current_count  : EXACT     00000001
+Action entry: TheIngress.broadcast_and_reset - 
+
+[18:31:27.395] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Action entry is TheIngress.broadcast_and_reset - 
+[18:31:27.396] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Action TheIngress.broadcast_and_reset
+[18:31:27.396] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(109) Primitive aggregation_reg.read(tmp, 0)
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 41637
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(110) Primitive tmp + hdr.sml.payload0
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(110) Primitive aggregation_reg.write(0, tmp + hdr.sml.payload0)
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 79085
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(111) Primitive aggregation_reg.read(tmp, 1)
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 43674
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(112) Primitive tmp + hdr.sml.payload1
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(112) Primitive aggregation_reg.write(1, tmp + hdr.sml.payload1)
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 98586
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(113) Primitive aggregation_reg.read(tmp, 2)
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 7190
+[18:31:27.397] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(114) Primitive tmp + hdr.sml.payload2
+[18:31:27.398] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(114) Primitive aggregation_reg.write(2, tmp + hdr.sml.payload2)
+[18:31:27.398] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 42804
+[18:31:27.398] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(115) Primitive aggregation_reg.read(tmp, 3)
+[18:31:27.398] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 56944
+[18:31:27.398] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(116) Primitive tmp + hdr.sml.payload3
+[18:31:27.398] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(116) Primitive aggregation_reg.write(3, tmp + hdr.sml.payload3)
+[18:31:27.399] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 82975
+[18:31:27.400] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(118) Primitive aggregation_reg.read(hdr.sml.payload0, 0)
+[18:31:27.401] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 79085
+[18:31:27.402] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(119) Primitive aggregation_reg.read(hdr.sml.payload1, 1)
+[18:31:27.403] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 98586
+[18:31:27.404] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(120) Primitive aggregation_reg.read(hdr.sml.payload2, 2)
+[18:31:27.405] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 42804
+[18:31:27.405] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(121) Primitive aggregation_reg.read(hdr.sml.payload3, 3)
+[18:31:27.406] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 82975
+[18:31:27.407] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(123) Primitive counter_reg.write(0, 0)
+[18:31:27.408] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Wrote register 'TheIngress.counter_reg' at index 0 with value 0
+[18:31:27.409] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(124) Primitive aggregation_reg.write(0, 0)
+[18:31:27.409] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 0
+[18:31:27.410] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(125) Primitive aggregation_reg.write(1, 0)
+[18:31:27.411] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 0
+[18:31:27.411] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(126) Primitive aggregation_reg.write(2, 0)
+[18:31:27.412] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 0
+[18:31:27.413] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(127) Primitive aggregation_reg.write(3, 0)
+[18:31:27.414] [bmv2] [T] [thread 65952] [16.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 0
+[18:31:27.415] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(21) Primitive 0x0000000000FF; ...
+[18:31:27.417] [bmv2] [T] [thread 65952] [16.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(129) Primitive standard_metadata.mcast_grp = 1
+[18:31:27.418] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Pipeline 'ingress': end
+[18:31:27.419] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Multicast requested for packet
+[18:31:27.420] [bmv2] [D] [thread 65952] number of packets replicated : 2
+[18:31:27.421] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Replicating packet on port 1
+[18:31:27.421] [bmv2] [D] [thread 65952] [16.0] [cxt 0] Replicating packet on port 0
+[18:31:27.423] [bmv2] [D] [thread 65953] [16.2] [cxt 0] Pipeline 'egress': start
+[18:31:27.424] [bmv2] [D] [thread 65953] [16.2] [cxt 0] Pipeline 'egress': end
+[18:31:27.425] [bmv2] [D] [thread 65953] [16.2] [cxt 0] Deparser 'deparser': start
+[18:31:27.425] [bmv2] [D] [thread 65953] [16.2] [cxt 0] Deparsing header 'eth'
+[18:31:27.425] [bmv2] [D] [thread 65953] [16.2] [cxt 0] Deparsing header 'sml'
+[18:31:27.425] [bmv2] [D] [thread 65953] [16.2] [cxt 0] Deparser 'deparser': end
+[18:31:27.426] [bmv2] [D] [thread 65957] [16.2] [cxt 0] Transmitting packet of size 34 out of port 0
+[18:31:27.424] [bmv2] [D] [thread 65954] [16.1] [cxt 0] Pipeline 'egress': start
+[18:31:27.428] [bmv2] [D] [thread 65954] [16.1] [cxt 0] Pipeline 'egress': end
+[18:31:27.429] [bmv2] [D] [thread 65954] [16.1] [cxt 0] Deparser 'deparser': start
+[18:31:27.430] [bmv2] [D] [thread 65954] [16.1] [cxt 0] Deparsing header 'eth'
+[18:31:27.430] [bmv2] [D] [thread 65954] [16.1] [cxt 0] Deparsing header 'sml'
+[18:31:27.431] [bmv2] [D] [thread 65954] [16.1] [cxt 0] Deparser 'deparser': end
+[18:31:27.432] [bmv2] [D] [thread 65957] [16.1] [cxt 0] Transmitting packet of size 34 out of port 1
+[18:31:27.665] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Processing packet received on port 0
+[18:31:27.666] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Parser 'parser': start
+[18:31:27.667] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:27.668] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Extracting header 'eth'
+[18:31:27.669] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Parser state 'start': key is 88b5
+[18:31:27.670] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Bytes parsed: 14
+[18:31:27.670] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Parser 'parser' entering state 'parse_switchml'
+[18:31:27.670] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Extracting header 'sml'
+[18:31:27.671] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Parser state 'parse_switchml' has no switch, going to default next state
+[18:31:27.671] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Bytes parsed: 34
+[18:31:27.671] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Parser 'parser': end
+[18:31:27.671] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Pipeline 'ingress': start
+[18:31:27.671] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is true
+[18:31:27.671] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Applying table 'tbl_main150'
+[18:31:27.672] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Looking up key:
+
+[18:31:27.673] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Table 'tbl_main150': miss
+[18:31:27.677] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Action entry is main150 - 
+[18:31:27.684] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Action main150
+[18:31:27.685] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(150) Primitive counter_reg.read(meta.current_count, 0)
+[18:31:27.685] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Read register 'TheIngress.counter_reg' at index 0 read value 0
+[18:31:27.691] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Applying table 'TheIngress.aggregation_table'
+[18:31:27.692] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Looking up key:
+* meta.current_count  : 00000000
+
+[18:31:27.693] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Table 'TheIngress.aggregation_table': miss
+[18:31:27.694] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Action entry is TheIngress.aggregate_and_increment - 
+[18:31:27.695] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Action TheIngress.aggregate_and_increment
+[18:31:27.696] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(93) Primitive aggregation_reg.read(current_val, 0)
+[18:31:27.697] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 0
+[18:31:27.698] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(94) Primitive current_val + hdr.sml.payload0
+[18:31:27.698] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(94) Primitive aggregation_reg.write(0, current_val + hdr.sml.payload0)
+[18:31:27.699] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 41780
+[18:31:27.700] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(95) Primitive aggregation_reg.read(current_val, 1)
+[18:31:27.701] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 0
+[18:31:27.702] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(96) Primitive current_val + hdr.sml.payload1
+[18:31:27.703] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(96) Primitive aggregation_reg.write(1, current_val + hdr.sml.payload1)
+[18:31:27.703] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 21544
+[18:31:27.704] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(97) Primitive aggregation_reg.read(current_val, 2)
+[18:31:27.705] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 0
+[18:31:27.706] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(98) Primitive current_val + hdr.sml.payload2
+[18:31:27.707] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(98) Primitive aggregation_reg.write(2, current_val + hdr.sml.payload2)
+[18:31:27.708] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 21176
+[18:31:27.709] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(99) Primitive aggregation_reg.read(current_val, 3)
+[18:31:27.710] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 0
+[18:31:27.711] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(100) Primitive current_val + hdr.sml.payload3
+[18:31:27.711] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(100) Primitive aggregation_reg.write(3, current_val + hdr.sml.payload3)
+[18:31:27.711] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 42095
+[18:31:27.711] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(101) Primitive meta.current_count + 1
+[18:31:27.711] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(101) Primitive counter_reg.write(0, meta.current_count + 1)
+[18:31:27.711] [bmv2] [T] [thread 65952] [17.0] [cxt 0] Wrote register 'TheIngress.counter_reg' at index 0 with value 1
+[18:31:27.712] [bmv2] [T] [thread 65952] [17.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(103) Primitive mark_to_drop(standard_metadata)
+[18:31:27.712] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Pipeline 'ingress': end
+[18:31:27.712] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Egress port is 511
+[18:31:27.712] [bmv2] [D] [thread 65952] [17.0] [cxt 0] Dropping packet at the end of ingress
+[18:31:27.712] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Processing packet received on port 1
+[18:31:27.712] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Parser 'parser': start
+[18:31:27.712] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:27.712] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Extracting header 'eth'
+[18:31:27.712] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Parser state 'start': key is 88b5
+[18:31:27.713] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Bytes parsed: 14
+[18:31:27.713] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Parser 'parser' entering state 'parse_switchml'
+[18:31:27.713] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Extracting header 'sml'
+[18:31:27.713] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Parser state 'parse_switchml' has no switch, going to default next state
+[18:31:27.713] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Bytes parsed: 34
+[18:31:27.713] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Parser 'parser': end
+[18:31:27.714] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Pipeline 'ingress': start
+[18:31:27.715] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is true
+[18:31:27.716] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Applying table 'tbl_main150'
+[18:31:27.717] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Looking up key:
+
+[18:31:27.718] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Table 'tbl_main150': miss
+[18:31:27.719] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Action entry is main150 - 
+[18:31:27.719] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Action main150
+[18:31:27.719] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(150) Primitive counter_reg.read(meta.current_count, 0)
+[18:31:27.719] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Read register 'TheIngress.counter_reg' at index 0 read value 1
+[18:31:27.719] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Applying table 'TheIngress.aggregation_table'
+[18:31:27.719] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Looking up key:
+* meta.current_count  : 00000001
+
+[18:31:27.719] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Table 'TheIngress.aggregation_table': hit with handle 0
+[18:31:27.719] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Dumping entry 0
+Match key:
+* meta.current_count  : EXACT     00000001
+Action entry: TheIngress.broadcast_and_reset - 
+
+[18:31:27.720] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Action entry is TheIngress.broadcast_and_reset - 
+[18:31:27.720] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Action TheIngress.broadcast_and_reset
+[18:31:27.720] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(109) Primitive aggregation_reg.read(tmp, 0)
+[18:31:27.721] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 41780
+[18:31:27.721] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(110) Primitive tmp + hdr.sml.payload0
+[18:31:27.721] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(110) Primitive aggregation_reg.write(0, tmp + hdr.sml.payload0)
+[18:31:27.722] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 107076
+[18:31:27.722] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(111) Primitive aggregation_reg.read(tmp, 1)
+[18:31:27.722] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 21544
+[18:31:27.722] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(112) Primitive tmp + hdr.sml.payload1
+[18:31:27.722] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(112) Primitive aggregation_reg.write(1, tmp + hdr.sml.payload1)
+[18:31:27.722] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 75997
+[18:31:27.722] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(113) Primitive aggregation_reg.read(tmp, 2)
+[18:31:27.723] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 21176
+[18:31:27.723] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(114) Primitive tmp + hdr.sml.payload2
+[18:31:27.723] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(114) Primitive aggregation_reg.write(2, tmp + hdr.sml.payload2)
+[18:31:27.723] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 53729
+[18:31:27.723] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(115) Primitive aggregation_reg.read(tmp, 3)
+[18:31:27.723] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 42095
+[18:31:27.723] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(116) Primitive tmp + hdr.sml.payload3
+[18:31:27.723] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(116) Primitive aggregation_reg.write(3, tmp + hdr.sml.payload3)
+[18:31:27.723] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 95101
+[18:31:27.724] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(118) Primitive aggregation_reg.read(hdr.sml.payload0, 0)
+[18:31:27.724] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 107076
+[18:31:27.724] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(119) Primitive aggregation_reg.read(hdr.sml.payload1, 1)
+[18:31:27.724] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 75997
+[18:31:27.724] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(120) Primitive aggregation_reg.read(hdr.sml.payload2, 2)
+[18:31:27.724] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 53729
+[18:31:27.724] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(121) Primitive aggregation_reg.read(hdr.sml.payload3, 3)
+[18:31:27.724] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 95101
+[18:31:27.725] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(123) Primitive counter_reg.write(0, 0)
+[18:31:27.725] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Wrote register 'TheIngress.counter_reg' at index 0 with value 0
+[18:31:27.725] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(124) Primitive aggregation_reg.write(0, 0)
+[18:31:27.725] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 0
+[18:31:27.725] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(125) Primitive aggregation_reg.write(1, 0)
+[18:31:27.726] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 0
+[18:31:27.726] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(126) Primitive aggregation_reg.write(2, 0)
+[18:31:27.726] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 0
+[18:31:27.726] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(127) Primitive aggregation_reg.write(3, 0)
+[18:31:27.727] [bmv2] [T] [thread 65952] [18.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 0
+[18:31:27.728] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(21) Primitive 0x0000000000FF; ...
+[18:31:27.728] [bmv2] [T] [thread 65952] [18.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(129) Primitive standard_metadata.mcast_grp = 1
+[18:31:27.728] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Pipeline 'ingress': end
+[18:31:27.728] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Multicast requested for packet
+[18:31:27.728] [bmv2] [D] [thread 65952] number of packets replicated : 2
+[18:31:27.728] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Replicating packet on port 1
+[18:31:27.729] [bmv2] [D] [thread 65952] [18.0] [cxt 0] Replicating packet on port 0
+[18:31:27.730] [bmv2] [D] [thread 65954] [18.1] [cxt 0] Pipeline 'egress': start
+[18:31:27.731] [bmv2] [D] [thread 65954] [18.1] [cxt 0] Pipeline 'egress': end
+[18:31:27.732] [bmv2] [D] [thread 65954] [18.1] [cxt 0] Deparser 'deparser': start
+[18:31:27.732] [bmv2] [D] [thread 65954] [18.1] [cxt 0] Deparsing header 'eth'
+[18:31:27.733] [bmv2] [D] [thread 65954] [18.1] [cxt 0] Deparsing header 'sml'
+[18:31:27.734] [bmv2] [D] [thread 65954] [18.1] [cxt 0] Deparser 'deparser': end
+[18:31:27.730] [bmv2] [D] [thread 65953] [18.2] [cxt 0] Pipeline 'egress': start
+[18:31:27.735] [bmv2] [D] [thread 65953] [18.2] [cxt 0] Pipeline 'egress': end
+[18:31:27.735] [bmv2] [D] [thread 65953] [18.2] [cxt 0] Deparser 'deparser': start
+[18:31:27.735] [bmv2] [D] [thread 65953] [18.2] [cxt 0] Deparsing header 'eth'
+[18:31:27.736] [bmv2] [D] [thread 65953] [18.2] [cxt 0] Deparsing header 'sml'
+[18:31:27.736] [bmv2] [D] [thread 65953] [18.2] [cxt 0] Deparser 'deparser': end
+[18:31:27.735] [bmv2] [D] [thread 65957] [18.1] [cxt 0] Transmitting packet of size 34 out of port 1
+[18:31:27.737] [bmv2] [D] [thread 65957] [18.2] [cxt 0] Transmitting packet of size 34 out of port 0
+[18:31:28.024] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Processing packet received on port 1
+[18:31:28.025] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Parser 'parser': start
+[18:31:28.026] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:28.041] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Extracting header 'eth'
+[18:31:28.055] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Parser state 'start': key is 88b5
+[18:31:28.062] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Bytes parsed: 14
+[18:31:28.063] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Parser 'parser' entering state 'parse_switchml'
+[18:31:28.063] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Extracting header 'sml'
+[18:31:28.063] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Parser state 'parse_switchml' has no switch, going to default next state
+[18:31:28.064] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Bytes parsed: 34
+[18:31:28.065] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Parser 'parser': end
+[18:31:28.066] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Pipeline 'ingress': start
+[18:31:28.067] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is true
+[18:31:28.067] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Applying table 'tbl_main150'
+[18:31:28.068] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Looking up key:
+
+[18:31:28.069] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Table 'tbl_main150': miss
+[18:31:28.069] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Action entry is main150 - 
+[18:31:28.069] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Action main150
+[18:31:28.069] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(150) Primitive counter_reg.read(meta.current_count, 0)
+[18:31:28.070] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Read register 'TheIngress.counter_reg' at index 0 read value 0
+[18:31:28.070] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Applying table 'TheIngress.aggregation_table'
+[18:31:28.070] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Looking up key:
+* meta.current_count  : 00000000
+
+[18:31:28.071] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Table 'TheIngress.aggregation_table': miss
+[18:31:28.072] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Action entry is TheIngress.aggregate_and_increment - 
+[18:31:28.072] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Action TheIngress.aggregate_and_increment
+[18:31:28.072] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(93) Primitive aggregation_reg.read(current_val, 0)
+[18:31:28.072] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 0
+[18:31:28.073] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(94) Primitive current_val + hdr.sml.payload0
+[18:31:28.074] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(94) Primitive aggregation_reg.write(0, current_val + hdr.sml.payload0)
+[18:31:28.074] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 14730
+[18:31:28.075] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(95) Primitive aggregation_reg.read(current_val, 1)
+[18:31:28.075] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 0
+[18:31:28.075] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(96) Primitive current_val + hdr.sml.payload1
+[18:31:28.076] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(96) Primitive aggregation_reg.write(1, current_val + hdr.sml.payload1)
+[18:31:28.076] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 47939
+[18:31:28.077] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(97) Primitive aggregation_reg.read(current_val, 2)
+[18:31:28.077] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 0
+[18:31:28.077] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(98) Primitive current_val + hdr.sml.payload2
+[18:31:28.078] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(98) Primitive aggregation_reg.write(2, current_val + hdr.sml.payload2)
+[18:31:28.079] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 34607
+[18:31:28.080] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(99) Primitive aggregation_reg.read(current_val, 3)
+[18:31:28.081] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 0
+[18:31:28.081] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(100) Primitive current_val + hdr.sml.payload3
+[18:31:28.082] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(100) Primitive aggregation_reg.write(3, current_val + hdr.sml.payload3)
+[18:31:28.083] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 17873
+[18:31:28.084] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(101) Primitive meta.current_count + 1
+[18:31:28.085] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(101) Primitive counter_reg.write(0, meta.current_count + 1)
+[18:31:28.086] [bmv2] [T] [thread 65952] [19.0] [cxt 0] Wrote register 'TheIngress.counter_reg' at index 0 with value 1
+[18:31:28.087] [bmv2] [T] [thread 65952] [19.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(103) Primitive mark_to_drop(standard_metadata)
+[18:31:28.087] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Pipeline 'ingress': end
+[18:31:28.088] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Egress port is 511
+[18:31:28.088] [bmv2] [D] [thread 65952] [19.0] [cxt 0] Dropping packet at the end of ingress
+[18:31:28.089] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Processing packet received on port 0
+[18:31:28.089] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Parser 'parser': start
+[18:31:28.090] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:28.091] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Extracting header 'eth'
+[18:31:28.092] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Parser state 'start': key is 88b5
+[18:31:28.093] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Bytes parsed: 14
+[18:31:28.094] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Parser 'parser' entering state 'parse_switchml'
+[18:31:28.095] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Extracting header 'sml'
+[18:31:28.096] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Parser state 'parse_switchml' has no switch, going to default next state
+[18:31:28.097] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Bytes parsed: 34
+[18:31:28.098] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Parser 'parser': end
+[18:31:28.099] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Pipeline 'ingress': start
+[18:31:28.099] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is true
+[18:31:28.099] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Applying table 'tbl_main150'
+[18:31:28.099] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Looking up key:
+
+[18:31:28.100] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Table 'tbl_main150': miss
+[18:31:28.100] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Action entry is main150 - 
+[18:31:28.101] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Action main150
+[18:31:28.102] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(150) Primitive counter_reg.read(meta.current_count, 0)
+[18:31:28.102] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Read register 'TheIngress.counter_reg' at index 0 read value 1
+[18:31:28.102] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Applying table 'TheIngress.aggregation_table'
+[18:31:28.102] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Looking up key:
+* meta.current_count  : 00000001
+
+[18:31:28.102] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Table 'TheIngress.aggregation_table': hit with handle 0
+[18:31:28.103] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Dumping entry 0
+Match key:
+* meta.current_count  : EXACT     00000001
+Action entry: TheIngress.broadcast_and_reset - 
+
+[18:31:28.103] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Action entry is TheIngress.broadcast_and_reset - 
+[18:31:28.103] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Action TheIngress.broadcast_and_reset
+[18:31:28.104] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(109) Primitive aggregation_reg.read(tmp, 0)
+[18:31:28.105] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 14730
+[18:31:28.106] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(110) Primitive tmp + hdr.sml.payload0
+[18:31:28.107] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(110) Primitive aggregation_reg.write(0, tmp + hdr.sml.payload0)
+[18:31:28.108] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 69521
+[18:31:28.109] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(111) Primitive aggregation_reg.read(tmp, 1)
+[18:31:28.110] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 47939
+[18:31:28.111] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(112) Primitive tmp + hdr.sml.payload1
+[18:31:28.112] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(112) Primitive aggregation_reg.write(1, tmp + hdr.sml.payload1)
+[18:31:28.112] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 83106
+[18:31:28.113] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(113) Primitive aggregation_reg.read(tmp, 2)
+[18:31:28.114] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 34607
+[18:31:28.115] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(114) Primitive tmp + hdr.sml.payload2
+[18:31:28.116] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(114) Primitive aggregation_reg.write(2, tmp + hdr.sml.payload2)
+[18:31:28.116] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 35148
+[18:31:28.117] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(115) Primitive aggregation_reg.read(tmp, 3)
+[18:31:28.118] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 17873
+[18:31:28.119] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(116) Primitive tmp + hdr.sml.payload3
+[18:31:28.120] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(116) Primitive aggregation_reg.write(3, tmp + hdr.sml.payload3)
+[18:31:28.122] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 33362
+[18:31:28.122] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(118) Primitive aggregation_reg.read(hdr.sml.payload0, 0)
+[18:31:28.122] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 0 read value 69521
+[18:31:28.122] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(119) Primitive aggregation_reg.read(hdr.sml.payload1, 1)
+[18:31:28.122] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 1 read value 83106
+[18:31:28.122] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(120) Primitive aggregation_reg.read(hdr.sml.payload2, 2)
+[18:31:28.122] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 2 read value 35148
+[18:31:28.123] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(121) Primitive aggregation_reg.read(hdr.sml.payload3, 3)
+[18:31:28.123] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Read register 'TheIngress.aggregation_reg' at index 3 read value 33362
+[18:31:28.123] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(123) Primitive counter_reg.write(0, 0)
+[18:31:28.123] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Wrote register 'TheIngress.counter_reg' at index 0 with value 0
+[18:31:28.123] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(124) Primitive aggregation_reg.write(0, 0)
+[18:31:28.123] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 0 with value 0
+[18:31:28.123] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(125) Primitive aggregation_reg.write(1, 0)
+[18:31:28.123] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 1 with value 0
+[18:31:28.123] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(126) Primitive aggregation_reg.write(2, 0)
+[18:31:28.124] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 2 with value 0
+[18:31:28.124] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(127) Primitive aggregation_reg.write(3, 0)
+[18:31:28.124] [bmv2] [T] [thread 65952] [20.0] [cxt 0] Wrote register 'TheIngress.aggregation_reg' at index 3 with value 0
+[18:31:28.124] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(21) Primitive 0x0000000000FF; ...
+[18:31:28.124] [bmv2] [T] [thread 65952] [20.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(129) Primitive standard_metadata.mcast_grp = 1
+[18:31:28.124] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Pipeline 'ingress': end
+[18:31:28.124] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Multicast requested for packet
+[18:31:28.124] [bmv2] [D] [thread 65952] number of packets replicated : 2
+[18:31:28.125] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Replicating packet on port 1
+[18:31:28.125] [bmv2] [D] [thread 65952] [20.0] [cxt 0] Replicating packet on port 0
+[18:31:28.126] [bmv2] [D] [thread 65954] [20.1] [cxt 0] Pipeline 'egress': start
+[18:31:28.127] [bmv2] [D] [thread 65953] [20.2] [cxt 0] Pipeline 'egress': start
+[18:31:28.128] [bmv2] [D] [thread 65953] [20.2] [cxt 0] Pipeline 'egress': end
+[18:31:28.129] [bmv2] [D] [thread 65953] [20.2] [cxt 0] Deparser 'deparser': start
+[18:31:28.129] [bmv2] [D] [thread 65953] [20.2] [cxt 0] Deparsing header 'eth'
+[18:31:28.129] [bmv2] [D] [thread 65953] [20.2] [cxt 0] Deparsing header 'sml'
+[18:31:28.129] [bmv2] [D] [thread 65953] [20.2] [cxt 0] Deparser 'deparser': end
+[18:31:28.130] [bmv2] [D] [thread 65957] [20.2] [cxt 0] Transmitting packet of size 34 out of port 0
+[18:31:28.128] [bmv2] [D] [thread 65954] [20.1] [cxt 0] Pipeline 'egress': end
+[18:31:28.132] [bmv2] [D] [thread 65954] [20.1] [cxt 0] Deparser 'deparser': start
+[18:31:28.133] [bmv2] [D] [thread 65954] [20.1] [cxt 0] Deparsing header 'eth'
+[18:31:28.134] [bmv2] [D] [thread 65954] [20.1] [cxt 0] Deparsing header 'sml'
+[18:31:28.135] [bmv2] [D] [thread 65954] [20.1] [cxt 0] Deparser 'deparser': end
+[18:31:28.136] [bmv2] [D] [thread 65957] [20.1] [cxt 0] Transmitting packet of size 34 out of port 1
+[18:31:37.656] [bmv2] [D] [thread 65952] [21.0] [cxt 0] Processing packet received on port 1
+[18:31:37.657] [bmv2] [D] [thread 65952] [21.0] [cxt 0] Parser 'parser': start
+[18:31:37.658] [bmv2] [D] [thread 65952] [21.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:37.658] [bmv2] [D] [thread 65952] [21.0] [cxt 0] Extracting header 'eth'
+[18:31:37.659] [bmv2] [D] [thread 65952] [21.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:37.659] [bmv2] [T] [thread 65952] [21.0] [cxt 0] Bytes parsed: 14
+[18:31:37.659] [bmv2] [D] [thread 65952] [21.0] [cxt 0] Parser 'parser': end
+[18:31:37.660] [bmv2] [D] [thread 65952] [21.0] [cxt 0] Pipeline 'ingress': start
+[18:31:37.660] [bmv2] [T] [thread 65952] [21.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:37.661] [bmv2] [D] [thread 65952] [21.0] [cxt 0] Pipeline 'ingress': end
+[18:31:37.661] [bmv2] [D] [thread 65952] [21.0] [cxt 0] Egress port is 0
+[18:31:37.661] [bmv2] [D] [thread 65953] [21.0] [cxt 0] Pipeline 'egress': start
+[18:31:37.661] [bmv2] [D] [thread 65953] [21.0] [cxt 0] Pipeline 'egress': end
+[18:31:37.662] [bmv2] [D] [thread 65953] [21.0] [cxt 0] Deparser 'deparser': start
+[18:31:37.662] [bmv2] [D] [thread 65953] [21.0] [cxt 0] Deparsing header 'eth'
+[18:31:37.663] [bmv2] [D] [thread 65953] [21.0] [cxt 0] Deparser 'deparser': end
+[18:31:37.664] [bmv2] [D] [thread 65957] [21.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:31:41.745] [bmv2] [D] [thread 65952] [22.0] [cxt 0] Processing packet received on port 0
+[18:31:41.746] [bmv2] [D] [thread 65952] [22.0] [cxt 0] Parser 'parser': start
+[18:31:41.746] [bmv2] [D] [thread 65952] [22.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:31:41.746] [bmv2] [D] [thread 65952] [22.0] [cxt 0] Extracting header 'eth'
+[18:31:41.746] [bmv2] [D] [thread 65952] [22.0] [cxt 0] Parser state 'start': key is 86dd
+[18:31:41.747] [bmv2] [T] [thread 65952] [22.0] [cxt 0] Bytes parsed: 14
+[18:31:41.747] [bmv2] [D] [thread 65952] [22.0] [cxt 0] Parser 'parser': end
+[18:31:41.747] [bmv2] [D] [thread 65952] [22.0] [cxt 0] Pipeline 'ingress': start
+[18:31:41.747] [bmv2] [T] [thread 65952] [22.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:31:41.748] [bmv2] [D] [thread 65952] [22.0] [cxt 0] Pipeline 'ingress': end
+[18:31:41.748] [bmv2] [D] [thread 65952] [22.0] [cxt 0] Egress port is 0
+[18:31:41.748] [bmv2] [D] [thread 65953] [22.0] [cxt 0] Pipeline 'egress': start
+[18:31:41.749] [bmv2] [D] [thread 65953] [22.0] [cxt 0] Pipeline 'egress': end
+[18:31:41.750] [bmv2] [D] [thread 65953] [22.0] [cxt 0] Deparser 'deparser': start
+[18:31:41.750] [bmv2] [D] [thread 65953] [22.0] [cxt 0] Deparsing header 'eth'
+[18:31:41.751] [bmv2] [D] [thread 65953] [22.0] [cxt 0] Deparser 'deparser': end
+[18:31:41.752] [bmv2] [D] [thread 65957] [22.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:32:10.431] [bmv2] [D] [thread 65952] [23.0] [cxt 0] Processing packet received on port 1
+[18:32:10.432] [bmv2] [D] [thread 65952] [23.0] [cxt 0] Parser 'parser': start
+[18:32:10.432] [bmv2] [D] [thread 65952] [23.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:32:10.432] [bmv2] [D] [thread 65952] [23.0] [cxt 0] Extracting header 'eth'
+[18:32:10.433] [bmv2] [D] [thread 65952] [23.0] [cxt 0] Parser state 'start': key is 86dd
+[18:32:10.433] [bmv2] [T] [thread 65952] [23.0] [cxt 0] Bytes parsed: 14
+[18:32:10.434] [bmv2] [D] [thread 65952] [23.0] [cxt 0] Parser 'parser': end
+[18:32:10.434] [bmv2] [D] [thread 65952] [23.0] [cxt 0] Pipeline 'ingress': start
+[18:32:10.434] [bmv2] [T] [thread 65952] [23.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:32:10.435] [bmv2] [D] [thread 65952] [23.0] [cxt 0] Pipeline 'ingress': end
+[18:32:10.435] [bmv2] [D] [thread 65952] [23.0] [cxt 0] Egress port is 0
+[18:32:10.436] [bmv2] [D] [thread 65953] [23.0] [cxt 0] Pipeline 'egress': start
+[18:32:10.436] [bmv2] [D] [thread 65953] [23.0] [cxt 0] Pipeline 'egress': end
+[18:32:10.436] [bmv2] [D] [thread 65953] [23.0] [cxt 0] Deparser 'deparser': start
+[18:32:10.436] [bmv2] [D] [thread 65953] [23.0] [cxt 0] Deparsing header 'eth'
+[18:32:10.436] [bmv2] [D] [thread 65953] [23.0] [cxt 0] Deparser 'deparser': end
+[18:32:10.437] [bmv2] [D] [thread 65957] [23.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:32:18.607] [bmv2] [D] [thread 65952] [24.0] [cxt 0] Processing packet received on port 0
+[18:32:18.608] [bmv2] [D] [thread 65952] [24.0] [cxt 0] Parser 'parser': start
+[18:32:18.608] [bmv2] [D] [thread 65952] [24.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:32:18.609] [bmv2] [D] [thread 65952] [24.0] [cxt 0] Extracting header 'eth'
+[18:32:18.610] [bmv2] [D] [thread 65952] [24.0] [cxt 0] Parser state 'start': key is 86dd
+[18:32:18.611] [bmv2] [T] [thread 65952] [24.0] [cxt 0] Bytes parsed: 14
+[18:32:18.611] [bmv2] [D] [thread 65952] [24.0] [cxt 0] Parser 'parser': end
+[18:32:18.611] [bmv2] [D] [thread 65952] [24.0] [cxt 0] Pipeline 'ingress': start
+[18:32:18.611] [bmv2] [T] [thread 65952] [24.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:32:18.611] [bmv2] [D] [thread 65952] [24.0] [cxt 0] Pipeline 'ingress': end
+[18:32:18.611] [bmv2] [D] [thread 65952] [24.0] [cxt 0] Egress port is 0
+[18:32:18.612] [bmv2] [D] [thread 65953] [24.0] [cxt 0] Pipeline 'egress': start
+[18:32:18.612] [bmv2] [D] [thread 65953] [24.0] [cxt 0] Pipeline 'egress': end
+[18:32:18.612] [bmv2] [D] [thread 65953] [24.0] [cxt 0] Deparser 'deparser': start
+[18:32:18.613] [bmv2] [D] [thread 65953] [24.0] [cxt 0] Deparsing header 'eth'
+[18:32:18.613] [bmv2] [D] [thread 65953] [24.0] [cxt 0] Deparser 'deparser': end
+[18:32:18.614] [bmv2] [D] [thread 65957] [24.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:33:18.000] [bmv2] [D] [thread 65952] [25.0] [cxt 0] Processing packet received on port 1
+[18:33:18.001] [bmv2] [D] [thread 65952] [25.0] [cxt 0] Parser 'parser': start
+[18:33:18.002] [bmv2] [D] [thread 65952] [25.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:33:18.003] [bmv2] [D] [thread 65952] [25.0] [cxt 0] Extracting header 'eth'
+[18:33:18.004] [bmv2] [D] [thread 65952] [25.0] [cxt 0] Parser state 'start': key is 86dd
+[18:33:18.005] [bmv2] [T] [thread 65952] [25.0] [cxt 0] Bytes parsed: 14
+[18:33:18.006] [bmv2] [D] [thread 65952] [25.0] [cxt 0] Parser 'parser': end
+[18:33:18.006] [bmv2] [D] [thread 65952] [25.0] [cxt 0] Pipeline 'ingress': start
+[18:33:18.007] [bmv2] [T] [thread 65952] [25.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:33:18.008] [bmv2] [D] [thread 65952] [25.0] [cxt 0] Pipeline 'ingress': end
+[18:33:18.009] [bmv2] [D] [thread 65952] [25.0] [cxt 0] Egress port is 0
+[18:33:18.010] [bmv2] [D] [thread 65953] [25.0] [cxt 0] Pipeline 'egress': start
+[18:33:18.010] [bmv2] [D] [thread 65953] [25.0] [cxt 0] Pipeline 'egress': end
+[18:33:18.011] [bmv2] [D] [thread 65953] [25.0] [cxt 0] Deparser 'deparser': start
+[18:33:18.011] [bmv2] [D] [thread 65953] [25.0] [cxt 0] Deparsing header 'eth'
+[18:33:18.011] [bmv2] [D] [thread 65953] [25.0] [cxt 0] Deparser 'deparser': end
+[18:33:18.012] [bmv2] [D] [thread 65957] [25.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:33:30.335] [bmv2] [D] [thread 65952] [26.0] [cxt 0] Processing packet received on port 0
+[18:33:30.336] [bmv2] [D] [thread 65952] [26.0] [cxt 0] Parser 'parser': start
+[18:33:30.337] [bmv2] [D] [thread 65952] [26.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:33:30.338] [bmv2] [D] [thread 65952] [26.0] [cxt 0] Extracting header 'eth'
+[18:33:30.338] [bmv2] [D] [thread 65952] [26.0] [cxt 0] Parser state 'start': key is 86dd
+[18:33:30.338] [bmv2] [T] [thread 65952] [26.0] [cxt 0] Bytes parsed: 14
+[18:33:30.338] [bmv2] [D] [thread 65952] [26.0] [cxt 0] Parser 'parser': end
+[18:33:30.338] [bmv2] [D] [thread 65952] [26.0] [cxt 0] Pipeline 'ingress': start
+[18:33:30.338] [bmv2] [T] [thread 65952] [26.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:33:30.338] [bmv2] [D] [thread 65952] [26.0] [cxt 0] Pipeline 'ingress': end
+[18:33:30.338] [bmv2] [D] [thread 65952] [26.0] [cxt 0] Egress port is 0
+[18:33:30.339] [bmv2] [D] [thread 65953] [26.0] [cxt 0] Pipeline 'egress': start
+[18:33:30.339] [bmv2] [D] [thread 65953] [26.0] [cxt 0] Pipeline 'egress': end
+[18:33:30.340] [bmv2] [D] [thread 65953] [26.0] [cxt 0] Deparser 'deparser': start
+[18:33:30.340] [bmv2] [D] [thread 65953] [26.0] [cxt 0] Deparsing header 'eth'
+[18:33:30.340] [bmv2] [D] [thread 65953] [26.0] [cxt 0] Deparser 'deparser': end
+[18:33:30.341] [bmv2] [D] [thread 65957] [26.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:35:37.264] [bmv2] [D] [thread 65952] [27.0] [cxt 0] Processing packet received on port 1
+[18:35:37.265] [bmv2] [D] [thread 65952] [27.0] [cxt 0] Parser 'parser': start
+[18:35:37.266] [bmv2] [D] [thread 65952] [27.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:35:37.266] [bmv2] [D] [thread 65952] [27.0] [cxt 0] Extracting header 'eth'
+[18:35:37.267] [bmv2] [D] [thread 65952] [27.0] [cxt 0] Parser state 'start': key is 86dd
+[18:35:37.268] [bmv2] [T] [thread 65952] [27.0] [cxt 0] Bytes parsed: 14
+[18:35:37.269] [bmv2] [D] [thread 65952] [27.0] [cxt 0] Parser 'parser': end
+[18:35:37.269] [bmv2] [D] [thread 65952] [27.0] [cxt 0] Pipeline 'ingress': start
+[18:35:37.270] [bmv2] [T] [thread 65952] [27.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:35:37.271] [bmv2] [D] [thread 65952] [27.0] [cxt 0] Pipeline 'ingress': end
+[18:35:37.272] [bmv2] [D] [thread 65952] [27.0] [cxt 0] Egress port is 0
+[18:35:37.273] [bmv2] [D] [thread 65953] [27.0] [cxt 0] Pipeline 'egress': start
+[18:35:37.273] [bmv2] [D] [thread 65953] [27.0] [cxt 0] Pipeline 'egress': end
+[18:35:37.274] [bmv2] [D] [thread 65953] [27.0] [cxt 0] Deparser 'deparser': start
+[18:35:37.275] [bmv2] [D] [thread 65953] [27.0] [cxt 0] Deparsing header 'eth'
+[18:35:37.276] [bmv2] [D] [thread 65953] [27.0] [cxt 0] Deparser 'deparser': end
+[18:35:37.277] [bmv2] [D] [thread 65957] [27.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:36:10.033] [bmv2] [D] [thread 65952] [28.0] [cxt 0] Processing packet received on port 0
+[18:36:10.033] [bmv2] [D] [thread 65952] [28.0] [cxt 0] Parser 'parser': start
+[18:36:10.033] [bmv2] [D] [thread 65952] [28.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:36:10.033] [bmv2] [D] [thread 65952] [28.0] [cxt 0] Extracting header 'eth'
+[18:36:10.034] [bmv2] [D] [thread 65952] [28.0] [cxt 0] Parser state 'start': key is 86dd
+[18:36:10.034] [bmv2] [T] [thread 65952] [28.0] [cxt 0] Bytes parsed: 14
+[18:36:10.034] [bmv2] [D] [thread 65952] [28.0] [cxt 0] Parser 'parser': end
+[18:36:10.034] [bmv2] [D] [thread 65952] [28.0] [cxt 0] Pipeline 'ingress': start
+[18:36:10.034] [bmv2] [T] [thread 65952] [28.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:36:10.034] [bmv2] [D] [thread 65952] [28.0] [cxt 0] Pipeline 'ingress': end
+[18:36:10.034] [bmv2] [D] [thread 65952] [28.0] [cxt 0] Egress port is 0
+[18:36:10.036] [bmv2] [D] [thread 65953] [28.0] [cxt 0] Pipeline 'egress': start
+[18:36:10.037] [bmv2] [D] [thread 65953] [28.0] [cxt 0] Pipeline 'egress': end
+[18:36:10.038] [bmv2] [D] [thread 65953] [28.0] [cxt 0] Deparser 'deparser': start
+[18:36:10.040] [bmv2] [D] [thread 65953] [28.0] [cxt 0] Deparsing header 'eth'
+[18:36:10.041] [bmv2] [D] [thread 65953] [28.0] [cxt 0] Deparser 'deparser': end
+[18:36:10.043] [bmv2] [D] [thread 65957] [28.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:40:15.813] [bmv2] [D] [thread 65952] [29.0] [cxt 0] Processing packet received on port 1
+[18:40:15.813] [bmv2] [D] [thread 65952] [29.0] [cxt 0] Parser 'parser': start
+[18:40:15.814] [bmv2] [D] [thread 65952] [29.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:40:15.814] [bmv2] [D] [thread 65952] [29.0] [cxt 0] Extracting header 'eth'
+[18:40:15.815] [bmv2] [D] [thread 65952] [29.0] [cxt 0] Parser state 'start': key is 86dd
+[18:40:15.816] [bmv2] [T] [thread 65952] [29.0] [cxt 0] Bytes parsed: 14
+[18:40:15.817] [bmv2] [D] [thread 65952] [29.0] [cxt 0] Parser 'parser': end
+[18:40:15.818] [bmv2] [D] [thread 65952] [29.0] [cxt 0] Pipeline 'ingress': start
+[18:40:15.818] [bmv2] [T] [thread 65952] [29.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:40:15.819] [bmv2] [D] [thread 65952] [29.0] [cxt 0] Pipeline 'ingress': end
+[18:40:15.820] [bmv2] [D] [thread 65952] [29.0] [cxt 0] Egress port is 0
+[18:40:15.820] [bmv2] [D] [thread 65953] [29.0] [cxt 0] Pipeline 'egress': start
+[18:40:15.821] [bmv2] [D] [thread 65953] [29.0] [cxt 0] Pipeline 'egress': end
+[18:40:15.823] [bmv2] [D] [thread 65953] [29.0] [cxt 0] Deparser 'deparser': start
+[18:40:15.823] [bmv2] [D] [thread 65953] [29.0] [cxt 0] Deparsing header 'eth'
+[18:40:15.823] [bmv2] [D] [thread 65953] [29.0] [cxt 0] Deparser 'deparser': end
+[18:40:15.824] [bmv2] [D] [thread 65957] [29.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:40:48.564] [bmv2] [D] [thread 65952] [30.0] [cxt 0] Processing packet received on port 0
+[18:40:48.565] [bmv2] [D] [thread 65952] [30.0] [cxt 0] Parser 'parser': start
+[18:40:48.566] [bmv2] [D] [thread 65952] [30.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:40:48.567] [bmv2] [D] [thread 65952] [30.0] [cxt 0] Extracting header 'eth'
+[18:40:48.567] [bmv2] [D] [thread 65952] [30.0] [cxt 0] Parser state 'start': key is 86dd
+[18:40:48.568] [bmv2] [T] [thread 65952] [30.0] [cxt 0] Bytes parsed: 14
+[18:40:48.569] [bmv2] [D] [thread 65952] [30.0] [cxt 0] Parser 'parser': end
+[18:40:48.570] [bmv2] [D] [thread 65952] [30.0] [cxt 0] Pipeline 'ingress': start
+[18:40:48.571] [bmv2] [T] [thread 65952] [30.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:40:48.572] [bmv2] [D] [thread 65952] [30.0] [cxt 0] Pipeline 'ingress': end
+[18:40:48.573] [bmv2] [D] [thread 65952] [30.0] [cxt 0] Egress port is 0
+[18:40:48.574] [bmv2] [D] [thread 65953] [30.0] [cxt 0] Pipeline 'egress': start
+[18:40:48.575] [bmv2] [D] [thread 65953] [30.0] [cxt 0] Pipeline 'egress': end
+[18:40:48.576] [bmv2] [D] [thread 65953] [30.0] [cxt 0] Deparser 'deparser': start
+[18:40:48.576] [bmv2] [D] [thread 65953] [30.0] [cxt 0] Deparsing header 'eth'
+[18:40:48.576] [bmv2] [D] [thread 65953] [30.0] [cxt 0] Deparser 'deparser': end
+[18:40:48.578] [bmv2] [D] [thread 65957] [30.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:59:22.308] [bmv2] [D] [thread 65952] [31.0] [cxt 0] Processing packet received on port 1
+[18:59:22.517] [bmv2] [D] [thread 65952] [31.0] [cxt 0] Parser 'parser': start
+[18:59:22.802] [bmv2] [D] [thread 65952] [31.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:59:22.951] [bmv2] [D] [thread 65952] [31.0] [cxt 0] Extracting header 'eth'
+[18:59:23.297] [bmv2] [D] [thread 65952] [31.0] [cxt 0] Parser state 'start': key is 86dd
+[18:59:23.299] [bmv2] [T] [thread 65952] [31.0] [cxt 0] Bytes parsed: 14
+[18:59:23.504] [bmv2] [D] [thread 65952] [31.0] [cxt 0] Parser 'parser': end
+[18:59:23.508] [bmv2] [D] [thread 65952] [31.0] [cxt 0] Pipeline 'ingress': start
+[18:59:23.956] [bmv2] [T] [thread 65952] [31.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:59:24.329] [bmv2] [D] [thread 65952] [31.0] [cxt 0] Pipeline 'ingress': end
+[18:59:24.330] [bmv2] [D] [thread 65952] [31.0] [cxt 0] Egress port is 0
+[18:59:24.821] [bmv2] [D] [thread 65952] [32.0] [cxt 0] Processing packet received on port 0
+[18:59:24.894] [bmv2] [D] [thread 65952] [32.0] [cxt 0] Parser 'parser': start
+[18:59:24.989] [bmv2] [D] [thread 65953] [31.0] [cxt 0] Pipeline 'egress': start
+[18:59:25.065] [bmv2] [D] [thread 65953] [31.0] [cxt 0] Pipeline 'egress': end
+[18:59:25.067] [bmv2] [D] [thread 65952] [32.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:59:25.137] [bmv2] [D] [thread 65953] [31.0] [cxt 0] Deparser 'deparser': start
+[18:59:25.169] [bmv2] [D] [thread 65953] [31.0] [cxt 0] Deparsing header 'eth'
+[18:59:25.207] [bmv2] [D] [thread 65952] [32.0] [cxt 0] Extracting header 'eth'
+[18:59:25.500] [bmv2] [D] [thread 65952] [32.0] [cxt 0] Parser state 'start': key is 86dd
+[18:59:25.503] [bmv2] [T] [thread 65952] [32.0] [cxt 0] Bytes parsed: 14
+[18:59:25.510] [bmv2] [D] [thread 65952] [32.0] [cxt 0] Parser 'parser': end
+[18:59:25.510] [bmv2] [D] [thread 65952] [32.0] [cxt 0] Pipeline 'ingress': start
+[18:59:25.333] [bmv2] [D] [thread 65953] [31.0] [cxt 0] Deparser 'deparser': end
+[18:59:25.538] [bmv2] [D] [thread 65957] [31.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:59:25.554] [bmv2] [T] [thread 65952] [32.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:59:25.596] [bmv2] [D] [thread 65952] [32.0] [cxt 0] Pipeline 'ingress': end
+[18:59:25.598] [bmv2] [D] [thread 65952] [32.0] [cxt 0] Egress port is 0
+[18:59:25.663] [bmv2] [D] [thread 65953] [32.0] [cxt 0] Pipeline 'egress': start
+[18:59:25.707] [bmv2] [D] [thread 65953] [32.0] [cxt 0] Pipeline 'egress': end
+[18:59:25.709] [bmv2] [D] [thread 65953] [32.0] [cxt 0] Deparser 'deparser': start
+[18:59:25.710] [bmv2] [D] [thread 65953] [32.0] [cxt 0] Deparsing header 'eth'
+[18:59:25.711] [bmv2] [D] [thread 65953] [32.0] [cxt 0] Deparser 'deparser': end
+[18:59:25.759] [bmv2] [D] [thread 65957] [32.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[19:17:40.421] [bmv2] [D] [thread 65952] [33.0] [cxt 0] Processing packet received on port 1
+[19:17:40.422] [bmv2] [D] [thread 65952] [33.0] [cxt 0] Parser 'parser': start
+[19:17:40.423] [bmv2] [D] [thread 65952] [33.0] [cxt 0] Parser 'parser' entering state 'start'
+[19:17:40.423] [bmv2] [D] [thread 65952] [33.0] [cxt 0] Extracting header 'eth'
+[19:17:40.423] [bmv2] [D] [thread 65952] [33.0] [cxt 0] Parser state 'start': key is 86dd
+[19:17:40.424] [bmv2] [T] [thread 65952] [33.0] [cxt 0] Bytes parsed: 14
+[19:17:40.424] [bmv2] [D] [thread 65952] [33.0] [cxt 0] Parser 'parser': end
+[19:17:40.424] [bmv2] [D] [thread 65952] [33.0] [cxt 0] Pipeline 'ingress': start
+[19:17:40.424] [bmv2] [T] [thread 65952] [33.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[19:17:40.425] [bmv2] [D] [thread 65952] [33.0] [cxt 0] Pipeline 'ingress': end
+[19:17:40.425] [bmv2] [D] [thread 65952] [33.0] [cxt 0] Egress port is 0
+[19:17:40.426] [bmv2] [D] [thread 65953] [33.0] [cxt 0] Pipeline 'egress': start
+[19:17:40.426] [bmv2] [D] [thread 65953] [33.0] [cxt 0] Pipeline 'egress': end
+[19:17:40.426] [bmv2] [D] [thread 65953] [33.0] [cxt 0] Deparser 'deparser': start
+[19:17:40.426] [bmv2] [D] [thread 65953] [33.0] [cxt 0] Deparsing header 'eth'
+[19:17:40.427] [bmv2] [D] [thread 65953] [33.0] [cxt 0] Deparser 'deparser': end
+[19:17:40.429] [bmv2] [D] [thread 65957] [33.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[19:19:51.479] [bmv2] [D] [thread 65952] [34.0] [cxt 0] Processing packet received on port 0
+[19:19:51.480] [bmv2] [D] [thread 65952] [34.0] [cxt 0] Parser 'parser': start
+[19:19:51.481] [bmv2] [D] [thread 65952] [34.0] [cxt 0] Parser 'parser' entering state 'start'
+[19:19:51.481] [bmv2] [D] [thread 65952] [34.0] [cxt 0] Extracting header 'eth'
+[19:19:51.482] [bmv2] [D] [thread 65952] [34.0] [cxt 0] Parser state 'start': key is 86dd
+[19:19:51.483] [bmv2] [T] [thread 65952] [34.0] [cxt 0] Bytes parsed: 14
+[19:19:51.484] [bmv2] [D] [thread 65952] [34.0] [cxt 0] Parser 'parser': end
+[19:19:51.484] [bmv2] [D] [thread 65952] [34.0] [cxt 0] Pipeline 'ingress': start
+[19:19:51.484] [bmv2] [T] [thread 65952] [34.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[19:19:51.485] [bmv2] [D] [thread 65952] [34.0] [cxt 0] Pipeline 'ingress': end
+[19:19:51.485] [bmv2] [D] [thread 65952] [34.0] [cxt 0] Egress port is 0
+[19:19:51.487] [bmv2] [D] [thread 65953] [34.0] [cxt 0] Pipeline 'egress': start
+[19:19:51.488] [bmv2] [D] [thread 65953] [34.0] [cxt 0] Pipeline 'egress': end
+[19:19:51.488] [bmv2] [D] [thread 65953] [34.0] [cxt 0] Deparser 'deparser': start
+[19:19:51.488] [bmv2] [D] [thread 65953] [34.0] [cxt 0] Deparsing header 'eth'
+[19:19:51.489] [bmv2] [D] [thread 65953] [34.0] [cxt 0] Deparser 'deparser': end
+[19:19:51.491] [bmv2] [D] [thread 65957] [34.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[19:50:26.480] [bmv2] [D] [thread 65952] [35.0] [cxt 0] Processing packet received on port 1
+[19:50:26.480] [bmv2] [D] [thread 65952] [35.0] [cxt 0] Parser 'parser': start
+[19:50:26.480] [bmv2] [D] [thread 65952] [35.0] [cxt 0] Parser 'parser' entering state 'start'
+[19:50:26.480] [bmv2] [D] [thread 65952] [35.0] [cxt 0] Extracting header 'eth'
+[19:50:26.480] [bmv2] [D] [thread 65952] [35.0] [cxt 0] Parser state 'start': key is 86dd
+[19:50:26.480] [bmv2] [T] [thread 65952] [35.0] [cxt 0] Bytes parsed: 14
+[19:50:26.480] [bmv2] [D] [thread 65952] [35.0] [cxt 0] Parser 'parser': end
+[19:50:26.480] [bmv2] [D] [thread 65952] [35.0] [cxt 0] Pipeline 'ingress': start
+[19:50:26.480] [bmv2] [T] [thread 65952] [35.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[19:50:26.481] [bmv2] [D] [thread 65952] [35.0] [cxt 0] Pipeline 'ingress': end
+[19:50:26.481] [bmv2] [D] [thread 65952] [35.0] [cxt 0] Egress port is 0
+[19:50:26.482] [bmv2] [D] [thread 65953] [35.0] [cxt 0] Pipeline 'egress': start
+[19:50:26.482] [bmv2] [D] [thread 65953] [35.0] [cxt 0] Pipeline 'egress': end
+[19:50:26.483] [bmv2] [D] [thread 65953] [35.0] [cxt 0] Deparser 'deparser': start
+[19:50:26.484] [bmv2] [D] [thread 65953] [35.0] [cxt 0] Deparsing header 'eth'
+[19:50:26.484] [bmv2] [D] [thread 65953] [35.0] [cxt 0] Deparser 'deparser': end
+[19:50:26.485] [bmv2] [D] [thread 65957] [35.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[20:14:43.727] [bmv2] [D] [thread 65952] [36.0] [cxt 0] Processing packet received on port 0
+[20:14:43.809] [bmv2] [D] [thread 65952] [36.0] [cxt 0] Parser 'parser': start
+[20:14:43.950] [bmv2] [D] [thread 65952] [36.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:14:43.983] [bmv2] [D] [thread 65952] [36.0] [cxt 0] Extracting header 'eth'
+[20:14:44.170] [bmv2] [D] [thread 65952] [36.0] [cxt 0] Parser state 'start': key is 86dd
+[20:14:44.192] [bmv2] [T] [thread 65952] [36.0] [cxt 0] Bytes parsed: 14
+[20:14:44.210] [bmv2] [D] [thread 65952] [36.0] [cxt 0] Parser 'parser': end
+[20:14:44.423] [bmv2] [D] [thread 65952] [36.0] [cxt 0] Pipeline 'ingress': start
+[20:14:44.440] [bmv2] [T] [thread 65952] [36.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[20:14:44.453] [bmv2] [D] [thread 65952] [36.0] [cxt 0] Pipeline 'ingress': end
+[20:14:44.543] [bmv2] [D] [thread 65952] [36.0] [cxt 0] Egress port is 0
+[20:14:44.556] [bmv2] [D] [thread 65953] [36.0] [cxt 0] Pipeline 'egress': start
+[20:14:44.612] [bmv2] [D] [thread 65953] [36.0] [cxt 0] Pipeline 'egress': end
+[20:14:44.632] [bmv2] [D] [thread 65953] [36.0] [cxt 0] Deparser 'deparser': start
+[20:14:44.671] [bmv2] [D] [thread 65953] [36.0] [cxt 0] Deparsing header 'eth'
+[20:14:44.695] [bmv2] [D] [thread 65953] [36.0] [cxt 0] Deparser 'deparser': end
+[20:14:44.712] [bmv2] [D] [thread 65957] [36.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[20:53:59.733] [bmv2] [D] [thread 65952] [37.0] [cxt 0] Processing packet received on port 1
+[20:53:59.751] [bmv2] [D] [thread 65952] [37.0] [cxt 0] Parser 'parser': start
+[20:53:59.971] [bmv2] [D] [thread 65952] [37.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:54:00.002] [bmv2] [D] [thread 65952] [37.0] [cxt 0] Extracting header 'eth'
+[20:54:00.036] [bmv2] [D] [thread 65952] [37.0] [cxt 0] Parser state 'start': key is 86dd
+[20:54:00.569] [bmv2] [T] [thread 65952] [37.0] [cxt 0] Bytes parsed: 14
+[20:54:00.570] [bmv2] [D] [thread 65952] [37.0] [cxt 0] Parser 'parser': end
+[20:54:00.571] [bmv2] [D] [thread 65952] [37.0] [cxt 0] Pipeline 'ingress': start
+[20:54:00.583] [bmv2] [T] [thread 65952] [37.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[20:54:00.585] [bmv2] [D] [thread 65952] [37.0] [cxt 0] Pipeline 'ingress': end
+[20:54:00.600] [bmv2] [D] [thread 65952] [37.0] [cxt 0] Egress port is 0
+[20:54:00.659] [bmv2] [D] [thread 65953] [37.0] [cxt 0] Pipeline 'egress': start
+[20:54:00.661] [bmv2] [D] [thread 65953] [37.0] [cxt 0] Pipeline 'egress': end
+[20:54:00.725] [bmv2] [D] [thread 65953] [37.0] [cxt 0] Deparser 'deparser': start
+[20:54:00.777] [bmv2] [D] [thread 65953] [37.0] [cxt 0] Deparsing header 'eth'
+[20:54:00.812] [bmv2] [D] [thread 65953] [37.0] [cxt 0] Deparser 'deparser': end
+[20:54:00.812] [bmv2] [D] [thread 65957] [37.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[21:20:00.450] [bmv2] [D] [thread 65952] [38.0] [cxt 0] Processing packet received on port 0
+[21:20:00.451] [bmv2] [D] [thread 65952] [38.0] [cxt 0] Parser 'parser': start
+[21:20:00.452] [bmv2] [D] [thread 65952] [38.0] [cxt 0] Parser 'parser' entering state 'start'
+[21:20:00.452] [bmv2] [D] [thread 65952] [38.0] [cxt 0] Extracting header 'eth'
+[21:20:00.453] [bmv2] [D] [thread 65952] [38.0] [cxt 0] Parser state 'start': key is 86dd
+[21:20:00.454] [bmv2] [T] [thread 65952] [38.0] [cxt 0] Bytes parsed: 14
+[21:20:00.454] [bmv2] [D] [thread 65952] [38.0] [cxt 0] Parser 'parser': end
+[21:20:00.455] [bmv2] [D] [thread 65952] [38.0] [cxt 0] Pipeline 'ingress': start
+[21:20:00.455] [bmv2] [T] [thread 65952] [38.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[21:20:00.456] [bmv2] [D] [thread 65952] [38.0] [cxt 0] Pipeline 'ingress': end
+[21:20:00.457] [bmv2] [D] [thread 65952] [38.0] [cxt 0] Egress port is 0
+[21:20:00.458] [bmv2] [D] [thread 65953] [38.0] [cxt 0] Pipeline 'egress': start
+[21:20:00.458] [bmv2] [D] [thread 65953] [38.0] [cxt 0] Pipeline 'egress': end
+[21:20:00.459] [bmv2] [D] [thread 65953] [38.0] [cxt 0] Deparser 'deparser': start
+[21:20:00.460] [bmv2] [D] [thread 65953] [38.0] [cxt 0] Deparsing header 'eth'
+[21:20:00.460] [bmv2] [D] [thread 65953] [38.0] [cxt 0] Deparser 'deparser': end
+[21:20:00.460] [bmv2] [D] [thread 65957] [38.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[21:53:08.627] [bmv2] [D] [thread 65952] [39.0] [cxt 0] Processing packet received on port 1
+[21:53:08.634] [bmv2] [D] [thread 65952] [39.0] [cxt 0] Parser 'parser': start
+[21:53:08.639] [bmv2] [D] [thread 65952] [39.0] [cxt 0] Parser 'parser' entering state 'start'
+[21:53:08.648] [bmv2] [D] [thread 65952] [39.0] [cxt 0] Extracting header 'eth'
+[21:53:08.656] [bmv2] [D] [thread 65952] [39.0] [cxt 0] Parser state 'start': key is 86dd
+[21:53:08.743] [bmv2] [T] [thread 65952] [39.0] [cxt 0] Bytes parsed: 14
+[21:53:08.901] [bmv2] [D] [thread 65952] [39.0] [cxt 0] Parser 'parser': end
+[21:53:08.909] [bmv2] [D] [thread 65952] [39.0] [cxt 0] Pipeline 'ingress': start
+[21:53:08.941] [bmv2] [T] [thread 65952] [39.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[21:53:08.956] [bmv2] [D] [thread 65952] [39.0] [cxt 0] Pipeline 'ingress': end
+[21:53:08.962] [bmv2] [D] [thread 65952] [39.0] [cxt 0] Egress port is 0
+[21:53:09.025] [bmv2] [D] [thread 65953] [39.0] [cxt 0] Pipeline 'egress': start
+[21:53:09.025] [bmv2] [D] [thread 65953] [39.0] [cxt 0] Pipeline 'egress': end
+[21:53:09.026] [bmv2] [D] [thread 65953] [39.0] [cxt 0] Deparser 'deparser': start
+[21:53:09.027] [bmv2] [D] [thread 65953] [39.0] [cxt 0] Deparsing header 'eth'
+[21:53:09.028] [bmv2] [D] [thread 65953] [39.0] [cxt 0] Deparser 'deparser': end
+[21:53:09.036] [bmv2] [D] [thread 65957] [39.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[22:21:12.192] [bmv2] [D] [thread 65952] [40.0] [cxt 0] Processing packet received on port 0
+[22:21:12.216] [bmv2] [D] [thread 65952] [40.0] [cxt 0] Parser 'parser': start
+[22:21:12.217] [bmv2] [D] [thread 65952] [40.0] [cxt 0] Parser 'parser' entering state 'start'
+[22:21:12.232] [bmv2] [D] [thread 65952] [40.0] [cxt 0] Extracting header 'eth'
+[22:21:12.335] [bmv2] [D] [thread 65952] [40.0] [cxt 0] Parser state 'start': key is 86dd
+[22:21:12.337] [bmv2] [T] [thread 65952] [40.0] [cxt 0] Bytes parsed: 14
+[22:21:12.394] [bmv2] [D] [thread 65952] [40.0] [cxt 0] Parser 'parser': end
+[22:21:12.492] [bmv2] [D] [thread 65952] [40.0] [cxt 0] Pipeline 'ingress': start
+[22:21:12.543] [bmv2] [T] [thread 65952] [40.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[22:21:12.552] [bmv2] [D] [thread 65952] [40.0] [cxt 0] Pipeline 'ingress': end
+[22:21:12.603] [bmv2] [D] [thread 65952] [40.0] [cxt 0] Egress port is 0
+[22:21:12.965] [bmv2] [D] [thread 65953] [40.0] [cxt 0] Pipeline 'egress': start
+[22:21:13.091] [bmv2] [D] [thread 65953] [40.0] [cxt 0] Pipeline 'egress': end
+[22:21:13.093] [bmv2] [D] [thread 65953] [40.0] [cxt 0] Deparser 'deparser': start
+[22:21:13.110] [bmv2] [D] [thread 65953] [40.0] [cxt 0] Deparsing header 'eth'
+[22:21:13.112] [bmv2] [D] [thread 65953] [40.0] [cxt 0] Deparser 'deparser': end
+[22:21:13.224] [bmv2] [D] [thread 65957] [40.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[00:54:50.827] [bmv2] [D] [thread 65952] [41.0] [cxt 0] Processing packet received on port 1
+[00:54:50.828] [bmv2] [D] [thread 65952] [41.0] [cxt 0] Parser 'parser': start
+[00:54:50.830] [bmv2] [D] [thread 65952] [41.0] [cxt 0] Parser 'parser' entering state 'start'
+[00:54:50.831] [bmv2] [D] [thread 65952] [41.0] [cxt 0] Extracting header 'eth'
+[00:54:50.832] [bmv2] [D] [thread 65952] [41.0] [cxt 0] Parser state 'start': key is 86dd
+[00:54:50.833] [bmv2] [T] [thread 65952] [41.0] [cxt 0] Bytes parsed: 14
+[00:54:50.834] [bmv2] [D] [thread 65952] [41.0] [cxt 0] Parser 'parser': end
+[00:54:50.835] [bmv2] [D] [thread 65952] [41.0] [cxt 0] Pipeline 'ingress': start
+[00:54:50.836] [bmv2] [T] [thread 65952] [41.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[00:54:50.837] [bmv2] [D] [thread 65952] [41.0] [cxt 0] Pipeline 'ingress': end
+[00:54:50.838] [bmv2] [D] [thread 65952] [41.0] [cxt 0] Egress port is 0
+[00:54:50.839] [bmv2] [D] [thread 65953] [41.0] [cxt 0] Pipeline 'egress': start
+[00:54:50.839] [bmv2] [D] [thread 65953] [41.0] [cxt 0] Pipeline 'egress': end
+[00:54:50.840] [bmv2] [D] [thread 65953] [41.0] [cxt 0] Deparser 'deparser': start
+[00:54:50.841] [bmv2] [D] [thread 65953] [41.0] [cxt 0] Deparsing header 'eth'
+[00:54:50.841] [bmv2] [D] [thread 65953] [41.0] [cxt 0] Deparser 'deparser': end
+[00:54:50.843] [bmv2] [D] [thread 65957] [41.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[01:27:36.859] [bmv2] [D] [thread 65952] [42.0] [cxt 0] Processing packet received on port 0
+[01:27:36.861] [bmv2] [D] [thread 65952] [42.0] [cxt 0] Parser 'parser': start
+[01:27:36.862] [bmv2] [D] [thread 65952] [42.0] [cxt 0] Parser 'parser' entering state 'start'
+[01:27:36.863] [bmv2] [D] [thread 65952] [42.0] [cxt 0] Extracting header 'eth'
+[01:27:36.864] [bmv2] [D] [thread 65952] [42.0] [cxt 0] Parser state 'start': key is 86dd
+[01:27:36.865] [bmv2] [T] [thread 65952] [42.0] [cxt 0] Bytes parsed: 14
+[01:27:36.865] [bmv2] [D] [thread 65952] [42.0] [cxt 0] Parser 'parser': end
+[01:27:36.866] [bmv2] [D] [thread 65952] [42.0] [cxt 0] Pipeline 'ingress': start
+[01:27:36.867] [bmv2] [T] [thread 65952] [42.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[01:27:36.868] [bmv2] [D] [thread 65952] [42.0] [cxt 0] Pipeline 'ingress': end
+[01:27:36.869] [bmv2] [D] [thread 65952] [42.0] [cxt 0] Egress port is 0
+[01:27:36.870] [bmv2] [D] [thread 65953] [42.0] [cxt 0] Pipeline 'egress': start
+[01:27:36.872] [bmv2] [D] [thread 65953] [42.0] [cxt 0] Pipeline 'egress': end
+[01:27:36.873] [bmv2] [D] [thread 65953] [42.0] [cxt 0] Deparser 'deparser': start
+[01:27:36.874] [bmv2] [D] [thread 65953] [42.0] [cxt 0] Deparsing header 'eth'
+[01:27:36.875] [bmv2] [D] [thread 65953] [42.0] [cxt 0] Deparser 'deparser': end
+[01:27:36.877] [bmv2] [D] [thread 65957] [42.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[02:32:33.332] [bmv2] [D] [thread 65952] [43.0] [cxt 0] Processing packet received on port 1
+[02:32:33.333] [bmv2] [D] [thread 65952] [43.0] [cxt 0] Parser 'parser': start
+[02:32:33.419] [bmv2] [D] [thread 65952] [43.0] [cxt 0] Parser 'parser' entering state 'start'
+[02:32:33.419] [bmv2] [D] [thread 65952] [43.0] [cxt 0] Extracting header 'eth'
+[02:32:33.421] [bmv2] [D] [thread 65952] [43.0] [cxt 0] Parser state 'start': key is 86dd
+[02:32:33.472] [bmv2] [T] [thread 65952] [43.0] [cxt 0] Bytes parsed: 14
+[02:32:33.491] [bmv2] [D] [thread 65952] [43.0] [cxt 0] Parser 'parser': end
+[02:32:33.568] [bmv2] [D] [thread 65952] [43.0] [cxt 0] Pipeline 'ingress': start
+[02:32:33.685] [bmv2] [T] [thread 65952] [43.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[02:32:33.779] [bmv2] [D] [thread 65952] [43.0] [cxt 0] Pipeline 'ingress': end
+[02:32:33.790] [bmv2] [D] [thread 65952] [43.0] [cxt 0] Egress port is 0
+[02:32:34.189] [bmv2] [D] [thread 65953] [43.0] [cxt 0] Pipeline 'egress': start
+[02:32:34.189] [bmv2] [D] [thread 65953] [43.0] [cxt 0] Pipeline 'egress': end
+[02:32:34.232] [bmv2] [D] [thread 65953] [43.0] [cxt 0] Deparser 'deparser': start
+[02:32:34.253] [bmv2] [D] [thread 65953] [43.0] [cxt 0] Deparsing header 'eth'
+[02:32:34.274] [bmv2] [D] [thread 65953] [43.0] [cxt 0] Deparser 'deparser': end
+[02:32:34.331] [bmv2] [D] [thread 65957] [43.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[03:10:31.549] [bmv2] [D] [thread 65952] [44.0] [cxt 0] Processing packet received on port 0
+[03:10:31.549] [bmv2] [D] [thread 65952] [44.0] [cxt 0] Parser 'parser': start
+[03:10:31.550] [bmv2] [D] [thread 65952] [44.0] [cxt 0] Parser 'parser' entering state 'start'
+[03:10:31.550] [bmv2] [D] [thread 65952] [44.0] [cxt 0] Extracting header 'eth'
+[03:10:31.550] [bmv2] [D] [thread 65952] [44.0] [cxt 0] Parser state 'start': key is 86dd
+[03:10:31.550] [bmv2] [T] [thread 65952] [44.0] [cxt 0] Bytes parsed: 14
+[03:10:31.550] [bmv2] [D] [thread 65952] [44.0] [cxt 0] Parser 'parser': end
+[03:10:31.550] [bmv2] [D] [thread 65952] [44.0] [cxt 0] Pipeline 'ingress': start
+[03:10:31.550] [bmv2] [T] [thread 65952] [44.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[03:10:31.550] [bmv2] [D] [thread 65952] [44.0] [cxt 0] Pipeline 'ingress': end
+[03:10:31.550] [bmv2] [D] [thread 65952] [44.0] [cxt 0] Egress port is 0
+[03:10:31.550] [bmv2] [D] [thread 65953] [44.0] [cxt 0] Pipeline 'egress': start
+[03:10:31.551] [bmv2] [D] [thread 65953] [44.0] [cxt 0] Pipeline 'egress': end
+[03:10:31.551] [bmv2] [D] [thread 65953] [44.0] [cxt 0] Deparser 'deparser': start
+[03:10:31.551] [bmv2] [D] [thread 65953] [44.0] [cxt 0] Deparsing header 'eth'
+[03:10:31.551] [bmv2] [D] [thread 65953] [44.0] [cxt 0] Deparser 'deparser': end
+[03:10:31.552] [bmv2] [D] [thread 65957] [44.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:36:30.043] [bmv2] [D] [thread 65952] [45.0] [cxt 0] Processing packet received on port 0
+[04:36:30.132] [bmv2] [D] [thread 65952] [45.0] [cxt 0] Parser 'parser': start
+[04:36:30.500] [bmv2] [D] [thread 65952] [45.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:36:30.558] [bmv2] [D] [thread 65952] [45.0] [cxt 0] Extracting header 'eth'
+[04:36:30.592] [bmv2] [D] [thread 65952] [45.0] [cxt 0] Parser state 'start': key is 86dd
+[04:36:30.637] [bmv2] [T] [thread 65952] [45.0] [cxt 0] Bytes parsed: 14
+[04:36:30.687] [bmv2] [D] [thread 65952] [45.0] [cxt 0] Parser 'parser': end
+[04:36:30.750] [bmv2] [D] [thread 65952] [45.0] [cxt 0] Pipeline 'ingress': start
+[04:36:30.858] [bmv2] [T] [thread 65952] [45.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[04:36:30.927] [bmv2] [D] [thread 65952] [45.0] [cxt 0] Pipeline 'ingress': end
+[04:36:30.935] [bmv2] [D] [thread 65952] [45.0] [cxt 0] Egress port is 0
+[04:36:30.936] [bmv2] [D] [thread 65953] [45.0] [cxt 0] Pipeline 'egress': start
+[04:36:30.944] [bmv2] [D] [thread 65953] [45.0] [cxt 0] Pipeline 'egress': end
+[04:36:31.011] [bmv2] [D] [thread 65953] [45.0] [cxt 0] Deparser 'deparser': start
+[04:36:31.061] [bmv2] [D] [thread 65953] [45.0] [cxt 0] Deparsing header 'eth'
+[04:36:31.071] [bmv2] [D] [thread 65953] [45.0] [cxt 0] Deparser 'deparser': end
+[04:36:30.944] [bmv2] [D] [thread 65952] [46.0] [cxt 0] Processing packet received on port 1
+[04:36:31.120] [bmv2] [D] [thread 65952] [46.0] [cxt 0] Parser 'parser': start
+[04:36:31.140] [bmv2] [D] [thread 65952] [46.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:36:31.146] [bmv2] [D] [thread 65957] [45.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:36:31.251] [bmv2] [D] [thread 65952] [46.0] [cxt 0] Extracting header 'eth'
+[04:36:31.288] [bmv2] [D] [thread 65952] [46.0] [cxt 0] Parser state 'start': key is 86dd
+[04:36:31.299] [bmv2] [T] [thread 65952] [46.0] [cxt 0] Bytes parsed: 14
+[04:36:31.300] [bmv2] [D] [thread 65952] [46.0] [cxt 0] Parser 'parser': end
+[04:36:31.332] [bmv2] [D] [thread 65952] [46.0] [cxt 0] Pipeline 'ingress': start
+[04:36:31.353] [bmv2] [T] [thread 65952] [46.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[04:36:31.354] [bmv2] [D] [thread 65952] [46.0] [cxt 0] Pipeline 'ingress': end
+[04:36:31.363] [bmv2] [D] [thread 65952] [46.0] [cxt 0] Egress port is 0
+[04:36:31.676] [bmv2] [D] [thread 65953] [46.0] [cxt 0] Pipeline 'egress': start
+[04:36:31.725] [bmv2] [D] [thread 65953] [46.0] [cxt 0] Pipeline 'egress': end
+[04:36:31.751] [bmv2] [D] [thread 65953] [46.0] [cxt 0] Deparser 'deparser': start
+[04:36:31.850] [bmv2] [D] [thread 65953] [46.0] [cxt 0] Deparsing header 'eth'
+[04:36:31.851] [bmv2] [D] [thread 65953] [46.0] [cxt 0] Deparser 'deparser': end
+[04:36:31.874] [bmv2] [D] [thread 65957] [46.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[10:02:31.843] [bmv2] [D] [thread 65952] [47.0] [cxt 0] Processing packet received on port 0
+[10:02:31.856] [bmv2] [D] [thread 65952] [47.0] [cxt 0] Parser 'parser': start
+[10:02:32.041] [bmv2] [D] [thread 65952] [47.0] [cxt 0] Parser 'parser' entering state 'start'
+[10:02:32.470] [bmv2] [D] [thread 65952] [47.0] [cxt 0] Extracting header 'eth'
+[10:02:32.519] [bmv2] [D] [thread 65952] [47.0] [cxt 0] Parser state 'start': key is 86dd
+[10:02:32.519] [bmv2] [T] [thread 65952] [47.0] [cxt 0] Bytes parsed: 14
+[10:02:32.520] [bmv2] [D] [thread 65952] [47.0] [cxt 0] Parser 'parser': end
+[10:02:32.521] [bmv2] [D] [thread 65952] [47.0] [cxt 0] Pipeline 'ingress': start
+[10:02:32.524] [bmv2] [T] [thread 65952] [47.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[10:02:32.526] [bmv2] [D] [thread 65952] [47.0] [cxt 0] Pipeline 'ingress': end
+[10:44:07.087] [bmv2] [D] [thread 65952] [47.0] [cxt 0] Egress port is 0
+[10:44:07.120] [bmv2] [D] [thread 65952] [48.0] [cxt 0] Processing packet received on port 1
+[10:44:07.146] [bmv2] [D] [thread 65952] [48.0] [cxt 0] Parser 'parser': start
+[10:44:07.147] [bmv2] [D] [thread 65952] [48.0] [cxt 0] Parser 'parser' entering state 'start'
+[10:44:07.148] [bmv2] [D] [thread 65952] [48.0] [cxt 0] Extracting header 'eth'
+[10:44:07.155] [bmv2] [D] [thread 65952] [48.0] [cxt 0] Parser state 'start': key is 86dd
+[10:44:07.202] [bmv2] [T] [thread 65952] [48.0] [cxt 0] Bytes parsed: 14
+[10:44:07.202] [bmv2] [D] [thread 65952] [48.0] [cxt 0] Parser 'parser': end
+[10:44:07.294] [bmv2] [D] [thread 65952] [48.0] [cxt 0] Pipeline 'ingress': start
+[10:44:07.367] [bmv2] [T] [thread 65952] [48.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[10:44:07.368] [bmv2] [D] [thread 65952] [48.0] [cxt 0] Pipeline 'ingress': end
+[10:44:07.386] [bmv2] [D] [thread 65952] [48.0] [cxt 0] Egress port is 0
+[10:44:07.176] [bmv2] [D] [thread 65953] [47.0] [cxt 0] Pipeline 'egress': start
+[10:44:07.437] [bmv2] [D] [thread 65953] [47.0] [cxt 0] Pipeline 'egress': end
+[10:44:07.438] [bmv2] [D] [thread 65953] [47.0] [cxt 0] Deparser 'deparser': start
+[10:44:07.439] [bmv2] [D] [thread 65953] [47.0] [cxt 0] Deparsing header 'eth'
+[10:44:07.440] [bmv2] [D] [thread 65953] [47.0] [cxt 0] Deparser 'deparser': end
+[10:44:07.458] [bmv2] [D] [thread 65953] [48.0] [cxt 0] Pipeline 'egress': start
+[10:44:07.497] [bmv2] [D] [thread 65953] [48.0] [cxt 0] Pipeline 'egress': end
+[10:44:07.505] [bmv2] [D] [thread 65953] [48.0] [cxt 0] Deparser 'deparser': start
+[10:44:07.465] [bmv2] [D] [thread 65957] [47.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[10:44:07.550] [bmv2] [D] [thread 65953] [48.0] [cxt 0] Deparsing header 'eth'
+[10:44:07.586] [bmv2] [D] [thread 65953] [48.0] [cxt 0] Deparser 'deparser': end
+[10:44:07.598] [bmv2] [D] [thread 65957] [48.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[11:41:40.766] [bmv2] [D] [thread 65952] [49.0] [cxt 0] Processing packet received on port 1
+[11:41:40.768] [bmv2] [D] [thread 65952] [49.0] [cxt 0] Parser 'parser': start
+[11:41:40.769] [bmv2] [D] [thread 65952] [49.0] [cxt 0] Parser 'parser' entering state 'start'
+[11:41:40.770] [bmv2] [D] [thread 65952] [49.0] [cxt 0] Extracting header 'eth'
+[11:41:40.771] [bmv2] [D] [thread 65952] [49.0] [cxt 0] Parser state 'start': key is 86dd
+[11:41:40.771] [bmv2] [T] [thread 65952] [49.0] [cxt 0] Bytes parsed: 14
+[11:41:40.772] [bmv2] [D] [thread 65952] [49.0] [cxt 0] Parser 'parser': end
+[11:41:40.773] [bmv2] [D] [thread 65952] [49.0] [cxt 0] Pipeline 'ingress': start
+[11:41:40.774] [bmv2] [T] [thread 65952] [49.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[11:41:40.776] [bmv2] [D] [thread 65952] [49.0] [cxt 0] Pipeline 'ingress': end
+[11:41:40.777] [bmv2] [D] [thread 65952] [49.0] [cxt 0] Egress port is 0
+[11:41:40.778] [bmv2] [D] [thread 65953] [49.0] [cxt 0] Pipeline 'egress': start
+[11:41:40.779] [bmv2] [D] [thread 65953] [49.0] [cxt 0] Pipeline 'egress': end
+[11:41:40.781] [bmv2] [D] [thread 65953] [49.0] [cxt 0] Deparser 'deparser': start
+[11:41:40.782] [bmv2] [D] [thread 65953] [49.0] [cxt 0] Deparsing header 'eth'
+[11:41:40.782] [bmv2] [D] [thread 65953] [49.0] [cxt 0] Deparser 'deparser': end
+[11:41:40.784] [bmv2] [D] [thread 65957] [49.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[11:43:51.763] [bmv2] [D] [thread 65952] [50.0] [cxt 0] Processing packet received on port 0
+[11:43:51.763] [bmv2] [D] [thread 65952] [50.0] [cxt 0] Parser 'parser': start
+[11:43:51.764] [bmv2] [D] [thread 65952] [50.0] [cxt 0] Parser 'parser' entering state 'start'
+[11:43:51.766] [bmv2] [D] [thread 65952] [50.0] [cxt 0] Extracting header 'eth'
+[11:43:51.767] [bmv2] [D] [thread 65952] [50.0] [cxt 0] Parser state 'start': key is 86dd
+[11:43:51.768] [bmv2] [T] [thread 65952] [50.0] [cxt 0] Bytes parsed: 14
+[11:43:51.769] [bmv2] [D] [thread 65952] [50.0] [cxt 0] Parser 'parser': end
+[11:43:51.770] [bmv2] [D] [thread 65952] [50.0] [cxt 0] Pipeline 'ingress': start
+[11:43:51.772] [bmv2] [T] [thread 65952] [50.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[11:43:51.772] [bmv2] [D] [thread 65952] [50.0] [cxt 0] Pipeline 'ingress': end
+[11:43:51.773] [bmv2] [D] [thread 65952] [50.0] [cxt 0] Egress port is 0
+[11:43:51.774] [bmv2] [D] [thread 65953] [50.0] [cxt 0] Pipeline 'egress': start
+[11:43:51.775] [bmv2] [D] [thread 65953] [50.0] [cxt 0] Pipeline 'egress': end
+[11:43:51.776] [bmv2] [D] [thread 65953] [50.0] [cxt 0] Deparser 'deparser': start
+[11:43:51.777] [bmv2] [D] [thread 65953] [50.0] [cxt 0] Deparsing header 'eth'
+[11:43:51.778] [bmv2] [D] [thread 65953] [50.0] [cxt 0] Deparser 'deparser': end
+[11:43:51.779] [bmv2] [D] [thread 65957] [50.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[12:43:10.216] [bmv2] [D] [thread 65952] [51.0] [cxt 0] Processing packet received on port 0
+[12:43:10.216] [bmv2] [D] [thread 65952] [51.0] [cxt 0] Parser 'parser': start
+[12:43:10.216] [bmv2] [D] [thread 65952] [51.0] [cxt 0] Parser 'parser' entering state 'start'
+[12:43:10.216] [bmv2] [D] [thread 65952] [51.0] [cxt 0] Extracting header 'eth'
+[12:43:10.217] [bmv2] [D] [thread 65952] [51.0] [cxt 0] Parser state 'start': key is 86dd
+[12:43:10.288] [bmv2] [T] [thread 65952] [51.0] [cxt 0] Bytes parsed: 14
+[12:43:10.289] [bmv2] [D] [thread 65952] [51.0] [cxt 0] Parser 'parser': end
+[12:43:10.290] [bmv2] [D] [thread 65952] [51.0] [cxt 0] Pipeline 'ingress': start
+[12:43:10.291] [bmv2] [T] [thread 65952] [51.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[12:43:10.355] [bmv2] [D] [thread 65952] [51.0] [cxt 0] Pipeline 'ingress': end
+[12:43:10.356] [bmv2] [D] [thread 65952] [51.0] [cxt 0] Egress port is 0
+[12:43:10.432] [bmv2] [D] [thread 65953] [51.0] [cxt 0] Pipeline 'egress': start
+[12:43:10.432] [bmv2] [D] [thread 65953] [51.0] [cxt 0] Pipeline 'egress': end
+[12:43:10.504] [bmv2] [D] [thread 65953] [51.0] [cxt 0] Deparser 'deparser': start
+[12:43:10.505] [bmv2] [D] [thread 65953] [51.0] [cxt 0] Deparsing header 'eth'
+[12:43:10.506] [bmv2] [D] [thread 65953] [51.0] [cxt 0] Deparser 'deparser': end
+[12:43:10.507] [bmv2] [D] [thread 65957] [51.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[12:47:12.825] [bmv2] [D] [thread 65952] [52.0] [cxt 0] Processing packet received on port 1
+[12:47:12.826] [bmv2] [D] [thread 65952] [52.0] [cxt 0] Parser 'parser': start
+[12:47:12.827] [bmv2] [D] [thread 65952] [52.0] [cxt 0] Parser 'parser' entering state 'start'
+[12:47:12.829] [bmv2] [D] [thread 65952] [52.0] [cxt 0] Extracting header 'eth'
+[12:47:12.829] [bmv2] [D] [thread 65952] [52.0] [cxt 0] Parser state 'start': key is 86dd
+[12:47:12.830] [bmv2] [T] [thread 65952] [52.0] [cxt 0] Bytes parsed: 14
+[12:47:12.830] [bmv2] [D] [thread 65952] [52.0] [cxt 0] Parser 'parser': end
+[12:47:12.831] [bmv2] [D] [thread 65952] [52.0] [cxt 0] Pipeline 'ingress': start
+[12:47:12.831] [bmv2] [T] [thread 65952] [52.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[12:47:12.832] [bmv2] [D] [thread 65952] [52.0] [cxt 0] Pipeline 'ingress': end
+[12:47:12.832] [bmv2] [D] [thread 65952] [52.0] [cxt 0] Egress port is 0
+[12:47:12.833] [bmv2] [D] [thread 65953] [52.0] [cxt 0] Pipeline 'egress': start
+[12:47:12.833] [bmv2] [D] [thread 65953] [52.0] [cxt 0] Pipeline 'egress': end
+[12:47:12.834] [bmv2] [D] [thread 65953] [52.0] [cxt 0] Deparser 'deparser': start
+[12:47:12.834] [bmv2] [D] [thread 65953] [52.0] [cxt 0] Deparsing header 'eth'
+[12:47:12.835] [bmv2] [D] [thread 65953] [52.0] [cxt 0] Deparser 'deparser': end
+[12:47:12.836] [bmv2] [D] [thread 65957] [52.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[17:44:57.081] [bmv2] [D] [thread 65952] [53.0] [cxt 0] Processing packet received on port 1
+[17:44:57.081] [bmv2] [D] [thread 65952] [53.0] [cxt 0] Parser 'parser': start
+[17:44:57.082] [bmv2] [D] [thread 65952] [53.0] [cxt 0] Parser 'parser' entering state 'start'
+[17:44:57.083] [bmv2] [D] [thread 65952] [53.0] [cxt 0] Extracting header 'eth'
+[17:44:57.083] [bmv2] [D] [thread 65952] [53.0] [cxt 0] Parser state 'start': key is 86dd
+[17:44:57.084] [bmv2] [T] [thread 65952] [53.0] [cxt 0] Bytes parsed: 14
+[17:44:57.084] [bmv2] [D] [thread 65952] [53.0] [cxt 0] Parser 'parser': end
+[17:44:57.084] [bmv2] [D] [thread 65952] [53.0] [cxt 0] Pipeline 'ingress': start
+[17:44:57.085] [bmv2] [T] [thread 65952] [53.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[17:44:57.085] [bmv2] [D] [thread 65952] [53.0] [cxt 0] Pipeline 'ingress': end
+[17:44:57.086] [bmv2] [D] [thread 65952] [53.0] [cxt 0] Egress port is 0
+[17:44:57.089] [bmv2] [D] [thread 65953] [53.0] [cxt 0] Pipeline 'egress': start
+[17:44:57.090] [bmv2] [D] [thread 65953] [53.0] [cxt 0] Pipeline 'egress': end
+[17:44:57.090] [bmv2] [D] [thread 65953] [53.0] [cxt 0] Deparser 'deparser': start
+[17:44:57.091] [bmv2] [D] [thread 65953] [53.0] [cxt 0] Deparsing header 'eth'
+[17:44:57.092] [bmv2] [D] [thread 65953] [53.0] [cxt 0] Deparser 'deparser': end
+[17:44:57.092] [bmv2] [D] [thread 65957] [53.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[17:45:07.392] [bmv2] [D] [thread 65952] [54.0] [cxt 0] Processing packet received on port 0
+[17:45:07.418] [bmv2] [D] [thread 65952] [54.0] [cxt 0] Parser 'parser': start
+[17:45:07.427] [bmv2] [D] [thread 65952] [54.0] [cxt 0] Parser 'parser' entering state 'start'
+[17:45:07.468] [bmv2] [D] [thread 65952] [54.0] [cxt 0] Extracting header 'eth'
+[17:45:07.484] [bmv2] [D] [thread 65952] [54.0] [cxt 0] Parser state 'start': key is 86dd
+[17:45:07.510] [bmv2] [T] [thread 65952] [54.0] [cxt 0] Bytes parsed: 14
+[17:45:07.534] [bmv2] [D] [thread 65952] [54.0] [cxt 0] Parser 'parser': end
+[17:45:07.555] [bmv2] [D] [thread 65952] [54.0] [cxt 0] Pipeline 'ingress': start
+[17:45:07.687] [bmv2] [T] [thread 65952] [54.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[17:45:07.702] [bmv2] [D] [thread 65952] [54.0] [cxt 0] Pipeline 'ingress': end
+[17:45:07.750] [bmv2] [D] [thread 65952] [54.0] [cxt 0] Egress port is 0
+[17:45:07.845] [bmv2] [D] [thread 65953] [54.0] [cxt 0] Pipeline 'egress': start
+[17:45:07.858] [bmv2] [D] [thread 65953] [54.0] [cxt 0] Pipeline 'egress': end
+[17:45:07.971] [bmv2] [D] [thread 65953] [54.0] [cxt 0] Deparser 'deparser': start
+[17:45:07.987] [bmv2] [D] [thread 65953] [54.0] [cxt 0] Deparsing header 'eth'
+[17:45:07.997] [bmv2] [D] [thread 65953] [54.0] [cxt 0] Deparser 'deparser': end
+[17:45:08.117] [bmv2] [D] [thread 65957] [54.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:40:00.715] [bmv2] [D] [thread 65952] [55.0] [cxt 0] Processing packet received on port 1
+[18:40:00.717] [bmv2] [D] [thread 65952] [55.0] [cxt 0] Parser 'parser': start
+[18:40:00.719] [bmv2] [D] [thread 65952] [55.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:40:00.721] [bmv2] [D] [thread 65952] [55.0] [cxt 0] Extracting header 'eth'
+[18:40:00.722] [bmv2] [D] [thread 65952] [55.0] [cxt 0] Parser state 'start': key is 86dd
+[18:40:00.724] [bmv2] [T] [thread 65952] [55.0] [cxt 0] Bytes parsed: 14
+[18:40:00.727] [bmv2] [D] [thread 65952] [55.0] [cxt 0] Parser 'parser': end
+[18:40:00.728] [bmv2] [D] [thread 65952] [55.0] [cxt 0] Pipeline 'ingress': start
+[18:40:00.729] [bmv2] [T] [thread 65952] [55.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:40:00.732] [bmv2] [D] [thread 65952] [55.0] [cxt 0] Pipeline 'ingress': end
+[18:40:00.733] [bmv2] [D] [thread 65952] [55.0] [cxt 0] Egress port is 0
+[18:40:00.734] [bmv2] [D] [thread 65953] [55.0] [cxt 0] Pipeline 'egress': start
+[18:40:00.735] [bmv2] [D] [thread 65953] [55.0] [cxt 0] Pipeline 'egress': end
+[18:40:00.736] [bmv2] [D] [thread 65953] [55.0] [cxt 0] Deparser 'deparser': start
+[18:40:00.737] [bmv2] [D] [thread 65953] [55.0] [cxt 0] Deparsing header 'eth'
+[18:40:00.739] [bmv2] [D] [thread 65953] [55.0] [cxt 0] Deparser 'deparser': end
+[18:40:00.743] [bmv2] [D] [thread 65957] [55.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[18:46:33.903] [bmv2] [D] [thread 65952] [56.0] [cxt 0] Processing packet received on port 0
+[18:46:33.904] [bmv2] [D] [thread 65952] [56.0] [cxt 0] Parser 'parser': start
+[18:46:33.907] [bmv2] [D] [thread 65952] [56.0] [cxt 0] Parser 'parser' entering state 'start'
+[18:46:33.908] [bmv2] [D] [thread 65952] [56.0] [cxt 0] Extracting header 'eth'
+[18:46:33.910] [bmv2] [D] [thread 65952] [56.0] [cxt 0] Parser state 'start': key is 86dd
+[18:46:33.913] [bmv2] [T] [thread 65952] [56.0] [cxt 0] Bytes parsed: 14
+[18:46:33.914] [bmv2] [D] [thread 65952] [56.0] [cxt 0] Parser 'parser': end
+[18:46:33.916] [bmv2] [D] [thread 65952] [56.0] [cxt 0] Pipeline 'ingress': start
+[18:46:33.919] [bmv2] [T] [thread 65952] [56.0] [cxt 0] /vagrant/lab3/sml-eth/p4/main.p4(148) Condition "hdr.sml.isValid()" (node_2) is false
+[18:46:33.920] [bmv2] [D] [thread 65952] [56.0] [cxt 0] Pipeline 'ingress': end
+[18:46:33.921] [bmv2] [D] [thread 65952] [56.0] [cxt 0] Egress port is 0
+[18:46:33.924] [bmv2] [D] [thread 65953] [56.0] [cxt 0] Pipeline 'egress': start
+[18:46:33.925] [bmv2] [D] [thread 65953] [56.0] [cxt 0] Pipeline 'egress': end
+[18:46:33.926] [bmv2] [D] [thread 65953] [56.0] [cxt 0] Deparser 'deparser': start
+[18:46:33.928] [bmv2] [D] [thread 65953] [56.0] [cxt 0] Deparsing header 'eth'
+[18:46:33.930] [bmv2] [D] [thread 65953] [56.0] [cxt 0] Deparser 'deparser': end
+[18:46:33.931] [bmv2] [D] [thread 65957] [56.0] [cxt 0] Transmitting packet of size 70 out of port 0
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory

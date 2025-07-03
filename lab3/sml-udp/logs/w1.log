@@ -1,0 +1,5 @@
+[W][10.0.0.2][02:51:35.456930] Started...
+[W][10.0.0.2][02:51:35.492804] Worker 1 using scapy for packet construction and raw sockets for transmission
+[W][10.0.0.2][02:51:35.596776] Starting AllReduce iteration 0 with 1320 elements
+[W][10.0.0.2][02:51:35.815893] FAIL: 'SwitchML' object has no attribute '__rdiv__'
+[W][10.0.0.2][02:51:35.878749] Done

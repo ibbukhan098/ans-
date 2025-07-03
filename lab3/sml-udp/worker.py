@@ -1,6 +1,6 @@
 """
- Debug version that processes only one chunk to isolate the aggregation issue
- """
+Level 2: In-network AllReduce over UDP
+"""
 
 from lib.gen import GenInts, GenMultipleOfInRange
 from lib.test import CreateTestData, RunIntTest
@@ -105,8 +105,16 @@ def create_raw_udp_packet(src_ip, dst_ip, src_port, dst_port, payload, src_mac, 
     return packet
 
 def AllReduce(rank, data, result):
-    """Process ALL chunks, not just the first one"""
-    Log(f"Worker {rank}: Processing ALL chunks")
+    """
+    Perform in-network all-reduce over UDP
+
+    :param int   rank: the worker's rank
+    :param [int] data: the input vector for this worker
+    :param [int] result: the output vector
+
+    This function is blocking, i.e. only returns with a result or error
+    """
+    Log(f"Worker {rank}: Starting AllReduce with {len(data)} values")
 
     # Get network information
     src_mac = get_worker_mac(rank)
@@ -115,8 +123,6 @@ def AllReduce(rank, data, result):
     dst_ip = "255.255.255.255"
     src_port = 10000 + rank
     dst_port = SWITCHML_PORT
-
-    Log(f"Worker {rank}: Processing {len(data)} values in chunks of {CHUNK_SIZE}")
 
     interface = "eth0"
 
@@ -127,7 +133,7 @@ def AllReduce(rank, data, result):
         Log(f"Worker {rank}: Created raw send socket on {interface}")
     except Exception as e:
         Log(f"Worker {rank}: ERROR - Could not create raw socket: {e}")
-        return False
+        raise RuntimeError(f"AllReduce failed: {e}")
 
     # Create UDP socket for receiving
     try:
@@ -135,100 +141,90 @@ def AllReduce(rank, data, result):
         recv_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         recv_sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         recv_sock.bind(('', src_port))
-        recv_sock.settimeout(10.0)  # Shorter timeout since we know it works
+        recv_sock.settimeout(10.0)
         Log(f"Worker {rank}: Created UDP receive socket on port {src_port}")
     except Exception as e:
         Log(f"Worker {rank}: ERROR - Could not create receive socket: {e}")
         send_sock.close()
-        return False
+        raise RuntimeError(f"AllReduce failed: {e}")
 
     try:
         num_workers = 3
-        num_chunks = (len(data) + CHUNK_SIZE - 1) // CHUNK_SIZE  # Ceiling division
+        # Split the data into chunks
+        chunks = [data[i:i + CHUNK_SIZE] for i in range(0, len(data), CHUNK_SIZE)]
 
         # Staggered delay based on rank
         delay = 1.0 + (rank * 0.5)
         Log(f"Worker {rank}: Waiting {delay} seconds before sending...")
         time.sleep(delay)
 
-        # Process each chunk
-        for chunk_id in range(num_chunks):
-            start_idx = chunk_id * CHUNK_SIZE
-            end_idx = min(start_idx + CHUNK_SIZE, len(data))
-            chunk_values = data[start_idx:end_idx]
+        MAX_RETRIES = 5
+        for chunk_id, chunk in enumerate(chunks):
+            # Pad chunk to CHUNK_SIZE if needed
+            padded = chunk + [0] * (CHUNK_SIZE - len(chunk))
 
-            # Pad chunk to 4 values if needed
-            while len(chunk_values) < 4:
-                chunk_values.append(0)
+            success = False
+            for attempt in range(1, MAX_RETRIES + 1):
+                Log(f"Sending chunk {chunk_id} (attempt {attempt}): {chunk}")
 
-            Log(f"Worker {rank}: Sending chunk {chunk_id} with values {chunk_values}")
+                # Create SwitchML payload
+                switchml_payload = pack_switchml_packet(
+                    worker_id=rank,
+                    chunk_id=chunk_id,
+                    num_workers=num_workers,
+                    flags=0,
+                    values=padded
+                )
 
-            # Create SwitchML payload
-            switchml_payload = pack_switchml_packet(
-                worker_id=rank,
-                chunk_id=chunk_id,
-                num_workers=num_workers,
-                flags=0,
-                values=chunk_values
-            )
+                # Create raw packet
+                raw_packet = create_raw_udp_packet(
+                    src_ip, dst_ip, src_port, dst_port,
+                    switchml_payload, src_mac, dst_mac
+                )
 
-            # Create raw packet
-            raw_packet = create_raw_udp_packet(
-                src_ip, dst_ip, src_port, dst_port,
-                switchml_payload, src_mac, dst_mac
-            )
+                # Send packet
+                try:
+                    bytes_sent = send_sock.send(raw_packet)
+                    Log(f"Worker {rank}: Sent packet for chunk {chunk_id} ({bytes_sent} bytes)")
+                except Exception as e:
+                    Log(f"Worker {rank}: ERROR - Failed to send packet for chunk {chunk_id}: {e}")
+                    continue
 
-            # Send packet
-            try:
-                bytes_sent = send_sock.send(raw_packet)
-                Log(f"Worker {rank}: Sent packet for chunk {chunk_id} ({bytes_sent} bytes)")
-            except Exception as e:
-                Log(f"Worker {rank}: ERROR - Failed to send packet for chunk {chunk_id}: {e}")
-                return False
+                # Wait for aggregation result
+                try:
+                    response_data, addr = recv_sock.recvfrom(1024)
+                    Log(f"Worker {rank}: Received response from {addr}")
 
-            # Wait for aggregation result
-            Log(f"Worker {rank}: Waiting for response to chunk {chunk_id}")
+                    # Unpack response
+                    response = unpack_switchml_packet(response_data)
+                    if response is None:
+                        Log(f"Worker {rank}: ERROR - Invalid response packet for chunk {chunk_id}")
+                        continue
 
-            try:
-                response_data, addr = recv_sock.recvfrom(1024)
-                Log(f"Worker {rank}: Received response from {addr}")
+                    resp_worker_id, resp_chunk_id, resp_num_workers, resp_flags, chunk_result = response
 
-                # Unpack response
-                response = unpack_switchml_packet(response_data)
-                if response is None:
-                    Log(f"Worker {rank}: ERROR - Invalid response packet for chunk {chunk_id}")
-                    return False
+                    # Verify this is the response we're expecting
+                    if resp_chunk_id == chunk_id and resp_flags == 1:
+                        Log(f"Received aggregated chunk {chunk_id}: {chunk_result}")
+                        start_idx = chunk_id * CHUNK_SIZE
+                        end_idx = start_idx + CHUNK_SIZE
+                        result[start_idx:end_idx] = chunk_result
+                        success = True
+                        break
+                    else:
+                        Log(f"Worker {rank}: ERROR - Wrong response: chunk_id={resp_chunk_id}, flags={resp_flags}")
 
-                resp_worker_id, resp_chunk_id, resp_num_workers, resp_flags, chunk_result = response
+                except socket.timeout:
+                    Log(f"No response for chunk {chunk_id} (attempt {attempt})")
+                    time.sleep(0.2)
+                except Exception as e:
+                    Log(f"Worker {rank}: ERROR - Exception receiving response for chunk {chunk_id}: {e}")
 
-                # Verify this is the response we're expecting
-                if resp_chunk_id == chunk_id and resp_flags == 1:
-                    Log(f"Worker {rank}: Received valid response for chunk {chunk_id}: {chunk_result}")
+            if not success:
+                Log(f"FAIL: Did not receive a response for chunk {chunk_id} after {MAX_RETRIES} attempts.")
+                raise RuntimeError(f"AllReduce failed for chunk {chunk_id}")
 
-                    # Copy aggregated values back to result array
-                    for i in range(min(len(chunk_values), 4)):
-                        if start_idx + i < len(result):
-                            result[start_idx + i] = chunk_result[i]
-
-                    Log(f"Worker {rank}: Updated result indices {start_idx}-{start_idx + len(chunk_values) - 1}")
-
-                else:
-                    Log(f"Worker {rank}: ERROR - Wrong response: chunk_id={resp_chunk_id}, flags={resp_flags}")
-                    return False
-
-            except socket.timeout:
-                Log(f"Worker {rank}: ERROR - Timeout waiting for chunk {chunk_id}")
-                return False
-            except Exception as e:
-                Log(f"Worker {rank}: ERROR - Exception receiving response for chunk {chunk_id}: {e}")
-                return False
-
-            # Small delay between chunks to avoid overwhelming the switch
-            time.sleep(0.1)
-
-        Log(f"Worker {rank}: Completed processing all {num_chunks} chunks")
-        Log(f"Worker {rank}: Final result: {result}")
-        return True
+            time.sleep(0.1)  # Add a small delay between chunks
 
     finally:
         send_sock.close()
@@ -236,18 +232,23 @@ def AllReduce(rank, data, result):
 
 def main():
     rank = GetRankOrExit()
-    Log("Started DEBUG worker...")
-
-    # Create fake test data for verification
-    data_out = [100, 200, 300, 400, 500, 600, 700, 800]  # Fixed test data
-    data_in = [0] * len(data_out)  # Initialize result vector
-
-    CreateTestData("udp-iter-0", rank, data_out)
-    success = AllReduce(rank, data_out, data_in)
-    if success:
-        RunIntTest("udp-iter-0", rank, data_in, True)
-    else:
-        Log("AllReduce failed!")
+    Log("Started...")
+    try:
+        for i in range(NUM_ITER):
+            # Generate a random vector whose length is a multiple of CHUNK_SIZE
+            num_elem = GenMultipleOfInRange(CHUNK_SIZE, 16, CHUNK_SIZE)
+            data_out = GenInts(num_elem)
+            # Initialize the result vector with zeros
+            data_in = [0] * num_elem
+            # Create test data so we can verify the result
+            CreateTestData("udp-iter-%d" % i, rank, data_out)
+            # Perform the AllReduce
+            AllReduce(rank, data_out, data_in)
+            # Check if the result is correct
+            RunIntTest("udp-iter-%d" % i, rank, data_in, True)
+        Log("PASS: AllReduce completed successfully.")
+    except Exception as e:
+        Log(f"FAIL: {e}")
     Log("Done")
 
 if __name__ == '__main__':

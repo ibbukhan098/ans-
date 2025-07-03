@@ -1,4 +1,4 @@
-[+] Running test: udp-iter-0, rank: 1, ts: 17:46:42.107984
+[+] Running test: udp-iter-0, rank: 1, ts: 18:10:17.670458
 [+] From data files:
 	/vagrant/lab3/sml-udp/logs/test/test-udp-iter-0/data-rank-0.csv
 	/vagrant/lab3/sml-udp/logs/test/test-udp-iter-0/data-rank-1.csv

@@ -1,0 +1,21 @@
+[W][10.0.0.3][17:46:38.895848] Started DEBUG worker...
+[W][10.0.0.3][17:46:38.924894] Worker 2: Processing ALL chunks
+[W][10.0.0.3][17:46:38.935633] Worker 2: Processing 8 values in chunks of 4
+[W][10.0.0.3][17:46:38.970236] Worker 2: Created raw send socket on eth0
+[W][10.0.0.3][17:46:39.013382] Worker 2: Created UDP receive socket on port 10002
+[W][10.0.0.3][17:46:39.025436] Worker 2: Waiting 2.0 seconds before sending...
+[W][10.0.0.3][17:46:41.044415] Worker 2: Sending chunk 0 with values [100, 200, 300, 400]
+[W][10.0.0.3][17:46:41.058132] Worker 2: Sent packet for chunk 0 (62 bytes)
+[W][10.0.0.3][17:46:41.067243] Worker 2: Waiting for response to chunk 0
+[W][10.0.0.3][17:46:41.177056] Worker 2: Received response from ('10.0.0.100', 9999)
+[W][10.0.0.3][17:46:41.191910] Worker 2: Received valid response for chunk 0: [300, 600, 900, 1200]
+[W][10.0.0.3][17:46:41.209140] Worker 2: Updated result indices 0-3
+[W][10.0.0.3][17:46:41.433417] Worker 2: Sending chunk 1 with values [500, 600, 700, 800]
+[W][10.0.0.3][17:46:41.462978] Worker 2: Sent packet for chunk 1 (62 bytes)
+[W][10.0.0.3][17:46:41.492661] Worker 2: Waiting for response to chunk 1
+[W][10.0.0.3][17:46:41.807620] Worker 2: Received response from ('10.0.0.100', 9999)
+[W][10.0.0.3][17:46:41.821363] Worker 2: Received valid response for chunk 1: [1500, 1800, 2100, 2400]
+[W][10.0.0.3][17:46:41.831022] Worker 2: Updated result indices 4-7
+[W][10.0.0.3][17:46:41.974400] Worker 2: Completed processing all 2 chunks
+[W][10.0.0.3][17:46:41.984899] Worker 2: Final result: [300, 600, 900, 1200, 1500, 1800, 2100, 2400]
+[W][10.0.0.3][17:46:42.104582] Done

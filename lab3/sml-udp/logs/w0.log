@@ -1,5 +1,21 @@
-[W][10.0.0.1][02:51:35.444048] Started...
-[W][10.0.0.1][02:51:35.470138] Worker 0 using scapy for packet construction and raw sockets for transmission
-[W][10.0.0.1][02:51:35.535879] Starting AllReduce iteration 0 with 1320 elements
-[W][10.0.0.1][02:51:35.776968] FAIL: 'SwitchML' object has no attribute '__rdiv__'
-[W][10.0.0.1][02:51:35.831009] Done
+[W][10.0.0.1][17:46:38.895667] Started DEBUG worker...
+[W][10.0.0.1][17:46:38.924560] Worker 0: Processing ALL chunks
+[W][10.0.0.1][17:46:38.935776] Worker 0: Processing 8 values in chunks of 4
+[W][10.0.0.1][17:46:38.970233] Worker 0: Created raw send socket on eth0
+[W][10.0.0.1][17:46:39.008025] Worker 0: Created UDP receive socket on port 10000
+[W][10.0.0.1][17:46:39.023551] Worker 0: Waiting 1.0 seconds before sending...
+[W][10.0.0.1][17:46:40.054989] Worker 0: Sending chunk 0 with values [100, 200, 300, 400]
+[W][10.0.0.1][17:46:40.069761] Worker 0: Sent packet for chunk 0 (62 bytes)
+[W][10.0.0.1][17:46:40.080688] Worker 0: Waiting for response to chunk 0
+[W][10.0.0.1][17:46:41.211689] Worker 0: Received response from ('10.0.0.100', 9999)
+[W][10.0.0.1][17:46:41.341512] Worker 0: Received valid response for chunk 0: [300, 600, 900, 1200]
+[W][10.0.0.1][17:46:41.395417] Worker 0: Updated result indices 0-3
+[W][10.0.0.1][17:46:41.531523] Worker 0: Sending chunk 1 with values [500, 600, 700, 800]
+[W][10.0.0.1][17:46:41.624337] Worker 0: Sent packet for chunk 1 (62 bytes)
+[W][10.0.0.1][17:46:41.642376] Worker 0: Waiting for response to chunk 1
+[W][10.0.0.1][17:46:41.808938] Worker 0: Received response from ('10.0.0.100', 9999)
+[W][10.0.0.1][17:46:41.821577] Worker 0: Received valid response for chunk 1: [1500, 1800, 2100, 2400]
+[W][10.0.0.1][17:46:41.831173] Worker 0: Updated result indices 4-7
+[W][10.0.0.1][17:46:41.976119] Worker 0: Completed processing all 2 chunks
+[W][10.0.0.1][17:46:41.985601] Worker 0: Final result: [300, 600, 900, 1200, 1500, 1800, 2100, 2400]
+[W][10.0.0.1][17:46:42.105874] Done

@@ -1,15 +1,15 @@
-[W][10.0.0.1][18:31:26.803747] Started...
-[W][10.0.0.1][18:31:26.830332] Sending chunk 0 (attempt 1): [21676, 23107, 55347, 26208]
-[W][10.0.0.1][18:31:27.094206] Raw response: 00:00:00:00:00:ff > ff:ff:ff:ff:ff:ff (0x88b5) / SwitchML
-[W][10.0.0.1][18:31:27.111930] Received aggregated chunk 0: [72112, 50039, 81952, 81423]
-[W][10.0.0.1][18:31:27.225143] Sending chunk 1 (attempt 1): [37448, 54912, 35614, 26031]
-[W][10.0.0.1][18:31:27.490509] Raw response: 00:00:00:00:00:ff > ff:ff:ff:ff:ff:ff (0x88b5) / SwitchML
-[W][10.0.0.1][18:31:27.506658] Received aggregated chunk 1: [79085, 98586, 42804, 82975]
-[W][10.0.0.1][18:31:27.622754] Sending chunk 2 (attempt 1): [41780, 21544, 21176, 42095]
-[W][10.0.0.1][18:31:27.774338] Raw response: 00:00:00:00:00:ff > ff:ff:ff:ff:ff:ff (0x88b5) / SwitchML
-[W][10.0.0.1][18:31:27.832159] Received aggregated chunk 2: [107076, 75997, 53729, 95101]
-[W][10.0.0.1][18:31:27.947027] Sending chunk 3 (attempt 1): [54791, 35167, 541, 15489]
-[W][10.0.0.1][18:31:28.159232] Raw response: 00:00:00:00:00:ff > ff:ff:ff:ff:ff:ff (0x88b5) / SwitchML
-[W][10.0.0.1][18:31:28.203240] Received aggregated chunk 3: [69521, 83106, 35148, 33362]
-[W][10.0.0.1][18:31:28.364754] PASS: AllReduce completed successfully.
-[W][10.0.0.1][18:31:28.379691] Done
+[W][10.0.0.1][17:03:06.271078] Started...
+[W][10.0.0.1][17:03:06.303925] Sending chunk 0 (attempt 1): [34841, 62443, 53534, 53496]
+[W][10.0.0.1][17:03:06.516470] Raw response: 00:00:00:00:00:ff > ff:ff:ff:ff:ff:ff (0x88b5) / SwitchML
+[W][10.0.0.1][17:03:06.544892] Received aggregated chunk 0: [88690, 71495, 110032, 103077]
+[W][10.0.0.1][17:03:06.676724] Sending chunk 1 (attempt 1): [33023, 47068, 56859, 23617]
+[W][10.0.0.1][17:03:06.857917] Raw response: 00:00:00:00:00:ff > ff:ff:ff:ff:ff:ff (0x88b5) / SwitchML
+[W][10.0.0.1][17:03:06.875009] Received aggregated chunk 1: [88478, 75111, 118899, 60133]
+[W][10.0.0.1][17:03:06.993402] Sending chunk 2 (attempt 1): [18043, 30606, 19932, 52871]
+[W][10.0.0.1][17:03:07.121148] Raw response: 00:00:00:00:00:ff > ff:ff:ff:ff:ff:ff (0x88b5) / SwitchML
+[W][10.0.0.1][17:03:07.137414] Received aggregated chunk 2: [75985, 65857, 67943, 113674]
+[W][10.0.0.1][17:03:07.263666] Sending chunk 3 (attempt 1): [55674, 679, 37131, 59643]
+[W][10.0.0.1][17:03:07.414536] Raw response: 00:00:00:00:00:ff > ff:ff:ff:ff:ff:ff (0x88b5) / SwitchML
+[W][10.0.0.1][17:03:07.430749] Received aggregated chunk 3: [96318, 8181, 50491, 69628]
+[W][10.0.0.1][17:03:07.579969] PASS: AllReduce completed successfully.
+[W][10.0.0.1][17:03:07.590523] Done

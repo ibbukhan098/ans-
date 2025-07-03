@@ -1,4 +1,4 @@
-[+] Running test: eth-iter-0, rank: 1, ts: 18:31:28.348948
+[+] Running test: eth-iter-0, rank: 1, ts: 17:03:07.569958
 [+] From data files:
 	/vagrant/lab3/sml-eth/logs/test/test-eth-iter-0/data-rank-0.csv
 	/vagrant/lab3/sml-eth/logs/test/test-eth-iter-0/data-rank-1.csv

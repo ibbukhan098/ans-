@@ -1,0 +1,4894 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["tmp", 8, false],
+        ["tmp_0", 32, false],
+        ["tmp_1", 32, false],
+        ["tmp_2", 32, false],
+        ["tmp_3", 32, false],
+        ["tmp_4", 32, false],
+        ["tmp_5", 32, false],
+        ["tmp_6", 32, false],
+        ["tmp_7", 32, false],
+        ["tmp_8", 32, false],
+        ["tmp_9", 32, false],
+        ["tmp_10", 32, false],
+        ["tmp_11", 32, false],
+        ["tmp_12", 32, false],
+        ["tmp_13", 32, false],
+        ["ready_0", 1, false],
+        ["temp_port_0", 16, false],
+        ["temp_mac_0", 48, false],
+        ["temp_ip_0", 32, false],
+        ["temp_port_1", 16, false],
+        ["worker_count_0", 8, false],
+        ["metadata.is_last_worker", 1, false],
+        ["metadata.is_retransmission", 1, false],
+        ["metadata.aggregation_complete", 1, false],
+        ["metadata.worker_bitmap", 8, false],
+        ["metadata.chunk_result0", 32, false],
+        ["metadata.chunk_result1", 32, false],
+        ["metadata.chunk_result2", 32, false],
+        ["metadata.chunk_result3", 32, false],
+        ["metadata.reg_index", 32, false],
+        ["_padding_0", 4, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["_padding", 3, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 2,
+      "fields" : [
+        ["dstAddr", 48, false],
+        ["srcAddr", 48, false],
+        ["etherType", 16, false]
+      ]
+    },
+    {
+      "name" : "ipv4_t",
+      "id" : 3,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["diffserv", 8, false],
+        ["totalLen", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragOffset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrChecksum", 16, false],
+        ["srcAddr", 32, false],
+        ["dstAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "udp_t",
+      "id" : 4,
+      "fields" : [
+        ["srcPort", 16, false],
+        ["dstPort", 16, false],
+        ["length", 16, false],
+        ["checksum", 16, false]
+      ]
+    },
+    {
+      "name" : "switchml_t",
+      "id" : 5,
+      "fields" : [
+        ["worker_id", 8, false],
+        ["chunk_id", 8, false],
+        ["num_workers", 8, false],
+        ["flags", 8, false],
+        ["value0", 32, false],
+        ["value1", 32, false],
+        ["value2", 32, false],
+        ["value3", 32, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ethernet",
+      "id" : 2,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ipv4",
+      "id" : 3,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "udp",
+      "id" : 4,
+      "header_type" : "udp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "switchml",
+      "id" : 5,
+      "header_type" : "switchml_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [],
+  "errors" : [
+    ["NoError", 0],
+    ["PacketTooShort", 1],
+    ["NoMatch", 2],
+    ["StackOutOfBounds", 3],
+    ["HeaderTooShort", 4],
+    ["ParserTimeout", 5],
+    ["ParserInvalidArgument", 6]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ethernet"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ipv4"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_ipv4",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ipv4"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x11",
+              "mask" : null,
+              "next_state" : "parse_udp"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "protocol"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_udp",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "udp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x270f",
+              "mask" : null,
+              "next_state" : "parse_switchml"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_switchml",
+          "id" : 3,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "switchml"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 407,
+        "column" : 8,
+        "source_fragment" : "MyDeparser"
+      },
+      "order" : ["ethernet", "ipv4", "udp", "switchml"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [
+    {
+      "name" : "MyIngress.agg_value0",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 135,
+        "column" : 27,
+        "source_fragment" : "agg_value0"
+      },
+      "size" : 256,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.agg_value1",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 136,
+        "column" : 27,
+        "source_fragment" : "agg_value1"
+      },
+      "size" : 256,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.agg_value2",
+      "id" : 2,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 137,
+        "column" : 27,
+        "source_fragment" : "agg_value2"
+      },
+      "size" : 256,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.agg_value3",
+      "id" : 3,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 138,
+        "column" : 27,
+        "source_fragment" : "agg_value3"
+      },
+      "size" : 256,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.worker_bitmap",
+      "id" : 4,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 141,
+        "column" : 26,
+        "source_fragment" : "worker_bitmap"
+      },
+      "size" : 256,
+      "bitwidth" : 8
+    },
+    {
+      "name" : "MyIngress.result_value0",
+      "id" : 5,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 144,
+        "column" : 27,
+        "source_fragment" : "result_value0"
+      },
+      "size" : 256,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.result_value1",
+      "id" : 6,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 145,
+        "column" : 27,
+        "source_fragment" : "result_value1"
+      },
+      "size" : 256,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.result_value2",
+      "id" : 7,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 146,
+        "column" : 27,
+        "source_fragment" : "result_value2"
+      },
+      "size" : 256,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.result_value3",
+      "id" : 8,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 147,
+        "column" : 27,
+        "source_fragment" : "result_value3"
+      },
+      "size" : 256,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.result_ready",
+      "id" : 9,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 148,
+        "column" : 26,
+        "source_fragment" : "result_ready"
+      },
+      "size" : 256,
+      "bitwidth" : 1
+    }
+  ],
+  "calculations" : [
+    {
+      "name" : "calc",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 388,
+        "column" : 8,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "algo" : "csum16",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["ipv4", "version"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ihl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "diffserv"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "totalLen"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "identification"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "flags"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "fragOffset"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ttl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "protocol"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "srcAddr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "dstAddr"]
+        }
+      ]
+    }
+  ],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "MyIngress.drop",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 151,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 151,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 151,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.read_worker_bitmap",
+      "id" : 3,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.worker_bitmap"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.worker_bitmap"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 155,
+            "column" : 8,
+            "source_fragment" : "worker_bitmap.read(meta.worker_bitmap, meta.reg_index)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.read_result_status",
+      "id" : 4,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "ready_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_ready"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 160,
+            "column" : 8,
+            "source_fragment" : "result_ready.read(ready, meta.reg_index)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.aggregation_complete"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "ready_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 161,
+            "column" : 8,
+            "source_fragment" : "meta.aggregation_complete = ready"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.read_stored_results",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 165,
+            "column" : 8,
+            "source_fragment" : "result_value0.read(meta.chunk_result0, meta.reg_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result1"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 166,
+            "column" : 8,
+            "source_fragment" : "result_value1.read(meta.chunk_result1, meta.reg_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result2"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 167,
+            "column" : 8,
+            "source_fragment" : "result_value2.read(meta.chunk_result2, meta.reg_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result3"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 168,
+            "column" : 8,
+            "source_fragment" : "result_value3.read(meta.chunk_result3, meta.reg_index)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.update_worker_bitmap",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "|",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "<<",
+                          "left" : {
+                            "type" : "hexstr",
+                            "value" : "0x01"
+                          },
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["switchml", "worker_id"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 174,
+            "column" : 44,
+            "source_fragment" : "new_bitmap"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.worker_bitmap"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 174,
+            "column" : 8,
+            "source_fragment" : "worker_bitmap.write(meta.reg_index, new_bitmap)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.worker_bitmap"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "|",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "<<",
+                          "left" : {
+                            "type" : "hexstr",
+                            "value" : "0x01"
+                          },
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["switchml", "worker_id"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 175,
+            "column" : 8,
+            "source_fragment" : "meta.worker_bitmap = new_bitmap"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.read_current_aggregation",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 179,
+            "column" : 8,
+            "source_fragment" : "agg_value0.read(meta.chunk_result0, meta.reg_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result1"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 180,
+            "column" : 8,
+            "source_fragment" : "agg_value1.read(meta.chunk_result1, meta.reg_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result2"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 181,
+            "column" : 8,
+            "source_fragment" : "agg_value2.read(meta.chunk_result2, meta.reg_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result3"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 182,
+            "column" : 8,
+            "source_fragment" : "agg_value3.read(meta.chunk_result3, meta.reg_index)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.update_aggregation",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.chunk_result0"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["switchml", "value0"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 191,
+            "column" : 41,
+            "source_fragment" : "new_val0"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 191,
+            "column" : 8,
+            "source_fragment" : "agg_value0.write(meta.reg_index, new_val0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.chunk_result1"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["switchml", "value1"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 192,
+            "column" : 41,
+            "source_fragment" : "new_val1"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 192,
+            "column" : 8,
+            "source_fragment" : "agg_value1.write(meta.reg_index, new_val1)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.chunk_result2"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["switchml", "value2"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 193,
+            "column" : 41,
+            "source_fragment" : "new_val2"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 193,
+            "column" : 8,
+            "source_fragment" : "agg_value2.write(meta.reg_index, new_val2)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.chunk_result3"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["switchml", "value3"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 194,
+            "column" : 41,
+            "source_fragment" : "new_val3"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 194,
+            "column" : 8,
+            "source_fragment" : "agg_value3.write(meta.reg_index, new_val3)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.chunk_result0"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["switchml", "value0"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 196,
+            "column" : 8,
+            "source_fragment" : "meta.chunk_result0 = new_val0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.chunk_result1"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["switchml", "value1"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 197,
+            "column" : 8,
+            "source_fragment" : "meta.chunk_result1 = new_val1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.chunk_result2"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["switchml", "value2"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 198,
+            "column" : 8,
+            "source_fragment" : "meta.chunk_result2 = new_val2"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.chunk_result3"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["switchml", "value3"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 199,
+            "column" : 8,
+            "source_fragment" : "meta.chunk_result3 = new_val3"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.store_final_results",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 203,
+            "column" : 8,
+            "source_fragment" : "result_value0.write(meta.reg_index, meta.chunk_result0)"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 204,
+            "column" : 8,
+            "source_fragment" : "result_value1.write(meta.reg_index, meta.chunk_result1)"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 205,
+            "column" : 8,
+            "source_fragment" : "result_value2.write(meta.reg_index, meta.chunk_result2)"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result3"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 206,
+            "column" : 8,
+            "source_fragment" : "result_value3.write(meta.reg_index, meta.chunk_result3)"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_ready"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 207,
+            "column" : 8,
+            "source_fragment" : "result_ready.write(meta.reg_index, 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.clear_old_aggregation",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.reg_index"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffffffe"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 212,
+            "column" : 28,
+            "source_fragment" : "old_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.worker_bitmap"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 212,
+            "column" : 8,
+            "source_fragment" : "worker_bitmap.write(old_index, 0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.reg_index"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffffffe"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 213,
+            "column" : 27,
+            "source_fragment" : "old_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_ready"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 213,
+            "column" : 8,
+            "source_fragment" : "result_ready.write(old_index, 0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.reg_index"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffffffe"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 214,
+            "column" : 28,
+            "source_fragment" : "old_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 214,
+            "column" : 8,
+            "source_fragment" : "result_value0.write(old_index, 0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.reg_index"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffffffe"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 215,
+            "column" : 28,
+            "source_fragment" : "old_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 215,
+            "column" : 8,
+            "source_fragment" : "result_value1.write(old_index, 0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.reg_index"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffffffe"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 216,
+            "column" : 28,
+            "source_fragment" : "old_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 216,
+            "column" : 8,
+            "source_fragment" : "result_value2.write(old_index, 0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.reg_index"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffffffe"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 217,
+            "column" : 28,
+            "source_fragment" : "old_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.result_value3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 217,
+            "column" : 8,
+            "source_fragment" : "result_value3.write(old_index, 0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.reg_index"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffffffe"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 218,
+            "column" : 25,
+            "source_fragment" : "old_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 218,
+            "column" : 8,
+            "source_fragment" : "agg_value0.write(old_index, 0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.reg_index"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffffffe"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 219,
+            "column" : 25,
+            "source_fragment" : "old_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 219,
+            "column" : 8,
+            "source_fragment" : "agg_value1.write(old_index, 0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_12"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.reg_index"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffffffe"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 220,
+            "column" : 25,
+            "source_fragment" : "old_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_12"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 220,
+            "column" : 8,
+            "source_fragment" : "agg_value2.write(old_index, 0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_13"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.reg_index"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffffffe"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 221,
+            "column" : 25,
+            "source_fragment" : "old_index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.agg_value3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_13"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 221,
+            "column" : 8,
+            "source_fragment" : "agg_value3.write(old_index, 0)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.multicast_result",
+      "id" : 11,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["switchml", "value0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 226,
+            "column" : 8,
+            "source_fragment" : "hdr.switchml.value0 = meta.chunk_result0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["switchml", "value1"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 227,
+            "column" : 8,
+            "source_fragment" : "hdr.switchml.value1 = meta.chunk_result1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["switchml", "value2"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 228,
+            "column" : 8,
+            "source_fragment" : "hdr.switchml.value2 = meta.chunk_result2"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["switchml", "value3"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result3"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 229,
+            "column" : 8,
+            "source_fragment" : "hdr.switchml.value3 = meta.chunk_result3"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["switchml", "flags"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 230,
+            "column" : 8,
+            "source_fragment" : "hdr.switchml.flags = 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "mcast_grp"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 233,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.mcast_grp = 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_port_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 236,
+            "column" : 8,
+            "source_fragment" : "bit<16> temp_port = hdr.udp.srcPort;"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            },
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 237,
+            "column" : 8,
+            "source_fragment" : "hdr.udp.srcPort = hdr.udp.dstPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_port_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 238,
+            "column" : 8,
+            "source_fragment" : "hdr.udp.dstPort = temp_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0a000064"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 241,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.srcAddr = 0x0a000064"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x000000000100"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 242,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.srcAddr = 0x000000000100"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xffffffff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 245,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.dstAddr = 0xffffffff"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xffffffffffff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 246,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.dstAddr = 0xffffffffffff"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x40"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 249,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl = 64"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "totalLen"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0030"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 250,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.totalLen = 20 + 8 + 20"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "length"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x001c"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 251,
+            "column" : 8,
+            "source_fragment" : "hdr.udp.length = 28"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.unicast_result",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["switchml", "value0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 256,
+            "column" : 8,
+            "source_fragment" : "hdr.switchml.value0 = meta.chunk_result0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["switchml", "value1"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 257,
+            "column" : 8,
+            "source_fragment" : "hdr.switchml.value1 = meta.chunk_result1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["switchml", "value2"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 258,
+            "column" : 8,
+            "source_fragment" : "hdr.switchml.value2 = meta.chunk_result2"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["switchml", "value3"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result3"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 259,
+            "column" : 8,
+            "source_fragment" : "hdr.switchml.value3 = meta.chunk_result3"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["switchml", "flags"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 260,
+            "column" : 8,
+            "source_fragment" : "hdr.switchml.flags = 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_mac_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 263,
+            "column" : 8,
+            "source_fragment" : "bit<48> temp_mac = hdr.ethernet.srcAddr;"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 264,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.srcAddr = hdr.ethernet.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_mac_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 265,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.dstAddr = temp_mac"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_ip_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 267,
+            "column" : 8,
+            "source_fragment" : "bit<32> temp_ip = hdr.ipv4.srcAddr;"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 268,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.srcAddr = hdr.ipv4.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_ip_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 269,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.dstAddr = temp_ip"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_port_1"]
+            },
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 271,
+            "column" : 8,
+            "source_fragment" : "bit<16> temp_port = hdr.udp.srcPort;"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            },
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 272,
+            "column" : 8,
+            "source_fragment" : "hdr.udp.srcPort = hdr.udp.dstPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_port_1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 273,
+            "column" : 8,
+            "source_fragment" : "hdr.udp.dstPort = temp_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_port"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 276,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = standard_metadata.ingress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x40"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 279,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl = 64"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main288",
+      "id" : 13,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.is_last_worker"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 288,
+            "column" : 12,
+            "source_fragment" : "meta.is_last_worker = 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 290,
+            "column" : 12,
+            "source_fragment" : "meta.chunk_result0 = 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result1"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 291,
+            "column" : 12,
+            "source_fragment" : "meta.chunk_result1 = 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 292,
+            "column" : 12,
+            "source_fragment" : "meta.chunk_result2 = 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.chunk_result3"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 293,
+            "column" : 12,
+            "source_fragment" : "meta.chunk_result3 = 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.reg_index"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["switchml", "chunk_id"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 294,
+            "column" : 12,
+            "source_fragment" : "meta.reg_index = (bit<32>)hdr.switchml.chunk_id"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main303",
+      "id" : 14,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.is_retransmission"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 303,
+            "column" : 16,
+            "source_fragment" : "meta.is_retransmission = 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main318",
+      "id" : 15,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.is_retransmission"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 318,
+            "column" : 16,
+            "source_fragment" : "meta.is_retransmission = 0"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main334",
+      "id" : 16,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "worker_count_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 334,
+            "column" : 42,
+            "source_fragment" : "worker_count = worker_count + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main330",
+      "id" : 17,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "worker_count_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 330,
+            "column" : 16,
+            "source_fragment" : "bit<8> worker_count = 0;"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main335",
+      "id" : 18,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "worker_count_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "worker_count_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x01"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 335,
+            "column" : 42,
+            "source_fragment" : "worker_count = worker_count + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main336",
+      "id" : 19,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "worker_count_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "worker_count_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x01"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 336,
+            "column" : 42,
+            "source_fragment" : "worker_count = worker_count + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main337",
+      "id" : 20,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "worker_count_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "worker_count_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x01"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 337,
+            "column" : 42,
+            "source_fragment" : "worker_count = worker_count + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main338",
+      "id" : 21,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "worker_count_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "worker_count_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x01"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 338,
+            "column" : 42,
+            "source_fragment" : "worker_count = worker_count + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main339",
+      "id" : 22,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "worker_count_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "worker_count_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x01"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 339,
+            "column" : 42,
+            "source_fragment" : "worker_count = worker_count + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main340",
+      "id" : 23,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "worker_count_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "worker_count_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x01"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 340,
+            "column" : 42,
+            "source_fragment" : "worker_count = worker_count + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main341",
+      "id" : 24,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "worker_count_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "worker_count_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x01"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 341,
+            "column" : 42,
+            "source_fragment" : "worker_count = worker_count + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main346",
+      "id" : 25,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.is_last_worker"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 346,
+            "column" : 20,
+            "source_fragment" : "meta.is_last_worker = 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.aggregation_complete"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 347,
+            "column" : 20,
+            "source_fragment" : "meta.aggregation_complete = 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "main361",
+      "id" : 26,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.is_last_worker"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 361,
+            "column" : 20,
+            "source_fragment" : "meta.is_last_worker = 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.aggregation_complete"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 362,
+            "column" : 20,
+            "source_fragment" : "meta.aggregation_complete = 0"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 130,
+        "column" : 8,
+        "source_fragment" : "MyIngress"
+      },
+      "init_table" : "node_2",
+      "tables" : [
+        {
+          "name" : "tbl_main288",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 288,
+            "column" : 32,
+            "source_fragment" : "= 0; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [13],
+          "actions" : ["main288"],
+          "base_default_next" : "tbl_read_worker_bitmap",
+          "next_tables" : {
+            "main288" : "tbl_read_worker_bitmap"
+          },
+          "default_entry" : {
+            "action_id" : 13,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_read_worker_bitmap",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 297,
+            "column" : 12,
+            "source_fragment" : "read_worker_bitmap()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [3],
+          "actions" : ["MyIngress.read_worker_bitmap"],
+          "base_default_next" : "node_5",
+          "next_tables" : {
+            "MyIngress.read_worker_bitmap" : "node_5"
+          },
+          "default_entry" : {
+            "action_id" : 3,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main303",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 303,
+            "column" : 39,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [14],
+          "actions" : ["main303"],
+          "base_default_next" : "tbl_read_result_status",
+          "next_tables" : {
+            "main303" : "tbl_read_result_status"
+          },
+          "default_entry" : {
+            "action_id" : 14,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_read_result_status",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 306,
+            "column" : 16,
+            "source_fragment" : "read_result_status()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [4],
+          "actions" : ["MyIngress.read_result_status"],
+          "base_default_next" : "node_8",
+          "next_tables" : {
+            "MyIngress.read_result_status" : "node_8"
+          },
+          "default_entry" : {
+            "action_id" : 4,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_read_stored_results",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 309,
+            "column" : 20,
+            "source_fragment" : "read_stored_results()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [5],
+          "actions" : ["MyIngress.read_stored_results"],
+          "base_default_next" : "tbl_unicast_result",
+          "next_tables" : {
+            "MyIngress.read_stored_results" : "tbl_unicast_result"
+          },
+          "default_entry" : {
+            "action_id" : 5,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_unicast_result",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 311,
+            "column" : 20,
+            "source_fragment" : "unicast_result()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12],
+          "actions" : ["MyIngress.unicast_result"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.unicast_result" : null
+          },
+          "default_entry" : {
+            "action_id" : 12,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_drop",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 314,
+            "column" : 20,
+            "source_fragment" : "drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [0],
+          "actions" : ["MyIngress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.drop" : null
+          },
+          "default_entry" : {
+            "action_id" : 0,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main318",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 318,
+            "column" : 39,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [15],
+          "actions" : ["main318"],
+          "base_default_next" : "tbl_update_worker_bitmap",
+          "next_tables" : {
+            "main318" : "tbl_update_worker_bitmap"
+          },
+          "default_entry" : {
+            "action_id" : 15,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_update_worker_bitmap",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 321,
+            "column" : 16,
+            "source_fragment" : "update_worker_bitmap()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [6],
+          "actions" : ["MyIngress.update_worker_bitmap"],
+          "base_default_next" : "tbl_read_current_aggregation",
+          "next_tables" : {
+            "MyIngress.update_worker_bitmap" : "tbl_read_current_aggregation"
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_read_current_aggregation",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 324,
+            "column" : 16,
+            "source_fragment" : "read_current_aggregation()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7],
+          "actions" : ["MyIngress.read_current_aggregation"],
+          "base_default_next" : "tbl_update_aggregation",
+          "next_tables" : {
+            "MyIngress.read_current_aggregation" : "tbl_update_aggregation"
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_update_aggregation",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 327,
+            "column" : 16,
+            "source_fragment" : "update_aggregation()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [8],
+          "actions" : ["MyIngress.update_aggregation"],
+          "base_default_next" : "tbl_main330",
+          "next_tables" : {
+            "MyIngress.update_aggregation" : "tbl_main330"
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main330",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 330,
+            "column" : 16,
+            "source_fragment" : "bit<8> worker_count = 0;"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [17],
+          "actions" : ["main330"],
+          "base_default_next" : "node_17",
+          "next_tables" : {
+            "main330" : "node_17"
+          },
+          "default_entry" : {
+            "action_id" : 17,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main334",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 334,
+            "column" : 55,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [16],
+          "actions" : ["main334"],
+          "base_default_next" : "node_19",
+          "next_tables" : {
+            "main334" : "node_19"
+          },
+          "default_entry" : {
+            "action_id" : 16,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main335",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 335,
+            "column" : 55,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [18],
+          "actions" : ["main335"],
+          "base_default_next" : "node_21",
+          "next_tables" : {
+            "main335" : "node_21"
+          },
+          "default_entry" : {
+            "action_id" : 18,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main336",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 336,
+            "column" : 55,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [19],
+          "actions" : ["main336"],
+          "base_default_next" : "node_23",
+          "next_tables" : {
+            "main336" : "node_23"
+          },
+          "default_entry" : {
+            "action_id" : 19,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main337",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 337,
+            "column" : 55,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [20],
+          "actions" : ["main337"],
+          "base_default_next" : "node_25",
+          "next_tables" : {
+            "main337" : "node_25"
+          },
+          "default_entry" : {
+            "action_id" : 20,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main338",
+          "id" : 16,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 338,
+            "column" : 55,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [21],
+          "actions" : ["main338"],
+          "base_default_next" : "node_27",
+          "next_tables" : {
+            "main338" : "node_27"
+          },
+          "default_entry" : {
+            "action_id" : 21,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main339",
+          "id" : 17,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 339,
+            "column" : 55,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [22],
+          "actions" : ["main339"],
+          "base_default_next" : "node_29",
+          "next_tables" : {
+            "main339" : "node_29"
+          },
+          "default_entry" : {
+            "action_id" : 22,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main340",
+          "id" : 18,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 340,
+            "column" : 55,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [23],
+          "actions" : ["main340"],
+          "base_default_next" : "node_31",
+          "next_tables" : {
+            "main340" : "node_31"
+          },
+          "default_entry" : {
+            "action_id" : 23,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main341",
+          "id" : 19,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 341,
+            "column" : 55,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [24],
+          "actions" : ["main341"],
+          "base_default_next" : "node_33",
+          "next_tables" : {
+            "main341" : "node_33"
+          },
+          "default_entry" : {
+            "action_id" : 24,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main346",
+          "id" : 20,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 346,
+            "column" : 40,
+            "source_fragment" : "= 1; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [25],
+          "actions" : ["main346"],
+          "base_default_next" : "tbl_store_final_results",
+          "next_tables" : {
+            "main346" : "tbl_store_final_results"
+          },
+          "default_entry" : {
+            "action_id" : 25,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_store_final_results",
+          "id" : 21,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 350,
+            "column" : 20,
+            "source_fragment" : "store_final_results()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [9],
+          "actions" : ["MyIngress.store_final_results"],
+          "base_default_next" : "tbl_multicast_result",
+          "next_tables" : {
+            "MyIngress.store_final_results" : "tbl_multicast_result"
+          },
+          "default_entry" : {
+            "action_id" : 9,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_multicast_result",
+          "id" : 22,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 353,
+            "column" : 20,
+            "source_fragment" : "multicast_result()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [11],
+          "actions" : ["MyIngress.multicast_result"],
+          "base_default_next" : "node_37",
+          "next_tables" : {
+            "MyIngress.multicast_result" : "node_37"
+          },
+          "default_entry" : {
+            "action_id" : 11,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clear_old_aggregation",
+          "id" : 23,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 357,
+            "column" : 24,
+            "source_fragment" : "clear_old_aggregation()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [10],
+          "actions" : ["MyIngress.clear_old_aggregation"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.clear_old_aggregation" : null
+          },
+          "default_entry" : {
+            "action_id" : 10,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_main361",
+          "id" : 24,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 361,
+            "column" : 40,
+            "source_fragment" : "= 0; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [26],
+          "actions" : ["main361"],
+          "base_default_next" : "tbl_drop_0",
+          "next_tables" : {
+            "main361" : "tbl_drop_0"
+          },
+          "default_entry" : {
+            "action_id" : 26,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_drop_0",
+          "id" : 25,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 363,
+            "column" : 20,
+            "source_fragment" : "drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [1],
+          "actions" : ["MyIngress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.drop" : null
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_drop_1",
+          "id" : 26,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 367,
+            "column" : 12,
+            "source_fragment" : "drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [2],
+          "actions" : ["MyIngress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.drop" : null
+          },
+          "default_entry" : {
+            "action_id" : 2,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_2",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 283,
+            "column" : 12,
+            "source_fragment" : "hdr.ipv4.isValid() && hdr.udp.isValid() && ..."
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "and",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "and",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "and",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["ipv4", "$valid$"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["udp", "$valid$"]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["switchml", "$valid$"]
+                      }
+                    }
+                  }
+                }
+              },
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "==",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["switchml", "flags"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x00"
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "tbl_main288",
+          "false_next" : "tbl_drop_1"
+        },
+        {
+          "name" : "node_5",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 301,
+            "column" : 16,
+            "source_fragment" : "(meta.worker_bitmap & worker_mask) != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "<<",
+                          "left" : {
+                            "type" : "hexstr",
+                            "value" : "0x01"
+                          },
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["switchml", "worker_id"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00"
+              }
+            }
+          },
+          "true_next" : "tbl_main303",
+          "false_next" : "tbl_main318"
+        },
+        {
+          "name" : "node_8",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 307,
+            "column" : 20,
+            "source_fragment" : "meta.aggregation_complete == 1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "metadata.aggregation_complete"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "true_next" : "tbl_read_stored_results",
+          "false_next" : "tbl_drop"
+        },
+        {
+          "name" : "node_17",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 334,
+            "column" : 20,
+            "source_fragment" : "(bitmap & 0x01) != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x01"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00"
+              }
+            }
+          },
+          "true_next" : "tbl_main334",
+          "false_next" : "node_19"
+        },
+        {
+          "name" : "node_19",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 335,
+            "column" : 20,
+            "source_fragment" : "(bitmap & 0x02) != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x02"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00"
+              }
+            }
+          },
+          "true_next" : "tbl_main335",
+          "false_next" : "node_21"
+        },
+        {
+          "name" : "node_21",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 336,
+            "column" : 20,
+            "source_fragment" : "(bitmap & 0x04) != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x04"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00"
+              }
+            }
+          },
+          "true_next" : "tbl_main336",
+          "false_next" : "node_23"
+        },
+        {
+          "name" : "node_23",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 337,
+            "column" : 20,
+            "source_fragment" : "(bitmap & 0x08) != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x08"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00"
+              }
+            }
+          },
+          "true_next" : "tbl_main337",
+          "false_next" : "node_25"
+        },
+        {
+          "name" : "node_25",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 338,
+            "column" : 20,
+            "source_fragment" : "(bitmap & 0x10) != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x10"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00"
+              }
+            }
+          },
+          "true_next" : "tbl_main338",
+          "false_next" : "node_27"
+        },
+        {
+          "name" : "node_27",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 339,
+            "column" : 20,
+            "source_fragment" : "(bitmap & 0x20) != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x20"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00"
+              }
+            }
+          },
+          "true_next" : "tbl_main339",
+          "false_next" : "node_29"
+        },
+        {
+          "name" : "node_29",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 340,
+            "column" : 20,
+            "source_fragment" : "(bitmap & 0x40) != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x40"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00"
+              }
+            }
+          },
+          "true_next" : "tbl_main340",
+          "false_next" : "node_31"
+        },
+        {
+          "name" : "node_31",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 341,
+            "column" : 20,
+            "source_fragment" : "(bitmap & 0x80) != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "metadata.worker_bitmap"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x80"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00"
+              }
+            }
+          },
+          "true_next" : "tbl_main341",
+          "false_next" : "node_33"
+        },
+        {
+          "name" : "node_33",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 344,
+            "column" : 20,
+            "source_fragment" : "worker_count == hdr.switchml.num_workers"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "worker_count_0"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["switchml", "num_workers"]
+              }
+            }
+          },
+          "true_next" : "tbl_main346",
+          "false_next" : "tbl_main361"
+        },
+        {
+          "name" : "node_37",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+            "line" : 356,
+            "column" : 24,
+            "source_fragment" : "meta.reg_index >= 2"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["switchml", "chunk_id"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000002"
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "tbl_clear_old_aggregation"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 373,
+        "column" : 8,
+        "source_fragment" : "MyEgress"
+      },
+      "init_table" : null,
+      "tables" : [],
+      "action_profiles" : [],
+      "conditionals" : []
+    }
+  ],
+  "checksums" : [
+    {
+      "name" : "cksum",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+        "line" : 388,
+        "column" : 8,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "target" : ["ipv4", "hdrChecksum"],
+      "type" : "generic",
+      "calculation" : "calc",
+      "verify" : false,
+      "update" : true,
+      "if_cond" : {
+        "type" : "expression",
+        "value" : {
+          "op" : "d2b",
+          "left" : null,
+          "right" : {
+            "type" : "field",
+            "value" : ["ipv4", "$valid$"]
+          }
+        }
+      }
+    }
+  ],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ]
+  ],
+  "program" : "/vagrant/lab3/sml-udp-rel/p4/main.p4",
+  "__meta__" : {
+    "version" : [2, 23],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}

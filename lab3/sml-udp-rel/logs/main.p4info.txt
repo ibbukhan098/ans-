@@ -10,9 +10,58 @@ actions {
 }
 actions {
   preamble {
-    id: 32567258
-    name: "MyIngress.perform_aggregation"
-    alias: "perform_aggregation"
+    id: 29663121
+    name: "MyIngress.read_worker_bitmap"
+    alias: "read_worker_bitmap"
+  }
+}
+actions {
+  preamble {
+    id: 32541087
+    name: "MyIngress.read_result_status"
+    alias: "read_result_status"
+  }
+}
+actions {
+  preamble {
+    id: 23278973
+    name: "MyIngress.read_stored_results"
+    alias: "read_stored_results"
+  }
+}
+actions {
+  preamble {
+    id: 29777202
+    name: "MyIngress.update_worker_bitmap"
+    alias: "update_worker_bitmap"
+  }
+}
+actions {
+  preamble {
+    id: 24003792
+    name: "MyIngress.read_current_aggregation"
+    alias: "read_current_aggregation"
+  }
+}
+actions {
+  preamble {
+    id: 23934250
+    name: "MyIngress.update_aggregation"
+    alias: "update_aggregation"
+  }
+}
+actions {
+  preamble {
+    id: 23187806
+    name: "MyIngress.store_final_results"
+    alias: "store_final_results"
+  }
+}
+actions {
+  preamble {
+    id: 24065970
+    name: "MyIngress.clear_old_aggregation"
+    alias: "clear_old_aggregation"
   }
 }
 actions {
@@ -27,13 +76,6 @@ actions {
     id: 26323167
     name: "MyIngress.unicast_result"
     alias: "unicast_result"
-  }
-}
-actions {
-  preamble {
-    id: 17547417
-    name: "MyIngress.clear_old_state"
-    alias: "clear_old_state"
   }
 }
 registers {
